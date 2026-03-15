@@ -4,7 +4,7 @@ This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 
 Things might (or might not) work on other combinations.
 
 ## Table of Contents
-- [Laptop Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
+- [Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
 - [BIOS settings](#bios-settings)
 - [Filesystem at setup](#filesystem-at-setup)
 - [User setup](#user-setup)
@@ -15,16 +15,28 @@ Things might (or might not) work on other combinations.
 - [Verify suspend/sleep](#verify-suspendsleep)
   - [Power Profiles](#power-profiles)
   - [Power-savings](#power-savings)
+  - [Current power profile](#current-power-profile)
+  - [Battery status](#battery-status)
+  - [What's consuming power right now](#whats-consuming-power-right-now)
+  - [TLP or auto-cpufreq installed?](#tlp-or-auto-cpufreq-installed)
+  - [Lenovo battery threshold support via its own ACPI interface](#lenovo-battery-threshold-support-via-its-own-acpi-interface)
 - [WiFi](#wifi)
   - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [Audio issues](#audio-issues)
-- [Fingerprint Sensor (not yet working, ignoring for now ☹️)](#fingerprint-sensor-not-yet-working-ignoring-for-now-️)
+- [Fingerprint Sensor (not yet working, ignoring for now ⚠️)](#fingerprint-sensor-not-yet-working-ignoring-for-now-️)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
 - [macOS theming on KDE Plasma](#macos-theming-on-kde-plasma)
+  - [Kvantum engine (required for proper widget styling)](#kvantum-engine-required-for-proper-widget-styling)
+  - [Clone MacSequoia (or swap for WhiteSur/MacVentura)](#clone-macsequoia-or-swap-for-whitesurmacventura)
+  - [WhiteSur icon pack (works with all three themes)](#whitesur-icon-pack-works-with-all-three-themes)
+  - [WhiteSur cursor](#whitesur-cursor)
+  - [Apply in KDE Settings](#apply-in-kde-settings)
 - [How to update BIOS on Lenovo Yoga Pro 7 when running Linux](#how-to-update-bios-on-lenovo-yoga-pro-7-when-running-linux)
+  - [Booting with LiveCD/LiveUSB](#booting-with-livecdliveusb)
+  - [Flash from within Linux (not tried yet)](#flash-from-within-linux-not-tried-yet)
 
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
