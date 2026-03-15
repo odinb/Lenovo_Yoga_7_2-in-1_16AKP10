@@ -175,46 +175,45 @@ Also uncomment and set:<br />
 This stops TLP from fighting with power-profiles-daemon over CPU settings, and only uses TLP for battery threshold management.
 
 Mask power-profiles-daemon so TLP can start cleanly:<br />
-`sudo systemctl mask power-profiles-daemon`
-`sudo systemctl stop power-profiles-daemon`
-`sudo systemctl enable --now tlp`
+`sudo systemctl mask power-profiles-daemon`<br />
+`sudo systemctl stop power-profiles-daemon`<br />
+`sudo systemctl enable --now tlp`<br />
 `sudo systemctl status tlp`
 
-Then verify the threshold is applied:
-sudo tlp-stat -b
+Then verify the threshold is applied:<br />
+`sudo tlp-stat -b`
 
-Or:
-sudo tlp-stat -b | grep -i threshold
+Or:<br />
+`sudo tlp-stat -b | grep -i threshold`
 
-You should see:
-Supported features: charge threshold
+You should see:<br />
+Supported features: charge threshold<br />
 * vendor (ideapad_laptop) = active (charge threshold)
 
 This is the most impactful long-term battery health setting — keeping the battery at 60% max when plugged in significantly extends its lifespan over years of use.
 
-==
 Machine should now be at around 13 hours which beats most Linux laptops.
 
-The biggest real-world battery gains on this machine will come from screen brightness — that 16" 2K display is the #1 power consumer. Dropping from 100% to 50% brightness saves 2-3W easily.
+The biggest real-world battery gains on this machine will come from screen brightness — the 16" 2K display is the #1 power consumer. Dropping from 100% to 50% (or therearound) brightness saves 2-3W easily.
 
-==========
-Wifi:
+# Wifi:
+Confirm current status:<br />
+`iw dev wlp3s0 info`
 
-Confirm current status:
-iw dev wlp3s0 info
+See full adapter capabilities:<br />
+`iw phy phy0 info | grep -A5 "Frequencies\|HE\|EHT\|VHT\|Band"`
 
-See full adapter capabilities:
-iw phy phy0 info | grep -A5 "Frequencies\|HE\|EHT\|VHT\|Band"
+Check driver version:<br />
+`modinfo rtw89_8922ae | grep -i "version\|description"`
 
-Check driver version:
-modinfo rtw89_8922ae | grep -i "version\|description"
+Check what the driver currently supports:<br />
+`iw dev wlp3s0 link | grep -i "EHT\|MLO\|be\|width"`
 
-Check what the driver currently supports:
-iw dev wlp3s0 link | grep -i "EHT\|MLO\|be\|width"
-
-Output:
+Output:<br />
+```
 rx bitrate: 864.8 MBit/s 80MHz EHT-MCS 8 EHT-NSS 2 EHT-GI 0
 tx bitrate: 960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
+```
 
 EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 with 2 spatial streams. The driver is working perfectly.
 
@@ -226,11 +225,9 @@ Summary of WiFi 7 status:
 ❌ MLO (multi-band bonding) — not yet in driver
 ❌ 6 GHz band — not yet in driver
 
-
-==========
-Video/webcam:
-# Check if it's detected
-v4l2-ctl --list-devices
+# Video/webcam:<br />
+Check if it's detected
+`v4l2-ctl --list-devices`
 
 To test, use KDE's built-in camera app:
 sudo pacman -S kamoso
