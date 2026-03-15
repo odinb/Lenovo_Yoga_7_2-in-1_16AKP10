@@ -129,8 +129,8 @@ You should see both:<br />
 - PM: suspend exit.
 
 # Power Profiles:
-`pacman -S power-profiles-daemon`<br />
-`systemctl enable --now power-profiles-daemon`
+`sudo pacman -S power-profiles-daemon`<br />
+`sudo systemctl enable --now power-profiles-daemon`
 
 Verify:<br />
 `systemctl status power-profiles-daemon`
@@ -139,7 +139,7 @@ To switch profiles from terminal:<br />
 `powerprofilesctl set power-saver` # For Power-Saver profile<br />
 `powerprofilesctl set balanced` # For Balanced profile<br />
 `powerprofilesctl set performance` # For Performance profile<br />
-`powerprofilesctl get  # check current` # Check active profile<br />
+`powerprofilesctl get` # Check active profile<br />
 
 # Power-savings
 Install auto-cpufreq — will push idle wattage down further on battery:<br />
@@ -166,10 +166,10 @@ turbo = auto
 `upower -i /org/freedesktop/UPower/devices/battery_BAT0`
 
 # What's consuming power right now
-`powertop --time=5 2>/dev/null | head -40`
+`sudo powertop --time=5 2>/dev/null | head -40`
 
 # TLP or auto-cpufreq installed?
-`pacman -Qs 'tlp|auto-cpufreq'`
+`sudo pacman -Qs 'tlp|auto-cpufreq'`
 
 # Lenovo battery threshold support via its own ACPI interface:
 `sudo pacman -S tlp`
@@ -287,7 +287,7 @@ Add at the top:<br />
 `auth sufficient pam_fprintd.so`
 
 # Setup SMB automount:
-`vi /etc/samba/creds-share`
+`sudo vi /etc/samba/creds-share`
 
 Content:
 ```
@@ -296,15 +296,15 @@ password=mypassword
 ```
 
 then:<br />
-`chmod 600 /etc/samba/creds-share`
+`sudo chmod 600 /etc/samba/creds-share`
 
 Create mount-point:<br />
-`mkdir -p /mnt/cwwk`<br />
+`sudo mkdir -p /mnt/cwwk`<br />
 You can call it whatever, change "cwwk" to what you want.<br />
 Same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
 
 Then create (verify uid/gid with your user):<br />
-`vi /etc/systemd/system/mnt-cwwk.mount`
+`sudo vi /etc/systemd/system/mnt-cwwk.mount`
 With this content:
 ```
 [Unit]
@@ -325,7 +325,7 @@ WantedBy=remote-fs.target
 ```
 
 Then create:<br />
-`vi /etc/systemd/system/mnt-cwwk.automount`
+`sudo vi /etc/systemd/system/mnt-cwwk.automount`
 With this content:
 ```
 [Unit]
@@ -345,13 +345,13 @@ systemctl daemon-reload
 systemctl enable --now mnt-cwwk.automount
 ```
 
-(or if edited: `systemctl restart mnt-cwwk.automount`)
+(or if edited: `sudo systemctl restart mnt-cwwk.automount`)
 
 Test (files on SMB-server should be listed now):<br />
 `ls /mnt/cwwk`
 
 Also enable network-online.target (usually disabled by default on Manjaro):<br />
-`systemctl enable NetworkManager-wait-online.service`
+`sudo systemctl enable NetworkManager-wait-online.service`
 
 For WiFi:<br />
 Stop race-condition by storing password in config, not kwallet:<br />
@@ -365,7 +365,7 @@ key-mgmt=sae
 psk=YOUR_ACTUAL_PASSWORD
 psk-flags=0
 ```
-Verify:<br />
+Verify (where MySSID is your SSID):<br />
 `nmcli connection show MySSID | grep -i psk`
 
 Should show psk-flags: 0. Then reboot and WiFi should connect immediately at boot without waiting for KWallet.
