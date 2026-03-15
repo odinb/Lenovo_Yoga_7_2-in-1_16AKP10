@@ -16,8 +16,7 @@ S/N: sudo dmidecode -t 1 | grep "Serial Number"
 or if no dmidecode: sudo cat /sys/devices/virtual/dmi/id/product_serial
 
 
-==========
-BIOS settings:
+# BIOS settings:
 
 Under "Security" in BIOS (F2):
 Enhanced Windows Biometry Security: Disabled
