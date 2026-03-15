@@ -6,9 +6,9 @@ Things might (or might not) work on other combinations.
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
 # Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
-CPU: AMD Ryzen AI 5 340 w/ Radeon 840M
+CPU: AMD Ryzen AI 5 340 w/ Radeon 840M<br />
 BIOS version:<br />
-- Original: QXCN19WW
+- Original (at purchase): QXCN19WW
 - Now: QXCN21WW
 
 S/N:<br />
@@ -18,7 +18,7 @@ or if no dmidecode:<br />
 `sudo cat /sys/devices/virtual/dmi/id/product_serial`
 
 # BIOS settings:
-Under "Security" in BIOS (F2):
+Under "Security" in BIOS (F2 at power-on):
 - Enhanced Windows Biometry Security: Disabled
 - Pluton Security Processor: Enabled (Needed for sleep to work)
 - Absolute Persistence Module Activation: Disabled
@@ -97,7 +97,7 @@ or<br />
 `reboot`
 
 # Check BIOS:
-`sudo dmidecode -s bios-version
+`sudo dmidecode -s bios-version<br />
 QXCN19WW`
 
 Verify with webpage if manual update needed, or wait for Lenovo to release.
