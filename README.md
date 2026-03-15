@@ -133,7 +133,8 @@ Install auto-cpufreq — will push idle wattage down further on battery:<br />
 `sudo systemctl enable --now auto-cpufreq`
 
 Create /etc/auto-cpufreq.conf with this content:<br />
-```[charger]
+```
+[charger]
 governor = performance
 energy_performance_preference = performance
 turbo = auto
