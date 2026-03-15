@@ -93,45 +93,41 @@ Then:<br />
 or<br />
 `fwupdmgr refresh --force`<br />
 `fwupdmgr update`<br />
-`fwupdmgr get-updates` #Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
+`fwupdmgr get-updates` # Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
 `reboot`
 
 # Check BIOS:
-`sudo dmidecode -s bios-version<br />
-QXCN19WW`
+`sudo dmidecode -s bios-version`<br />
+`QXCN19WW`
 
-Verify with webpage if manual update needed, or wait for Lenovo to release.
+Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?).
 https://pcsupport.lenovo.com/us/en/redesign-search?query=Lenovo%20Yoga%207%202-in-1%2016AKP10%20-%20Type%2083JU&SearchType=Customer%20search&searchLocation=Homepage
 
+# Verify suspend/sleep:
+Logged into Manjaro, test sleep:<br />
+`systemctl suspend`
 
-==========
-Verify suspend/sleep:
-Logged into Manjaro, test sleep:
-systemctl suspend
+Wake it and confirm:<br />
+`journalctl -b 0 | grep -i "suspend\|resume" | grep "PM:"`
 
-Wake it and confirm:
-journalctl -b 0 | grep -i "suspend\|resume" | grep "PM:"
+You should see both:<br />
+- PM: suspend entry and
+- PM: suspend exit.
 
-You should see both PM: suspend entry and PM: suspend exit.
+# Power Profiles:
+`pacman -S power-profiles-daemon`
+`systemctl enable --now power-profiles-daemon`
 
+Verify:<br />
+`systemctl status power-profiles-daemon`
 
-==========
-Power Profiles:
-pacman -S power-profiles-daemon
-systemctl enable --now power-profiles-daemon
+To switch profiles from terminal:<br />
+`powerprofilesctl set power-saver` # For Power-Saver profile<br />
+`powerprofilesctl set balanced` # For Balanced profile<br />
+`powerprofilesctl set performance` # For Performance profile<br />
+`powerprofilesctl get  # check current` # Check active profile<br />
 
-Verify:
-systemctl status power-profiles-daemon
-
-To switch profiles from terminal:
-powerprofilesctl set power-saver
-powerprofilesctl set balanced
-powerprofilesctl set performance
-powerprofilesctl get  # check current
-
-
-==========
-Powersavings
+# Power-savings
 
 Install auto-cpufreq — will push idle wattage down further on battery:
 yay -S auto-cpufreq (do not run as sudo)
