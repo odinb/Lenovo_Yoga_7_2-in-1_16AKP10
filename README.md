@@ -67,10 +67,10 @@ Verify:<br />
 # Update System:
 
 Add faster mirrors:<br />
-`pacman-mirrors --fasttrack`
+`sudo pacman-mirrors --fasttrack`
 
 Update full system:<br />
-`pacman -Syu`
+`sudo pacman -Syu`
 
 To install package with pacman:<br />
 `sudo pacman -S 'package-name'`
@@ -89,7 +89,7 @@ Confirm:<br />
 `[Yoga7-Manjaro ~]# cat /usr/share/libalpm/hooks/00-timeshift-autosnap.hook`
 
 Edit:<br />
-`vi /etc/timeshift/timeshift.json`
+`sudo vi /etc/timeshift/timeshift.json`
 
 Add/change:<br />
 - "schedule_boot": "true" → Takes a snapshot at each boot (great safety net).
@@ -99,16 +99,16 @@ Add/change:<br />
 
 Then:<br />
 `sudo update-grub`<br />
-`reboot`
+`sudo reboot`
 
 # Add firmware-updates:
-`pacman -S yay fwupd`<br />
-`fwupdmgr refresh`<br />
+`sudo pacman -S yay fwupd`<br />
+`sudo fwupdmgr refresh`<br />
 or<br />
-`fwupdmgr refresh --force`<br />
-`fwupdmgr update`<br />
-`fwupdmgr get-updates` # Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
-`reboot`
+`sudo fwupdmgr refresh --force`<br />
+`sudo fwupdmgr update`<br />
+`sudo fwupdmgr get-updates` # Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
+`sudo reboot`
 
 # Check BIOS:
 `sudo dmidecode -s bios-version`<br />
