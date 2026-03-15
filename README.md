@@ -43,7 +43,8 @@ Things might (or might not) work on other combinations.
   - [Booting with LiveCD/LiveUSB](#booting-with-livecdliveusb)
   - [Flash from within Linux (not tried yet)](#flash-from-within-linux-not-tried-yet)
 
-This is my working log of this combo. Things might change, and this guide might or might not be updated.
+
+This is my working "lazy-moose" for this combo. Things might change, and this guide might or might not be updated.
 
 | Item | Status | Notes |
 |-----|-----|-----|
