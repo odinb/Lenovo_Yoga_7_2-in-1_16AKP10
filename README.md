@@ -7,7 +7,9 @@ This is my working log of this combo. Things might change, and this guide might 
 
 # Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
 CPU: AMD Ryzen AI 5 340 w/ Radeon 840M
-BIOS version: Original: QXCN19WW Now: QXCN21WW
+BIOS version:<br />
+- Original: QXCN19WW
+- Now: QXCN21WW
 
 S/N:<br />
 `sudo dmidecode -t 1 | grep "Serial Number"`
@@ -45,7 +47,7 @@ Enable:<br />
 Add user to group wheel:<br />
 `usermod -aG wheel JohnDoe`
 
-Veirfy:<br />
+Verify:<br />
 `id JohnDoe`
 
 # Update System:
@@ -64,7 +66,7 @@ To remove package with pacman:<br />
 
 # Timeshift Setup:
 - Daily: keep 5
-- Weekly: keep2
+- Weekly: keep 2
 
 Before updates:<br />
 `sudo pacman -S timeshift-autosnap`
@@ -82,16 +84,16 @@ Add/change:<br />
 - "count_hourly": "0" → Hourly snapshots are unnecessary if using boot + daily snapshots.
 
 Then:<br />
-`sudo update-grub`
+`sudo update-grub`<br />
 `reboot`
 
 # Add firmware-updates:
-`pacman -S yay fwupd`
-`fwupdmgr refresh`
+`pacman -S yay fwupd`<br />
+`fwupdmgr refresh`<br />
 or<br />
-`fwupdmgr refresh --force`
-`fwupdmgr update`
-`fwupdmgr get-updates` #Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.
+`fwupdmgr refresh --force`<br />
+`fwupdmgr update`<br />
+`fwupdmgr get-updates` #Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
 `reboot`
 
 # Check BIOS:
