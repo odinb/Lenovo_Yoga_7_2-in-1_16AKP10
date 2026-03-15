@@ -63,8 +63,8 @@ To remove package with pacman:<br />
 `sudo pacman -Rns 'package-name'`
 
 # Timeshift Setup:
-Daily: keep 5
-Weekly: keep2
+- Daily: keep 5
+- Weekly: keep2
 
 Before updates:<br />
 `sudo pacman -S timeshift-autosnap`
