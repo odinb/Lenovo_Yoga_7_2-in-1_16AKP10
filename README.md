@@ -1,14 +1,12 @@
 # Lenovo_Yoga_7_2-in-1_16AKP10
 
-==========
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
 
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
 
-==========
-Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
+# Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
 CPU: AMD Ryzen AI 5 340 w/ Radeon 840M
 BIOS version: Original: QXCN19WW Now: QXCN21WW
 
