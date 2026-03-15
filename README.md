@@ -12,7 +12,8 @@ Things might (or might not) work on other combinations.
 - [Timeshift Setup](#timeshift-setup)
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
-- [Verify suspend/sleep](#verify-suspendsleep)
+
+- [Verify suspend/sleep](#verify-suspend-sleep)
   - [Power Profiles](#power-profiles)
   - [Power-savings](#power-savings)
   - [Current power profile](#current-power-profile)
@@ -20,20 +21,24 @@ Things might (or might not) work on other combinations.
   - [What's consuming power right now](#whats-consuming-power-right-now)
   - [TLP or auto-cpufreq installed?](#tlp-or-auto-cpufreq-installed)
   - [Lenovo battery threshold support via its own ACPI interface](#lenovo-battery-threshold-support-via-its-own-acpi-interface)
+
 - [WiFi](#wifi)
   - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
+
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [Audio issues](#audio-issues)
-- [Fingerprint Sensor (not yet working, ignoring for now ⚠️)](#fingerprint-sensor-not-yet-working-ignoring-for-now-️)
+- [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
+
 - [macOS theming on KDE Plasma](#macos-theming-on-kde-plasma)
   - [Kvantum engine (required for proper widget styling)](#kvantum-engine-required-for-proper-widget-styling)
   - [Clone MacSequoia (or swap for WhiteSur/MacVentura)](#clone-macsequoia-or-swap-for-whitesurmacventura)
   - [WhiteSur icon pack (works with all three themes)](#whitesur-icon-pack-works-with-all-three-themes)
   - [WhiteSur cursor](#whitesur-cursor)
   - [Apply in KDE Settings](#apply-in-kde-settings)
+
 - [How to update BIOS on Lenovo Yoga Pro 7 when running Linux](#how-to-update-bios-on-lenovo-yoga-pro-7-when-running-linux)
   - [Booting with LiveCD/LiveUSB](#booting-with-livecdliveusb)
   - [Flash from within Linux (not tried yet)](#flash-from-within-linux-not-tried-yet)
