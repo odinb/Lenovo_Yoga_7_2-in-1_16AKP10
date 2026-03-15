@@ -299,9 +299,9 @@ then:<br />
 `chmod 600 /etc/samba/creds-share`
 
 Create mount-point:<br />
-`mkdir -p /mnt/cwwk` #/you can call it whatever, change "cwwk" to what you want.
-
-#same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
+`mkdir -p /mnt/cwwk`<br />
+You can call it whatever, change "cwwk" to what you want.<br />
+Same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
 
 Then create (verify uid/gid with your user):<br />
 `vi /etc/systemd/system/mnt-cwwk.mount`
@@ -358,20 +358,19 @@ Stop race-condition by storing password in config, not kwallet:<br />
 `sudo vi /etc/NetworkManager/system-connections/TheSSID.nmconnection`
 
 Change "psk-flags=1" to "psk-flags=0" and make sure the password is present:
+```
 [wifi-security]
 auth-alg=open
 key-mgmt=sae
 psk=YOUR_ACTUAL_PASSWORD
 psk-flags=0
-
-Verify:
-nmcli connection show MySSID | grep -i psk
+```
+Verify:<br />
+`nmcli connection show MySSID | grep -i psk`
 
 Should show psk-flags: 0. Then reboot and WiFi should connect immediately at boot without waiting for KWallet.
 
-
-==
-Create a Dolphin “Places” bookmark
+# Create a Dolphin “Places” bookmark
 Open Dolphin.
 Navigate to /mnt/cwwk.
 Press Ctrl+D (or Bookmarks → Add to Places).
