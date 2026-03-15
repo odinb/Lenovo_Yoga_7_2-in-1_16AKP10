@@ -1,4 +1,4 @@
-# Lenovo_Yoga_7_2-in-1_16AKP10 with Manjaro
+# Lenovo Yoga 7, 2-in-1 16AKP10 with Manjaro
 
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
@@ -68,35 +68,35 @@ To remove package with pacman:<br />
 
 Before updates:<br />
 `sudo pacman -S timeshift-autosnap`
+
 Confirm:<br />
 `[Yoga7-Manjaro ~]# cat /usr/share/libalpm/hooks/00-timeshift-autosnap.hook`
 
 Edit:<br />
-vi /etc/timeshift/timeshift.json
+`vi /etc/timeshift/timeshift.json`
 
-Add/change:
-"schedule_boot": "true" → Takes a snapshot at each boot (great safety net).
-"boot_grub_menu": "true" → GRUB shows available snapshots.
-"count_boot": "5" → Keeps last 5 boot snapshots, automatically cleans older ones.
-"count_hourly": "0" → Hourly snapshots are unnecessary if using boot + daily snapshots.
+Add/change:<br />
+- "schedule_boot": "true" → Takes a snapshot at each boot (great safety net).
+- "boot_grub_menu": "true" → GRUB shows available snapshots.
+- "count_boot": "5" → Keeps last 5 boot snapshots, automatically cleans older ones.
+- "count_hourly": "0" → Hourly snapshots are unnecessary if using boot + daily snapshots.
 
-Then > sudo update-grub
-reboot
+Then:
+`sudo update-grub`
+`reboot`
 
-
-==========
-Add firmware-updates:
-pacman -S yay fwupd
-fwupdmgr refresh
+# Add firmware-updates:
+`pacman -S yay fwupd`
+`fwupdmgr refresh`
 or
-fwupdmgr refresh --force
-fwupdmgr update
-fwupdmgr get-updates #Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.
-reboot
+`fwupdmgr refresh --force`
+`fwupdmgr update`
+`fwupdmgr get-updates` #Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.
+`reboot`
 
-Check BIOS:
-sudo dmidecode -s bios-version
-QXCN19WW
+# Check BIOS:
+`sudo dmidecode -s bios-version
+QXCN19WW`
 
 Verify with webpage if manual update needed, or wait for Lenovo to release.
 https://pcsupport.lenovo.com/us/en/redesign-search?query=Lenovo%20Yoga%207%202-in-1%2016AKP10%20-%20Type%2083JU&SearchType=Customer%20search&searchLocation=Homepage
