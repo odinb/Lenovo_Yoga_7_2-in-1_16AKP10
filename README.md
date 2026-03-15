@@ -291,11 +291,13 @@ Record 5 seconds of audio:<br />
 Play it back:<br />
 `aplay /tmp/test/wav`
 
-## Audio issues: ⚠️
+## Audio issues
+⚠️
 See separate text-file for how to fix properly untill missing kernel fixup is added.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
-## Fingerprint Sensor (not yet working, ignoring for now ⚠️)
+## Fingerprint Sensor (not yet working, ignoring for now)
+⚠️
 `lsusb` to get printout:<br />
 `Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E`
 
