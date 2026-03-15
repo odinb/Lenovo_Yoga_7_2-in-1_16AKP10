@@ -444,7 +444,7 @@ GTK apps (Chrome, Firefox etc.):<br />
 
 This makes GTK apps match the KDE theme so everything looks consistent.
 
-## How to update BIOS on Lenovo Yoga Pro 7 from Linux
+## How to update BIOS on Lenovo Yoga Pro 7 when running Linux
 Lenovo support page for this model only provides "*.exe" installer for BIOS updates. There is no option in the BIOS itself to select a binary blob from USB stick, none whatsoever.
 
 The way to do a BIOS update anyway below (2 ways):
@@ -462,17 +462,14 @@ The steps are as follows:
 - Find the BIOS update installer on the portable (aka LiveUSB) Windows and run it.
 
 ### Flash from within Linux (not tried yet)
-You don't actually need WinPE, Hiren's BootCD PE or weird hack tools for any of this, you can use fwupd just fine:
-- Download the "BIOS Updater" Windows executable file from Lenovo's support website
+You don't actually need WinPE, Hiren's BootCD PE or weird hack tools for any of this, you can use `fwupd` just fine:
+- Download the "BIOS Updater" Windows executable file from Lenovo's support website. [BIOS update installer from Lenovo](https://pcsupport.lenovo.com/pl/en/products/laptops-and-netbooks/yoga-series/yoga-pro-7-14asp9/downloads/driver-list/component?name=BIOS%2FUEFI&id=5AC6A815-321D-440E-8833-B07A93E0428C). Make sure you pick the one for your specific machine!
 - Unzip that executable file with either 7z or a desktop archive manager (Ark works)
 - Get the ~34MiB .fd file, this is the actual firmware image
-- Look up your system firmware device ID: doas fwupdtool get-devices | grep -A 1 "System Firmware"
-- Prepare the firmware flash process with: doas fwupdtool install-blob [filename].fd [system firmware device ID]
+- Look up your system firmware device ID: `doas fwupdtool get-devices | grep -A 1 "System Firmware"`
+- Prepare the firmware flash process with: `doas fwupdtool install-blob [filename].fd [system firmware device ID]`
 
 When the tool asks you to reboot, let it do so.
-The laptop will update the firmware first using H2OFFT and then the internal flashing utility (and so it'll restart two times).
+The laptop will update the firmware first using H2OFFT and then the internal flashing utility ( it will restart twice).
 
 Once everything's done, you're back to GRUB/rEFInd
-
-
-==========
