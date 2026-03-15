@@ -50,29 +50,28 @@ Veirfy:<br />
 
 # Update System:
 
-Add faster mirrors:
-pacman-mirrors --fasttrack
+Add faster mirrors:<br />
+`pacman-mirrors --fasttrack`
 
-Update full system:
-pacman -Syu
+Update full system:<br />
+`pacman -Syu`
 
-To install package with pacman:
-sudo pacman -S 'package-name'
+To install package with pacman:<br />
+`sudo pacman -S 'package-name'`
 
-To remove package with pacman:
-sudo pacman -Rns 'package-name'
+To remove package with pacman:<br />
+`sudo pacman -Rns 'package-name'`
 
-
-==========
-Timeshift Setup:
+# Timeshift Setup:
 Daily: keep 5
 Weekly: keep2
 
-Before updates:
-sudo pacman -S timeshift-autosnap
-Confirm: [Yoga7-Manjaro ~]# cat /usr/share/libalpm/hooks/00-timeshift-autosnap.hook
+Before updates:<br />
+`sudo pacman -S timeshift-autosnap`
+Confirm:<br />
+`[Yoga7-Manjaro ~]# cat /usr/share/libalpm/hooks/00-timeshift-autosnap.hook`
 
-Edit:
+Edit:<br />
 vi /etc/timeshift/timeshift.json
 
 Add/change:
