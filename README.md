@@ -1,35 +1,29 @@
-# Lenovo_Yoga_7_2-in-1_16AKP10
+# Lenovo_Yoga_7_2-in-1_16AKP10 with Manjaro
 
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
 
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
-
 # Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
 CPU: AMD Ryzen AI 5 340 w/ Radeon 840M
 BIOS version: Original: QXCN19WW Now: QXCN21WW
 
-==
 S/N: sudo dmidecode -t 1 | grep "Serial Number"
 
 or if no dmidecode: sudo cat /sys/devices/virtual/dmi/id/product_serial
 
-
 # BIOS settings:
-
 Under "Security" in BIOS (F2):
 Enhanced Windows Biometry Security: Disabled
 Pluton Security Processor: Enabled (Needed for sleep to work)
 Absolute Persistence Module Activation: Disabled
 Secure Boot: Disabled
 
-==========
+# Filesystem at setup
 When installing Manjaro OS (or other), keep the default btrfs for better snapshotting with Timeshift.
 
-
-==========
-User setup:
+# User setup:
 Change so no password needed for sudo for user "JohnDoe".
 
 visudo -f /etc/sudoers
@@ -51,9 +45,7 @@ usermod -aG wheel JohnDoe
 Veirfy:
 id JohnDoe
 
-
-==========
-Update System:
+# Update System:
 
 Add faster mirrors:
 pacman-mirrors --fasttrack
