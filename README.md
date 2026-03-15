@@ -8,11 +8,13 @@ This is my working log of this combo. Things might change, and this guide might 
 | Item | Status | Notes |
 |-----|-----|-----|
 | Touchpad | ✅ Working | No changes needed |
-| Keyboard and backlight | ✅ Working | No changes needed |
-| Screen Brightness | ✅ Working | No changes needed |
+| Keyboard and Backlight | ✅ Working | No changes needed |
+| Screen Brightness Buttons | ✅ Working | No changes needed |
+| WebCam | ✅ Working | No changes needed |
+| Microphone | ✅ Working | No changes needed |
 | Mute Buttons for Audio and Microphone | ✅ Working | No changes needed |
-| Volume Buttons for Audio | ⚠️ Partial  | Needs Kernel Quirk table fix [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
-| Audio Speakers | ⚠️ Partial  | Needs Kernel Quirk table fix [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+| Volume Buttons for Audio | ⚠️ Partial  | Needs Kernel Quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+| Audio Speakers | ⚠️ Partial  | Needs Kernel Quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
 | Audio EQ | ⚠️ Partial  | Needs PipeWire EQ Filter Chain fix below |
 | FingerPrint Reader | ❌ Not Working | Needs more work apparently |
 
@@ -240,44 +242,25 @@ Summary of WiFi 7 status:
 ❌ | 6 GHz band | not yet in driver| 
 
 # Video/webcam:<br />
-Check if it's detected
+Check if it's detected<br />
 `v4l2-ctl --list-devices`
 
-To test, use KDE's built-in camera app:
-sudo pacman -S kamoso
-kamoso
+To test, use KDE's built-in camera app:<br />
+`sudo pacman -S kamoso`<br />
+`kamoso`
 
-
-==========
-Microphone:
-# Record 5 seconds of audio:
-arecord -d 5 -f cd /tmp/test.wav
+# Microphone:
+Record 5 seconds of audio:<br />
+`arecord -d 5 -f cd /tmp/test.wav`
 
 # Play it back:
-aplay /tmp/test/wav
+`aplay /tmp/test/wav`
 
-
-==========
-Audio issues:
+# Audio issues:
 See separate text-file for how to fix properly untill missing kernel fixup is added.
 https://bugzilla.kernel.org/show_bug.cgi?id=221210
 
-==
-Lenovo Yoga Pro 7 14ASP10 sound issue (not applicable to or working on 16AKP10, but similar/same symptoms):
-https://www.reddit.com/r/Fedora/comments/1n7lyno/lenovo_yoga_pro_7_14asp10_sound_issue/
-https://wiki.archlinux.org/title/Lenovo_Yoga_7i#Speaker_audio
-
-The internal speakers are either off or at max volume, no matter the setting.
-The volume of headphones connected via the 3.5mm jack was very low, even at 100%.
-To fix this, you need at least kernel 6.17.9 and add the file /etc/modprobe.d/alc287.conf with the content:
-options snd-hda-intel model=(null),alc287-yoga9-bass-spk-pin
-
-Reboot & both the volume settings of the internal speakers & the max volume of headphones is working.
-You probably need to have the alsa-sof-firmware package installed as well.
-
-
-==========
-Fingerprint Sensor (not yet working, ignoring for now):
+# Fingerprint Sensor (not yet working, ignoring for now)
 Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E
 
 sudo pacman -S fprintd
