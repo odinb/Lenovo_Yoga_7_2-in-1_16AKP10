@@ -3,6 +3,30 @@
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
 
+## Table of Contents
+
+- [Laptop](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
+- [BIOS settings](#bios-settings)
+- [Filesystem at setup](#filesystem-at-setup)
+- [User setup](#user-setup)
+- [Update System](#update-system)
+- [Timeshift Setup](#timeshift-setup)
+- [Add firmware-updates](#add-firmware-updates)
+- [Check BIOS](#check-bios)
+- [Verify suspend/sleep](#verify-suspendsleep)
+  - [Power Profiles](#power-profiles)
+  - [Power-savings](#power-savings)
+- [WiFi](#wifi)
+  - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
+- [Video/webcam](#videowebcam)
+- [Microphone](#microphone)
+- [Audio issues](#audio-issues)
+- [Fingerprint Sensor](#fingerprint-sensor-not-yet-working-ignoring-for-now-️)
+- [Setup SMB automount](#setup-smb-automount)
+- [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
+- [macOS theming on KDE Plasma](#macos-theming-on-kde-plasma)
+- [How to update BIOS on Lenovo Yoga Pro 7 when running Linux](#how-to-update-bios-on-lenovo-yoga-pro-7-when-running-linux)
+
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
 | Item | Status | Notes |
