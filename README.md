@@ -9,7 +9,7 @@ This is my working log of this combo. Things might change, and this guide might 
 CPU: AMD Ryzen AI 5 340 w/ Radeon 840M
 BIOS version: Original: QXCN19WW Now: QXCN21WW
 
-S/N: 'sudo dmidecode -t 1 | grep "Serial Number"'
+S/N: `sudo dmidecode -t 1 | grep "Serial Number"`
 
 or if no dmidecode: sudo cat /sys/devices/virtual/dmi/id/product_serial
 
