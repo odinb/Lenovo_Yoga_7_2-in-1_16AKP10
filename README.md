@@ -210,7 +210,7 @@ Machine should now be at around 13 hours which beats most Linux laptops.
 
 The biggest real-world battery gains on this machine will come from screen brightness — the 16" 2K display is the #1 power consumer. Dropping from 100% to 50% (or therearound) brightness saves 2-3W easily.
 
-# Wifi:
+# WiFi:
 Confirm current status:<br />
 `iw dev wlp3s0 info`
 
@@ -256,11 +256,12 @@ Record 5 seconds of audio:<br />
 Play it back:<br />
 `aplay /tmp/test/wav`
 
-# Audio issues: ⚠️⚠️
+# Audio issues: ⚠️
 See separate text-file for how to fix properly untill missing kernel fixup is added.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
-# Fingerprint Sensor (`lsusb` to get printout) (⚠️ not yet working, ignoring for now ⚠️)
+# Fingerprint Sensor (not yet working, ignoring for now ⚠️)
+`lsusb` to get printout:<br />
 `Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E`
 
 `sudo pacman -S fprintd`<br />
