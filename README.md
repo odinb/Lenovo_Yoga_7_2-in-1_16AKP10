@@ -3,6 +3,14 @@
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
 
+## Table of Contents
+- [Hardware](#hardware)
+- [Linux Compatibility](#linux-compatibility)
+- [Working](#working)
+- [Not Working](#not-working)
+- [Kernel Requirements](#kernel-requirements)
+- [Fixes](#fixes)
+
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
 | Item | Status | Notes |
@@ -371,64 +379,64 @@ Verify (where MySSID is your SSID):<br />
 Should show psk-flags: 0. Then reboot and WiFi should connect immediately at boot without waiting for KWallet.
 
 ## Create a Dolphin “Places” bookmark
-Open Dolphin.
-Navigate to /mnt/cwwk.
-Press Ctrl+D (or Bookmarks → Add to Places).
-This adds a persistent sidebar entry called “cwwk” (you can rename it).
+Replace /mnt/cwwk with whatever you named it above.<br />
+Open Dolphin.<br />
+Navigate to /mnt/cwwk.<br />
+Press Ctrl+D (or Bookmarks → Add to Places).<br />
+This adds a persistent sidebar entry called “cwwk” (you can rename it).<br />
 Since the share is mounted and owned by your user, it loads immediately without hanging.
 
-Optional: Create a .desktop shortcut
-If you want a clickable shortcut elsewhere (like on Desktop):
+Optional: Create a .desktop shortcut<br />
+If you want a clickable shortcut elsewhere (like on Desktop):<br />
 Create ~/Desktop/TrueNAS Share.desktop with:
+```
 [Desktop Entry]
 Type=Link
 Name=TrueNAS Share
 Icon=folder-remote
 URL=file:///mnt/cwwk/
-
-Make it executable so some desktop environments recognize it:
-chmod +x ~/Desktop/TrueNAS\ Share.desktop
+```
+Make it executable so some desktop environments recognize it:<br />
+`chmod +x ~/Desktop/TrueNAS\ Share.desktop`
 
 Clicking it opens the mounted share in Dolphin immediately.
 
-==========
-macOS theming on KDE Plasma:
-
-Recommendation: MacSequoia if you want the latest look, WhiteSur if you want the most stable.
+## macOS theming on KDE Plasma:
+Recommendation: MacSequoia if you want the latest look, WhiteSur if you want the most stable.<br />
 All three use the same stack. Here's the full setup:
 
-Install the full stack
-# Kvantum engine (required for proper widget styling)
-sudo pacman -S kvantum
+Install the full stack:<br />
+### Kvantum engine (required for proper widget styling)
+`sudo pacman -S kvantum`
 
-# Clone MacSequoia (or swap for WhiteSur/MacVentura)
-git clone https://github.com/vinceliuice/MacSequoia-kde
-cd MacSequoia-kde
-./install.sh
+### Clone MacSequoia (or swap for WhiteSur/MacVentura)
+`cd ~`<br />
+`git clone https://github.com/vinceliuice/MacSequoia-kde`<br />
+`cd MacSequoia-kde`<br />
+`sudo ./install.sh`
 
-# WhiteSur icon pack (works with all three themes)
-cd ~
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme
-cd WhiteSur-icon-theme
-./install.sh
+### WhiteSur icon pack (works with all three themes)
+`cd ~`<br />
+`git clone https://github.com/vinceliuice/WhiteSur-icon-theme`<br />
+`cd WhiteSur-icon-theme`<br />
+`sudo ./install.sh`
 
-# WhiteSur cursor
-cd ~
-git clone https://github.com/vinceliuice/WhiteSur-cursors
-cd WhiteSur-cursors
-./install.sh
+### WhiteSur cursor
+`cd ~`<br />
+`git clone https://github.com/vinceliuice/WhiteSur-cursors`<br />
+`cd WhiteSur-cursors`<br />
+`sudo ./install.sh`
 
-==
-Apply in KDE Settings
+### Apply in KDE Settings
 System Settings → Appearance → Global Theme → select MacSequoia
 System Settings → Appearance → Application Style → set to Kvantum, then open kvantummanager and select MacSequoia
 System Settings → Appearance → Icons → WhiteSur
 System Settings → Appearance → Cursors → WhiteSur
 
-For the dock (makes it really feel like macOS)
+For the dock (makes it really feel like macOS):
 sudo pacman -S latte-dock
 
-GTK apps (Chrome, Firefox etc.)
+GTK apps (Chrome, Firefox etc.):
 cd ~
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme
 cd WhiteSur-gtk-theme
