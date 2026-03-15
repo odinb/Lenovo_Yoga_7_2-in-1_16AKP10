@@ -49,6 +49,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Item | Status | Notes |
 |-----|-----|-----|
 | Touchpad | ✅ Working | No changes needed |
+| TouchScreen | ✅ Working | No changes needed |
 | Keyboard and Backlight | ✅ Working | No changes needed |
 | Screen Brightness Buttons | ✅ Working | No changes needed |
 | WebCam | ✅ Working | No changes needed |
