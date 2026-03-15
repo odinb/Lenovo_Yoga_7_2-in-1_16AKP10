@@ -31,17 +31,17 @@ S/N:<br />
 or if no dmidecode:<br />
 `sudo cat /sys/devices/virtual/dmi/id/product_serial`
 
-# BIOS settings:
+## BIOS settings:
 Under "Security" in BIOS (F2 at power-on):
 - Enhanced Windows Biometry Security: Disabled
 - Pluton Security Processor: Enabled (Needed for sleep to work)
 - Absolute Persistence Module Activation: Disabled
 - Secure Boot: Disabled
 
-# Filesystem at setup
+## Filesystem at setup
 When installing Manjaro OS (or other), keep the default btrfs for better snapshotting with Timeshift.
 
-# User setup:
+## User setup:
 Change to no password needed for sudo for user "JohnDoe":<br />
 `visudo -f /etc/sudoers`
 
@@ -64,7 +64,7 @@ Add user to group wheel:<br />
 Verify:<br />
 `id JohnDoe`
 
-# Update System:
+## Update System:
 
 Add faster mirrors:<br />
 `sudo pacman-mirrors --fasttrack`
@@ -78,7 +78,7 @@ To install package with pacman:<br />
 To remove package with pacman:<br />
 `sudo pacman -Rns 'package-name'`
 
-# Timeshift Setup:
+## Timeshift Setup:
 - Daily: keep 5
 - Weekly: keep 2
 
@@ -101,7 +101,7 @@ Then:<br />
 `sudo update-grub`<br />
 `sudo reboot`
 
-# Add firmware-updates:
+## Add firmware-updates:
 `sudo pacman -S yay fwupd`<br />
 `sudo fwupdmgr refresh`<br />
 or<br />
@@ -110,14 +110,14 @@ or<br />
 `sudo fwupdmgr get-updates` # Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
 `sudo reboot`
 
-# Check BIOS:
+## Check BIOS:
 `sudo dmidecode -s bios-version`<br />
 `QXCN19WW`
 
 Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?):<br />
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
-# Verify suspend/sleep:
+## Verify suspend/sleep:
 Logged into Manjaro, test sleep:<br />
 `systemctl suspend`
 
@@ -128,7 +128,7 @@ You should see both:<br />
 - PM: suspend entry, and
 - PM: suspend exit.
 
-# Power Profiles:
+### Power Profiles:
 `sudo pacman -S power-profiles-daemon`<br />
 `sudo systemctl enable --now power-profiles-daemon`
 
@@ -141,7 +141,7 @@ To switch profiles from terminal:<br />
 `powerprofilesctl set performance` # For Performance profile<br />
 `powerprofilesctl get` # Check active profile<br />
 
-# Power-savings
+### Power-savings
 Install auto-cpufreq — will push idle wattage down further on battery:<br />
 `yay -S auto-cpufreq` # Do not run as sudo<br />
 `sudo systemctl enable --now auto-cpufreq`
@@ -159,19 +159,19 @@ energy_performance_preference = power
 turbo = auto
 ```
 
-# Current power profile
+### Current power profile
 `powerprofilesctl get`
 
-# Battery status
+### Battery status
 `upower -i /org/freedesktop/UPower/devices/battery_BAT0`
 
-# What's consuming power right now
+### What's consuming power right now
 `sudo powertop --time=5 2>/dev/null | head -40`
 
-# TLP or auto-cpufreq installed?
+### TLP or auto-cpufreq installed?
 `sudo pacman -Qs 'tlp|auto-cpufreq'`
 
-# Lenovo battery threshold support via its own ACPI interface:
+### Lenovo battery threshold support via its own ACPI interface:
 `sudo pacman -S tlp`
 `sudo vi /etc/tlp.conf`
 
@@ -210,7 +210,7 @@ Machine should now be at around 13 hours which beats most Linux laptops.
 
 The biggest real-world battery gains on this machine will come from screen brightness — the 16" 2K display is the #1 power consumer. Dropping from 100% to 50% (or therearound) brightness saves 2-3W easily.
 
-# WiFi:
+## WiFi:
 Confirm current status:<br />
 `iw dev wlp3s0 info`
 
@@ -231,7 +231,7 @@ tx bitrate: 960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
 
 EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 with 2 spatial streams. The driver is working almost perfectly.
 
-Summary of WiFi 7 status:
+### Summary of WiFi 7 status:
 | Working | Item | Notes |
 |-----|-----|-----|
 ✅ | EHT (WiFi 7 modulation) | Working |
@@ -241,7 +241,7 @@ Summary of WiFi 7 status:
 ❌ | MLO (multi-band bonding) | Not yet in driver |
 ❌ | 6 GHz band | Not yet in driver |
 
-# Video/webcam:<br />
+## Video/webcam:<br />
 Check if it's detected<br />
 `v4l2-ctl --list-devices`
 
@@ -249,18 +249,18 @@ To test, use KDE's built-in camera app:<br />
 `sudo pacman -S kamoso`<br />
 `kamoso`
 
-# Microphone:
+## Microphone:
 Record 5 seconds of audio:<br />
 `arecord -d 5 -f cd /tmp/test.wav`
 
 Play it back:<br />
 `aplay /tmp/test/wav`
 
-# Audio issues: ⚠️
+## Audio issues: ⚠️
 See separate text-file for how to fix properly untill missing kernel fixup is added.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
-# Fingerprint Sensor (not yet working, ignoring for now ⚠️)
+## Fingerprint Sensor (not yet working, ignoring for now ⚠️)
 `lsusb` to get printout:<br />
 `Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E`
 
@@ -286,7 +286,7 @@ And for the lock screen specifically:<br />
 Add at the top:<br />
 `auth sufficient pam_fprintd.so`
 
-# Setup SMB automount:
+## Setup SMB automount:
 `sudo vi /etc/samba/creds-share`
 
 Content:
@@ -370,7 +370,7 @@ Verify (where MySSID is your SSID):<br />
 
 Should show psk-flags: 0. Then reboot and WiFi should connect immediately at boot without waiting for KWallet.
 
-# Create a Dolphin “Places” bookmark
+## Create a Dolphin “Places” bookmark
 Open Dolphin.
 Navigate to /mnt/cwwk.
 Press Ctrl+D (or Bookmarks → Add to Places).
