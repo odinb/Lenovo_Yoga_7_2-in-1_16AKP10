@@ -101,7 +101,7 @@ or<br />
 `QXCN19WW`
 
 Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?).
-https://pcsupport.lenovo.com/us/en/redesign-search?query=Lenovo%20Yoga%207%202-in-1%2016AKP10%20-%20Type%2083JU&SearchType=Customer%20search&searchLocation=Homepage
+[Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
 # Verify suspend/sleep:
 Logged into Manjaro, test sleep:<br />
@@ -115,7 +115,7 @@ You should see both:<br />
 - PM: suspend exit.
 
 # Power Profiles:
-`pacman -S power-profiles-daemon`
+`pacman -S power-profiles-daemon`<br />
 `systemctl enable --now power-profiles-daemon`
 
 Verify:<br />
@@ -128,12 +128,11 @@ To switch profiles from terminal:<br />
 `powerprofilesctl get  # check current` # Check active profile<br />
 
 # Power-savings
+Install auto-cpufreq — will push idle wattage down further on battery:<br />
+`yay -S auto-cpufreq` # Do not run as sudo<br />
+`sudo systemctl enable --now auto-cpufreq`
 
-Install auto-cpufreq — will push idle wattage down further on battery:
-yay -S auto-cpufreq (do not run as sudo)
-sudo systemctl enable --now auto-cpufreq
-
-Create /etc/auto-cpufreq.conf:
+Create /etc/auto-cpufreq.conf:<br />
 [charger]
 governor = performance
 energy_performance_preference = performance
