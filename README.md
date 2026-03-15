@@ -3,8 +3,6 @@
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
 
-[[_TOC_]]
-
 This is my working log of this combo. Things might change, and this guide might or might not be updated.
 
 | Item | Status | Notes |
