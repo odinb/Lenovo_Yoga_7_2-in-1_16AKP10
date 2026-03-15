@@ -444,15 +444,15 @@ GTK apps (Chrome, Firefox etc.):<br />
 
 This makes GTK apps match the KDE theme so everything looks consistent.
 
-## How to update BIOD on Lenovo Yoga Pro 7 Gen 9 (14ASP9) from Linux
-Lenovo support page for this model only provides "*.exe" installer for BIOS updates. There is no option in the BIOS itself to select a binary blob from USB stick, none whatsoever. [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
+## How to update BIOS on Lenovo Yoga Pro 7 from Linux
+Lenovo support page for this model only provides "*.exe" installer for BIOS updates. There is no option in the BIOS itself to select a binary blob from USB stick, none whatsoever.
 
 The way to do a BIOS update anyway below (2 ways):
 ### Booting with LiveCD/LiveUSB
 - [Hiren's BootCD Preinstallation Environment](https://www.hirensbootcd.org/)
  4 GB USB stick
 - [Ventoy](https://ventoy.net/en/index.html)
-- The [BIOS update installer from Lenovo](https://pcsupport.lenovo.com/pl/en/products/laptops-and-netbooks/yoga-series/yoga-pro-7-14asp9/downloads/driver-list/component?name=BIOS%2FUEFI&id=5AC6A815-321D-440E-8833-B07A93E0428C)
+- The [BIOS update installer from Lenovo](https://pcsupport.lenovo.com/pl/en/products/laptops-and-netbooks/yoga-series/yoga-pro-7-14asp9/downloads/driver-list/component?name=BIOS%2FUEFI&id=5AC6A815-321D-440E-8833-B07A93E0428C). Make sure you pick the one for your specific machine!
 
 The steps are as follows:
 - Install Ventoy on the USB stick
