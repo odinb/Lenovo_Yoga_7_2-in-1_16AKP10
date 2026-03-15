@@ -15,24 +15,24 @@ or if no dmidecode: `sudo cat /sys/devices/virtual/dmi/id/product_serial`
 
 # BIOS settings:
 Under "Security" in BIOS (F2):
-Enhanced Windows Biometry Security: Disabled
-Pluton Security Processor: Enabled (Needed for sleep to work)
-Absolute Persistence Module Activation: Disabled
-Secure Boot: Disabled
+- Enhanced Windows Biometry Security: Disabled
+- Pluton Security Processor: Enabled (Needed for sleep to work)
+- Absolute Persistence Module Activation: Disabled
+- Secure Boot: Disabled
 
 # Filesystem at setup
 When installing Manjaro OS (or other), keep the default btrfs for better snapshotting with Timeshift.
 
 # User setup:
-Change so no password needed for sudo for user "JohnDoe".
+Change so no password needed for sudo for user "JohnDoe":
+`visudo -f /etc/sudoers`
 
-visudo -f /etc/sudoers
 Enable:
-## Uncomment to allow members of group wheel to execute any command
-%wheel ALL=(ALL:ALL) ALL
+Uncomment to allow members of group wheel to execute any command
+`%wheel ALL=(ALL:ALL) ALL`
 
-## Same thing without a password
-%wheel ALL=(ALL:ALL) NOPASSWD: ALL
+Same thing without a password
+`%wheel ALL=(ALL:ALL) NOPASSWD: ALL`
 
 Then:
 visudo -f /etc/sudoers.d/10-installer
