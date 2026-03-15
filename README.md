@@ -26,14 +26,14 @@ Under "Security" in BIOS (F2):
 When installing Manjaro OS (or other), keep the default btrfs for better snapshotting with Timeshift.
 
 # User setup:
-Change so no password needed for sudo for user "JohnDoe":<br />
+Change to no password needed for sudo for user "JohnDoe":<br />
 `visudo -f /etc/sudoers`
 
-Enable:
-Uncomment to allow members of group wheel to execute any command<br />
+Enable:<br />
+Uncomment to allow members of group wheel to execute any command:<br />
 `%wheel ALL=(ALL:ALL) ALL`
 
-Same thing without a password<br />
+Same thing without a password:<br />
 `%wheel ALL=(ALL:ALL) NOPASSWD: ALL`
 
 Then:<br />
@@ -81,14 +81,14 @@ Add/change:<br />
 - "count_boot": "5" → Keeps last 5 boot snapshots, automatically cleans older ones.
 - "count_hourly": "0" → Hourly snapshots are unnecessary if using boot + daily snapshots.
 
-Then:
+Then:<br />
 `sudo update-grub`
 `reboot`
 
 # Add firmware-updates:
 `pacman -S yay fwupd`
 `fwupdmgr refresh`
-or
+or<br />
 `fwupdmgr refresh --force`
 `fwupdmgr update`
 `fwupdmgr get-updates` #Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.
