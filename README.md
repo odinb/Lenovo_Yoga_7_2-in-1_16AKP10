@@ -28,10 +28,10 @@ Change so no password needed for sudo for user "JohnDoe":
 `visudo -f /etc/sudoers`
 
 Enable:
-Uncomment to allow members of group wheel to execute any command
+Uncomment to allow members of group wheel to execute any command<br />
 `%wheel ALL=(ALL:ALL) ALL`
 
-Same thing without a password
+Same thing without a password<br />
 `%wheel ALL=(ALL:ALL) NOPASSWD: ALL`
 
 Then:
