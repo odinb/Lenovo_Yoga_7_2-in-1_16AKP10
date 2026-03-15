@@ -295,15 +295,18 @@ username=myuser
 password=mypassword
 ```
 
-then:
+then:<br />
 `chmod 600 /etc/samba/creds-share`
-Create mount-point:
-mkdir -p /mnt/cwwk #/you can call it whatever, change "cwwk" to what you want.
 
-# same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
+Create mount-point:<br />
+`mkdir -p /mnt/cwwk` #/you can call it whatever, change "cwwk" to what you want.
 
-Then create (verify uid/gid with your user):
-# vi /etc/systemd/system/mnt-cwwk.mount
+#same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
+
+Then create (verify uid/gid with your user):<br />
+`vi /etc/systemd/system/mnt-cwwk.mount`
+With this content:
+```
 [Unit]
 Description=SMB Share Mount
 After=network-online.target
@@ -319,9 +322,12 @@ TimeoutSec=5
 
 [Install]
 WantedBy=remote-fs.target
+```
 
-Then create:
-# vi /etc/systemd/system/mnt-cwwk.automount
+Then create:<br />
+`vi /etc/systemd/system/mnt-cwwk.automount`
+With this content:
+```
 [Unit]
 Description=Automount SMB Share
 After=network-online.target
@@ -337,19 +343,19 @@ WantedBy=remote-fs.target
 Enable and Start Automount:
 systemctl daemon-reload
 systemctl enable --now mnt-cwwk.automount
+```
 
-(or if edited:
-systemctl restart mnt-cwwk.automount)
+(or if edited: `systemctl restart mnt-cwwk.automount`)
 
-Test:
-ls /mnt/cwwk
+Test (files on SMB-server should be listed now):<br />
+`ls /mnt/cwwk`
 
-Also enable network-online.target (usually disabled by default on Manjaro):
-systemctl enable NetworkManager-wait-online.service
+Also enable network-online.target (usually disabled by default on Manjaro):<br />
+`systemctl enable NetworkManager-wait-online.service`
 
-For WiFi:
-Stop race-condition by storing password in config, not kwallet:
-sudo vi /etc/NetworkManager/system-connections/TheSSID.nmconnection
+For WiFi:<br />
+Stop race-condition by storing password in config, not kwallet:<br />
+`sudo vi /etc/NetworkManager/system-connections/TheSSID.nmconnection`
 
 Change "psk-flags=1" to "psk-flags=0" and make sure the password is present:
 [wifi-security]
