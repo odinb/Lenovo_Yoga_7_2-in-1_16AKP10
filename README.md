@@ -229,17 +229,17 @@ rx bitrate: 864.8 MBit/s 80MHz EHT-MCS 8 EHT-NSS 2 EHT-GI 0
 tx bitrate: 960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
 ```
 
-EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 with 2 spatial streams. The driver is working perfectly.
+EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 with 2 spatial streams. The driver is working almost perfectly.
 
 Summary of WiFi 7 status:
 | Working | Item | Notes |
 |-----|-----|-----|
-✅ | EHT (WiFi 7 modulation) | working| 
-✅ | 2x2 MIMO | working| 
-✅ | 4096-QAM | working| 
-✅ | ~1 Gbps on 5 GHz | working| 
-❌ | MLO (multi-band bonding) | not yet in driver| 
-❌ | 6 GHz band | not yet in driver| 
+✅ | EHT (WiFi 7 modulation) | Working |
+✅ | 2x2 MIMO | Working |
+✅ | 4096-QAM | Working |
+✅ | ~1 Gbps on 5 GHz | Working |
+❌ | MLO (multi-band bonding) | Not yet in driver |
+❌ | 6 GHz band | Not yet in driver |
 
 # Video/webcam:<br />
 Check if it's detected<br />
@@ -253,48 +253,49 @@ To test, use KDE's built-in camera app:<br />
 Record 5 seconds of audio:<br />
 `arecord -d 5 -f cd /tmp/test.wav`
 
-# Play it back:
+Play it back:<br />
 `aplay /tmp/test/wav`
 
-# Audio issues:
-See separate text-file for how to fix properly untill missing kernel fixup is added.
-https://bugzilla.kernel.org/show_bug.cgi?id=221210
+# Audio issues: ⚠️⚠️
+See separate text-file for how to fix properly untill missing kernel fixup is added.<br />
+[Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
-# Fingerprint Sensor (not yet working, ignoring for now)
-Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E
+# Fingerprint Sensor (`lsusb` to get printout) (⚠️ not yet working, ignoring for now ⚠️)
+`Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E`
 
-sudo pacman -S fprintd
-sudo systemctl enable --now fprintd
-fprintd-enroll -f right-index-finger
+`sudo pacman -S fprintd`<br />
+`sudo systemctl enable --now fprintd`<br />
+`fprintd-enroll -f right-index-finger`
 
-Test enrollment first:
-fprintd-list $USER
+Test enrollment first:<br />
+`fprintd-list $USER`
 
-If it shows your enrolled finger, try locking the screen and using the fingerprint to unlock.
+If it shows your enrolled finger, try locking the screen and using the fingerprint to unlock.<br />
 If it enrolls but fails to match, unfortunately that's a known bug with this specific sensor on Linux that hasn't been fully resolved upstream yet.
 
-Enrollment is lost after the screen locks or sleeps:
+Enrollment is lost after the screen locks or sleeps:<br />
 This is a known bug with this exact sensor. The 1c7a:0583 device has been widely reported to fail — it enrolls successfully but enrollment is lost after the screen locks or sleeps.
 
-If enrollment works, then enable it for KDE login and sudo:
-sudo pam-auth-update --enable fprintd
+If enrollment works, then enable it for KDE login and sudo:<br />
+`sudo pam-auth-update --enable fprintd`
 
-And for the lock screen specifically:
-sudo nano /etc/pam.d/kde
+And for the lock screen specifically:<br />
+`sudo nano /etc/pam.d/kde`
 
-Add at the top:
-auth sufficient pam_fprintd.so
+Add at the top:<br />
+`auth sufficient pam_fprintd.so`
 
+# Setup SMB automount:
+`vi /etc/samba/creds-share`
 
-==========
-Setup SMB automount:
-vi /etc/samba/creds-share
 Content:
+```
 username=myuser
 password=mypassword
+```
 
 then:
-chmod 600 /etc/samba/creds-share
+`chmod 600 /etc/samba/creds-share`
 Create mount-point:
 mkdir -p /mnt/cwwk #/you can call it whatever, change "cwwk" to what you want.
 
