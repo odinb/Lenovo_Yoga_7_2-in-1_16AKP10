@@ -11,9 +11,9 @@ This is my working log of this combo. Things might change, and this guide might 
 | Keyboard and backlight | ✅ Working | No changes needed |
 | Screen Brightness | ✅ Working | No changes needed |
 | Mute Buttons for Audio and Microphone | ✅ Working | No changes needed |
-| Volume Buttons for Audio | ⚠️ Partial  | Needs Kernel Quirk table fix [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
-| Audio Speakers | ⚠️ Partial  | Needs Kernel Quirk table fix [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) |
-| Audio EQ | ⚠️ Partial  | Needs PipeWire EQ Filter Chain fix |
+| Volume Buttons for Audio | ⚠️ Partial  | Needs Kernel Quirk table fix [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+| Audio Speakers | ⚠️ Partial  | Needs Kernel Quirk table fix [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+| Audio EQ | ⚠️ Partial  | Needs PipeWire EQ Filter Chain fix below |
 | FingerPrint Reader | ❌ Not Working | Needs more work apparently |
 
 
