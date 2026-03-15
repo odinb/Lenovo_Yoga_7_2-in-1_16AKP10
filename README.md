@@ -4,8 +4,7 @@ This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 
 Things might (or might not) work on other combinations.
 
 ## Table of Contents
-
-- [Laptop](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
+- [Laptop Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
 - [BIOS settings](#bios-settings)
 - [Filesystem at setup](#filesystem-at-setup)
 - [User setup](#user-setup)
@@ -21,7 +20,7 @@ Things might (or might not) work on other combinations.
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [Audio issues](#audio-issues)
-- [Fingerprint Sensor](#fingerprint-sensor-not-yet-working-ignoring-for-now-️)
+- [Fingerprint Sensor (not yet working, ignoring for now ☹️)](#fingerprint-sensor-not-yet-working-ignoring-for-now-️)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
 - [macOS theming on KDE Plasma](#macos-theming-on-kde-plasma)
