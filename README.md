@@ -11,7 +11,7 @@ BIOS version: Original: QXCN19WW Now: QXCN21WW
 
 S/N: `sudo dmidecode -t 1 | grep "Serial Number"`
 
-or if no dmidecode: sudo cat /sys/devices/virtual/dmi/id/product_serial
+or if no dmidecode: `sudo cat /sys/devices/virtual/dmi/id/product_serial`
 
 # BIOS settings:
 Under "Security" in BIOS (F2):
