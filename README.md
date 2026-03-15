@@ -403,7 +403,7 @@ Clicking it opens the mounted share in Dolphin immediately.
 
 ## macOS theming on KDE Plasma:
 Recommendation: MacSequoia if you want the latest look, WhiteSur if you want the most stable.<br />
-All three use the same stack. Here's the full setup:
+All three use the same stack.
 
 Install the full stack:<br />
 ### Kvantum engine (required for proper widget styling)
@@ -428,34 +428,31 @@ Install the full stack:<br />
 `sudo ./install.sh`
 
 ### Apply in KDE Settings
-System Settings → Appearance → Global Theme → select MacSequoia
-System Settings → Appearance → Application Style → set to Kvantum, then open kvantummanager and select MacSequoia
-System Settings → Appearance → Icons → WhiteSur
-System Settings → Appearance → Cursors → WhiteSur
+System Settings → Appearance → Global Theme → select MacSequoia<br />
+System Settings → Appearance → Application Style → set to Kvantum, then open kvantummanager and select MacSequoia<br />
+System Settings → Appearance → Icons → WhiteSur<br />
+System Settings → Appearance → Cursors → WhiteSur<br />
 
-For the dock (makes it really feel like macOS):
-sudo pacman -S latte-dock
+For the dock (makes it really feel like macOS):<br />
+`sudo pacman -S latte-dock`
 
-GTK apps (Chrome, Firefox etc.):
-cd ~
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme
-cd WhiteSur-gtk-theme
-./install.sh
-
+GTK apps (Chrome, Firefox etc.):<br />
+`cd ~`
+`git clone https://github.com/vinceliuice/WhiteSur-gtk-theme`
+`cd WhiteSur-gtk-theme`
+`sudo ./install.sh`
 
 This makes GTK apps match the KDE theme so everything looks consistent.
 
+## How to update BIOD on Lenovo Yoga Pro 7 Gen 9 (14ASP9) from Linux
+Lenovo support page for this model only provides "*.exe" installer for BIOS updates. There is no option in the BIOS itself to select a binary blob from USB stick, none whatsoever. [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
-==========
-How to update bios on Lenovo Yoga Pro 7 Gen 9 (14ASP9) from Linux
-Lenovo support page for this model only provides .exe installer for BIOS updates. There is no option in the BIOS itself to select a binary blob from USB stick, none whatsoever.
-
-The way to do a BIOS update anyway below:
-
-* Hiren's BootCD Preinstallation Environment (https://www.hirensbootcd.org/)
-* 4 GB USB stick
-* Ventoy (https://ventoy.net/en/index.html)
-* The BIOS update installer from Lenovo (https://pcsupport.lenovo.com/pl/en/products/laptops-and-netbooks/yoga-series/yoga-pro-7-14asp9/downloads/driver-list/component?name=BIOS%2FUEFI&id=5AC6A815-321D-440E-8833-B07A93E0428C)
+The way to do a BIOS update anyway below (2 ways):
+### Booting with LiveCD/LiveUSB
+- [Hiren's BootCD Preinstallation Environment](https://www.hirensbootcd.org/)
+ 4 GB USB stick
+- [Ventoy](https://ventoy.net/en/index.html)
+- The [BIOS update installer from Lenovo](https://pcsupport.lenovo.com/pl/en/products/laptops-and-netbooks/yoga-series/yoga-pro-7-14asp9/downloads/driver-list/component?name=BIOS%2FUEFI&id=5AC6A815-321D-440E-8833-B07A93E0428C)
 
 The steps are as follows:
 - Install Ventoy on the USB stick
@@ -464,10 +461,7 @@ The steps are as follows:
 - Boot from Ventoy USB stick
 - Find the BIOS update installer on the portable (aka LiveUSB) Windows and run it.
 
-Done!
-
-==
-From within Linux (not tried yet):
+### Flash from within Linux (not tried yet)
 You don't actually need WinPE, Hiren's BootCD PE or weird hack tools for any of this, you can use fwupd just fine:
 - Download the "BIOS Updater" Windows executable file from Lenovo's support website
 - Unzip that executable file with either 7z or a desktop archive manager (Ark works)
