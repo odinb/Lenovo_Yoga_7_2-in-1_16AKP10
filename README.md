@@ -100,7 +100,7 @@ or<br />
 `sudo dmidecode -s bios-version`<br />
 `QXCN19WW`
 
-Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?).
+Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?):<br />
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
 # Verify suspend/sleep:
@@ -111,7 +111,7 @@ Wake it and confirm:<br />
 `journalctl -b 0 | grep -i "suspend\|resume" | grep "PM:"`
 
 You should see both:<br />
-- PM: suspend entry and
+- PM: suspend entry, and
 - PM: suspend exit.
 
 # Power Profiles:
@@ -132,8 +132,8 @@ Install auto-cpufreq — will push idle wattage down further on battery:<br />
 `yay -S auto-cpufreq` # Do not run as sudo<br />
 `sudo systemctl enable --now auto-cpufreq`
 
-Create /etc/auto-cpufreq.conf:<br />
-[charger]
+Create /etc/auto-cpufreq.conf with this content:<br />
+```[charger]
 governor = performance
 energy_performance_preference = performance
 turbo = auto
@@ -142,7 +142,7 @@ turbo = auto
 governor = powersave
 energy_performance_preference = power
 turbo = auto
-
+```
 ==
 Other:
 # Current power profile
