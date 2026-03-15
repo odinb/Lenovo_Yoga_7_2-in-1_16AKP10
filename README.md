@@ -144,43 +144,41 @@ governor = powersave
 energy_performance_preference = power
 turbo = auto
 ```
-==
-Other:
+
 # Current power profile
-powerprofilesctl get
+`powerprofilesctl get`
 
 # Battery status
-upower -i /org/freedesktop/UPower/devices/battery_BAT0
+`upower -i /org/freedesktop/UPower/devices/battery_BAT0`
 
 # What's consuming power right now
-powertop --time=5 2>/dev/null | head -40
+`powertop --time=5 2>/dev/null | head -40`
 
 # TLP or auto-cpufreq installed?
-pacman -Qs 'tlp|auto-cpufreq'
+`pacman -Qs 'tlp|auto-cpufreq'`
 
-==
-Lenovo battery threshold support via its own ACPI interface:
+# Lenovo battery threshold support via its own ACPI interface:
+`sudo pacman -S tlp`
+`sudo vi /etc/tlp.conf`
 
-sudo pacman -S tlp
-sudo vi /etc/tlp.conf
-
-Find and set:
+Find and set:<br />
+```
 START_CHARGE_THRESH_BAT0=0
 STOP_CHARGE_THRESH_BAT0=1
+```
+For Lenovo IdeaPad/Yoga, 1 = conservation mode on (charges to ~60%), 0 = off (charges to 100%).<br />
 
-For Lenovo IdeaPad/Yoga, 1 = conservation mode on (charges to ~60%), 0 = off (charges to 100%).
-
-Then fix the TLP service conflict with power-profiles-daemon:
-Also uncomment and set:
-TLP_DISABLE_DEFAULTS=1
+Now fix the TLP service conflict with power-profiles-daemon.<br />
+Also uncomment and set:<br />
+`TLP_DISABLE_DEFAULTS=1`
 
 This stops TLP from fighting with power-profiles-daemon over CPU settings, and only uses TLP for battery threshold management.
 
-Mask power-profiles-daemon so TLP can start cleanly:
-sudo systemctl mask power-profiles-daemon
-sudo systemctl stop power-profiles-daemon
-sudo systemctl enable --now tlp
-sudo systemctl status tlp
+Mask power-profiles-daemon so TLP can start cleanly:<br />
+`sudo systemctl mask power-profiles-daemon`
+`sudo systemctl stop power-profiles-daemon`
+`sudo systemctl enable --now tlp`
+`sudo systemctl status tlp`
 
 Then verify the threshold is applied:
 sudo tlp-stat -b
