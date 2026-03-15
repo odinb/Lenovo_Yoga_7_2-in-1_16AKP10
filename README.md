@@ -230,12 +230,14 @@ tx bitrate: 960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
 EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 with 2 spatial streams. The driver is working perfectly.
 
 Summary of WiFi 7 status:
-✅ EHT (WiFi 7 modulation) — working
-✅ 2x2 MIMO — working
-✅ 4096-QAM — working
-✅ ~1 Gbps on 5 GHz — working
-❌ MLO (multi-band bonding) — not yet in driver
-❌ 6 GHz band — not yet in driver
+| Working | Item | Notes |
+|-----|-----|-----|
+✅ | EHT (WiFi 7 modulation) | working| 
+✅ | 2x2 MIMO | working| 
+✅ | 4096-QAM | working| 
+✅ | ~1 Gbps on 5 GHz | working| 
+❌ | MLO (multi-band bonding) | not yet in driver| 
+❌ | 6 GHz band | not yet in driver| 
 
 # Video/webcam:<br />
 Check if it's detected
