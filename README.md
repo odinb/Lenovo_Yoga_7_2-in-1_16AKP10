@@ -24,7 +24,7 @@ Under "Security" in BIOS (F2):
 When installing Manjaro OS (or other), keep the default btrfs for better snapshotting with Timeshift.
 
 # User setup:
-Change so no password needed for sudo for user "JohnDoe":
+Change so no password needed for sudo for user "JohnDoe":<br />
 `visudo -f /etc/sudoers`
 
 Enable:
@@ -34,16 +34,17 @@ Uncomment to allow members of group wheel to execute any command<br />
 Same thing without a password<br />
 `%wheel ALL=(ALL:ALL) NOPASSWD: ALL`
 
-Then:
-visudo -f /etc/sudoers.d/10-installer
-Enable:
-/etc/sudoers.d/10-installer
+Then:<br />
+`visudo -f /etc/sudoers.d/10-installer`
 
-Add user to group wheel:
-usermod -aG wheel JohnDoe
+Enable:<br />
+`/etc/sudoers.d/10-installer`
 
-Veirfy:
-id JohnDoe
+Add user to group wheel:<br />
+`usermod -aG wheel JohnDoe`
+
+Veirfy:<br />
+`id JohnDoe`
 
 # Update System:
 
