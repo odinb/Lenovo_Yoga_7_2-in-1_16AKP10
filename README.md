@@ -299,7 +299,7 @@ Play it back:<br />
 
 ## Audio issues
 ⚠️ Not working after OS-install, tinkering needed for now.<br />
-See separate text-file for how to fix properly untill missing kernel fixup is added.<br />
+See separate text-file [ALC287](alc287.txt) for how to fix properly untill missing kernel fixup is added.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
 ## Fingerprint Sensor
