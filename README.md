@@ -28,7 +28,7 @@ Things might (or might not) work on other combinations.
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
-- [Audio issues](#audio-issues)
+- [Audio setup & EQ](#audio-setup--eq)
 - [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
