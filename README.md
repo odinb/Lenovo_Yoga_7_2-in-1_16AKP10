@@ -28,7 +28,7 @@ Things might (or might not) work on other combinations.
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
-- [Audio setup & EQ](#audio-setup--eq)
+- [Audio Setup & EQ](#audio-setup--eq)
 - [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
@@ -320,7 +320,7 @@ Even if the sensor works, your desktop might have "Orientation Lock" turned on.
 
 If you are on KDE Plasma: Go to System Settings > Display and Monitor > Display Configuration. You should see an "Orientation" drop-down. If iio-sensor-proxy is working, an "Automatic" option should appear here.
 
-## Audio setup & EQ
+## Audio Setup & EQ
 ⚠️ Not working after OS-install, tinkering needed for now.<br />
 See separate page [ALC287](alc287.md) for how to fix properly untill missing kernel fixup is added.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
