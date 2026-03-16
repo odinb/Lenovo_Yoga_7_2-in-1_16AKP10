@@ -25,6 +25,7 @@ Things might (or might not) work on other combinations.
 - [WiFi](#wifi)
   - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
 
+- [Bluetooth Audio](#bluetooth-audio)
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
