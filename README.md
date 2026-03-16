@@ -323,8 +323,12 @@ If you are on KDE Plasma: Go to System Settings > Display and Monitor > Display 
 ## Audio issues
 ⚠️ Not working after OS-install, tinkering needed for now.<br />
 See separate page [ALC287](alc287.md) for how to fix properly untill missing kernel fixup is added.<br />
-[Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)<br />
-This page also contains the EQ-fix for better sound.
+[Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
+
+🔊🔊
+This page also contains the EQ-fix for much improved sound.
+🔊🔊
+
 
 ## Fingerprint Sensor
 ⚠️ Not working after OS-install, ignoring for now.<br />
