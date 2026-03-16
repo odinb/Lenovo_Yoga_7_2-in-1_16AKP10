@@ -326,8 +326,8 @@ See separate page [ALC287](alc287.md) for how to fix properly untill missing ker
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
 🔊 🔊 🔊<br />
-This page also contains the EQ-fix for much improved sound.
-🔊 🔊 🔊<br />
+This page also contains the EQ-fix for much improved sound.<br />
+🔊 🔊 🔊
 
 
 ## Fingerprint Sensor
