@@ -315,6 +315,10 @@ Then verify it sees the sensor:<br />
 Tilt the laptop — you should see orientation values changing in the output (normal, bottom-up, left-up, right-up). Hit Ctrl+C when done.
 Try tent-mode, it should now work.
 
+Even if the sensor works, your desktop might have "Orientation Lock" turned on.
+
+If you are on KDE Plasma: Go to System Settings > Display and Monitor > Display Configuration. You should see an "Orientation" drop-down. If iio-sensor-proxy is working, an "Automatic" option should appear here.
+
 ## Audio issues
 ⚠️ Not working after OS-install, tinkering needed for now.<br />
 See separate page [ALC287](alc287.md) for how to fix properly untill missing kernel fixup is added.<br />
