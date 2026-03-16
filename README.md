@@ -310,7 +310,7 @@ sudo pacman -S iio-sensor-proxy
 sudo systemctl enable --now iio-sensor-proxy
 ```
 Then verify it sees the sensor:<br />
-`bashmonitor-sensor`
+`monitor-sensor`
 
 Tilt the laptop — you should see orientation values changing in the output (normal, bottom-up, left-up, right-up). Hit Ctrl+C when done.
 Try tent-mode, it should now work.
