@@ -308,6 +308,7 @@ If you do, the fix: install iio-sensor-proxy, and for KDE also do kscreen.<br />
 This is the daemon that reads the IIO accelerometer and tells GNOME/KDE/etc. to rotate the screen.<br />
 ```
 sudo pacman -S iio-sensor-proxy
+# if on KDE do: sudo pacman -S iio-sensor-proxy kscreen
 sudo systemctl enable --now iio-sensor-proxy
 ```
 Then verify it sees the sensor:<br />
