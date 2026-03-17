@@ -83,6 +83,17 @@ S/N:<br />
 or if no dmidecode:<br />
 `sudo cat /sys/devices/virtual/dmi/id/product_serial`
 
+<p align="center">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_2-in-1_16AKP10_OverViewPic.avif" width="800">
+</p>
+
+| # | Left Side | # | Right Side |
+|-----|-----|-----|-----|
+| 1. | HDMI® 2.1, up to 4K/60Hz | 4. | USB-A (USB 5Gbps), Always On |
+| 2. | USB-C® (USB 10Gbps), with USB PD 45-65W & DP 2.1 UHBR10 | 5. | USB-C® (USB 10Gbps), with USB PD 45-65W & DP 1.4a |
+| 3. | Headphone / microphone combo jack (3.5mm) | 6. | microSD card reader |
+|    |  | 7. | Power button |
+
 ## BIOS settings:
 Under "Security" in BIOS (F2 at power-on):
 - Enhanced Windows Biometry Security: Disabled
