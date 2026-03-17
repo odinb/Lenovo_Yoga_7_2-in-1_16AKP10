@@ -53,7 +53,7 @@ Things might (or might not) work on other combinations.
 This is my working "lazy-moose" for this combo. Things might change, and this guide might or might not be updated.
 
 <p align="center">
-  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_2-in-1_16AKP10_squid.avif" width="500">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_2-in-1_16AKP10_squid.avif" width="700">
 </p>
 
 | Item | Status | Notes |
@@ -84,7 +84,7 @@ or if no dmidecode:<br />
 `sudo cat /sys/devices/virtual/dmi/id/product_serial`
 
 <p align="center">
-  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_2-in-1_16AKP10_OverViewPic.avif" width="800">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_2-in-1_16AKP10_OverViewPic.avif" width="600">
 </p>
 
 | # | Left Side | # | Right Side |
