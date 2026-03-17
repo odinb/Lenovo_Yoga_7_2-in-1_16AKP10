@@ -4,7 +4,7 @@ This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 
 Things might (or might not) work on other combinations.
 
 <p align="center">
-  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_%202-in-1_16AKP10.avif" width="1000">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_%202-in-1_16AKP10.avif" width="1200">
 </p>
 
 ## Table of Contents
