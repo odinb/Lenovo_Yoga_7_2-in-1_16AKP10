@@ -3,6 +3,8 @@
 This guide is assuming Manjaro, and the below specific model of the Lenovo Yoga 7.
 Things might (or might not) work on other combinations.
 
+<br /> <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_%202-in-1_16AKP10.avif" width="500">
+
 ## Table of Contents
 - [Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
 - [BIOS settings](#bios-settings)
