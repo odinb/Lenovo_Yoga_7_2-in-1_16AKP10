@@ -50,7 +50,9 @@ Things might (or might not) work on other combinations.
 
 This is my working "lazy-moose" for this combo. Things might change, and this guide might or might not be updated.
 
-<br /> <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_%202-in-1_16AKP10_bike.avif" width="500">
+<p align="center">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Lenovo_Yoga7_%202-in-1_16AKP10_bike.avif" width="500">
+</p>
 
 | Item | Status | Notes |
 |-----|-----|-----|
