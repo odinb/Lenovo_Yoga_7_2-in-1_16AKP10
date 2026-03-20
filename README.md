@@ -432,12 +432,12 @@ Add at the top:<br />
 `auth sufficient pam_fprintd.so`
 
 ## Setup SMB automount:
-`sudo vi /etc/samba/creds-share`
-
-Content:
+Replace with your actual credentials
 ```
+sudo tee /etc/samba/creds-share << 'EOF'
 username=myuser
 password=mypassword
+EOF
 ```
 
 then:<br />
@@ -470,9 +470,8 @@ EOF
 ```
 
 Then create:<br />
-`sudo vi /etc/systemd/system/mnt-cwwk.automount`
-With this content:
 ```
+sudo tee /etc/systemd/system/mnt-cwwk.automount << 'EOF'
 [Unit]
 Description=Automount SMB Share
 After=network-online.target
@@ -488,9 +487,10 @@ WantedBy=remote-fs.target
 Enable and Start Automount:
 systemctl daemon-reload
 systemctl enable --now mnt-cwwk.automount
+EOF
 ```
 
-(or if edited: `sudo systemctl restart mnt-cwwk.automount`)
+(or if edited/updated: `sudo systemctl restart mnt-cwwk.automount`)
 
 Test (files on SMB-server should be listed now):<br />
 `ls /mnt/cwwk`
@@ -499,7 +499,8 @@ Also enable network-online.target (usually disabled by default on Manjaro):<br /
 `sudo systemctl enable NetworkManager-wait-online.service`
 
 For WiFi:<br />
-Stop race-condition by storing password in config, not kwallet:<br />
+Stop race-condition by storing password in config, not kwallet.<br />
+Replace "TheSSID" with your actual SSID:<br />
 `sudo vi /etc/NetworkManager/system-connections/TheSSID.nmconnection`
 
 Change "psk-flags=1" to "psk-flags=0" and make sure the password is present:
