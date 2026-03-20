@@ -227,7 +227,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 
 BIOS version:<br />
 - Original (at purchase): QXCN19WW
-- Now: QXCN21WW
+- Upgraded to: QXCN21WW
 
 S/N:<br />
 `sudo dmidecode -t 1 | grep "Serial Number"`
