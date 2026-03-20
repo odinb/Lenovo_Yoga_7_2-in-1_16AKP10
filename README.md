@@ -289,9 +289,9 @@ EOF
 sudo systemctl enable --now battery-threshold.timer
 ```
 
-### Verify Settings:<br />
-`sudo tlp-stat -b | grep -i "threshold\|conservation\|charge"`
-`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`
+### Verify Settings:
+`sudo tlp-stat -b | grep -i "threshold\|conservation\|charge"`<br />
+`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`<br />
 `sudo journalctl -t battery-threshold -f`
 
 This is the most impactful long-term battery health setting — keeping the battery at 60% max when plugged in significantly extends its lifespan over years of use.
