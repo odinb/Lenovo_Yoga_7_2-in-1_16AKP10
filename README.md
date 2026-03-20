@@ -59,10 +59,12 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Item | Status | Notes |
 |-----|-----|-----|
 | Touchpad | ✅ Working | No changes needed |
-| TouchScreen | ✅ Working | Auto-rotate not working out of the box |
+| TouchScreen | ✅ Working | No changes needed |
+| Auto Screen Rotation | ✅ Working | Needs: iio-sensor-proxy + kscreen |
 | Keyboard and Backlight | ✅ Working | No changes needed |
 | Screen Brightness Buttons | ✅ Working | No changes needed |
 | WebCam | ✅ Working | No changes needed |
+| Bluetooth | ✅ Working | Needs: bluez + bluez-utils |
 | Microphone | ✅ Working | No changes needed |
 | Mute Buttons for Audio and Microphone | ✅ Working | No changes needed |
 | Volume Buttons for Audio | ⚠️ Partial  | Needs Kernel Quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
