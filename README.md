@@ -550,9 +550,9 @@ Then create (verify uid/gid with your user):<br />
 sudo tee /etc/systemd/system/mnt-cwwk.mount << 'EOF'
 [Unit]
 Description=SMB Share Mount
-After=network-online.target
+DefaultDependencies=no
+After=NetworkManager-wait-online.service network-online.target
 Wants=network-online.target
-ConditionPathExists=/mnt/cwwk
 
 [Mount]
 What=//192.168.1.100/TrueNAS-share
