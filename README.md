@@ -80,75 +80,60 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 ## Specifications
 | Key Specs | |
 |------|-------|
-| Screen | IPS, 16 inches |
-| Screen Resolution | 1920 x 1200 (WUXGA) |
-| Touch Screen | Yes |
-| Refresh Rate | 60Hz |
+| Screen | IPS, 16 inches, 1920 x 1200 (WUXGA) 60Hz |
 | Brightness | 300 nits |
+| Touch Screen | Yes |
 | Processor Model | AMD Ryzen AI 340 |
 | CPU Base Clock | 2 GHz |
-| Storage Type | SSD |
-| Storage Capacity | 512 GB |
+| Storage | SSD, 512 GB |
 | RAM | 16 GB |
 | Graphics | AMD Radeon 840M |
 | Display Connectors | 1x HDMI 2.1, USB-C |
-| Battery Life | Up to 15 hours |
-| Battery Type | Lithium-polymer |
+| Battery | Up to 15 hours, Lithium-polymer |
 | 2-in-1 Design | Yes |
 | Backlit Keyboard | Yes |
 
 | General | |
 |------|-------|
-| Brand/Product | Lenovo Yoga 7 2-in-1 - Copilot+ PC - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 2025 - 16GB Memory - 512GB SSD |
+| Brand/Product | Lenovo Yoga 7 2-in-1 - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 - 16GB Memory - 512GB SSD |
 | Model Number | 83JU0001US |
 | Color | Seashell |
 | Year of Release | 2025 |
 
 | Display | |
 |------|-------|
-| Display Type | LCD |
-| Screen Type | IPS |
-| Screen Size | 16 inches |
-| Screen Resolution | 1920 x 1200 (WUXGA) |
-| Touch Screen | Yes |
-| Refresh Rate | 60Hz |
+| Screen | IPS, 16 inches, 1920 x 1200 (WUXGA) 60Hz |
 | Brightness | 300 nits |
+| Touch Screen | Yes |
 | Color Gamut (NTSC) | 45 percent |
 
 | Processor | |
 |------|-------|
-| Processor | AMD Ryzen AI 340 |
-| Processor Model Number | AI 5 340 |
-| Processor Model Year of Release | 2025 |
+| Processor | AMD Ryzen AI 5 340 |
+| Year of Release | 2025 |
 | CPU Base Clock Frequency | 2 gigahertz |
 | CPU Boost Clock Frequency | 4.8 gigahertz |
 | Number of CPU Cores | 6-core |
 | Number of CPU Threads | 12 |
-| CPU Cache Memory Level | L2, L3 |
-| L2 Cache | 6 megabytes |
-| L3 Cache | 16 megabytes |
+| CPU Cache Memory Level | L2 (6 MB), L3 (16 MB) |
 | Neural Processing Unit (NPU) | Yes |
 | Maximum NPU Performance | 50 trillions operations per second |
 
 | Storage | |
 |------|-------|
-| Storage Type | SSD |
-| Total Storage Capacity | 512 gigabytes |
 | Solid State Drive Capacity | 512 gigabytes |
 | Solid State Drive Interface | PCIe 4.0 |
 
 | Memory | |
 |------|-------|
-| System Memory (RAM) | 16 gigabytes |
-| Type of Memory (RAM) | LPDDR5X |
+| System Memory (RAM) | 16 GB LPDDR5X |
 | System Memory RAM Speed | 7500 megahertz |
 | Number Of Memory Slots | 0 |
 
 | Graphics | |
 |------|-------|
 | Graphics Type | Integrated |
-| GPU Brand | AMD Radeon |
-| Graphics | AMD Radeon 840M |
+| Graphics GPU | AMD Radeon 840M |
 
 | Connectivity | |
 |------|-------|
@@ -156,13 +141,11 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Number of HDMI Outputs (Total) | 1 |
 | DisplayPort Over USB-C | DisplayPort 1.4 |
 | USB Ports | 1 x USB-A 3.2, 2 x USB-C 3.2 |
-| Number of USB Ports (Total) | 3 |
 | Number of USB-C Charging Ports | 2 |
 | Headphone Jack | Yes |
 | Microphone Input | Yes |
 | Wireless Connectivity | Wi-Fi (RTL8922AE), Bluetooth (RTL8922AU) |
-| Wireless Standard | BE 5.3 |
-| Wireless Networking Standard | Wi-Fi 7 |
+| Wireless Standard | Wi-Fi 7, BE 5.3 |
 | Number Of Ethernet Ports | 0 |
 | Number of M.2 Expansion Slots | 1 |
 
@@ -186,13 +169,13 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 |------|-------|
 | Backlit Keyboard | Yes |
 | Customizable Keyboard Lighting | No |
-| GPS Enabled | No |
 | Touchpad Type | CIRQ1080 Multi-touch, Precision |
-| Customizable Case Lighting | No |
 | Audio Technology | High Definition (HD) Audio, Realtek ALC3306 codec |
 | Speaker Type | 4 stereo speakers, 2W x2 (woofers), 2W x2 (tweeters), optimized with Dolby Atmos, Smart Amplifier (AMP) |
-| Windows AI | Copilot+ PC |
 | Security Features | Privacy camera, Fingerprint reader |
+| Windows AI | Copilot+ PC |
+| Customizable Case Lighting | No |
+| GPS Enabled | No |
 | Cable Lock Slot | None |
 | Casing Material | Aluminum |
 
@@ -206,24 +189,22 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Certifications Listings & Approvals | |
 |------|-------|
 | ENERGY STAR Certified | Yes |
-| EPEAT Qualified | Yes |
-| EPEAT Level | Gold |
+| EPEAT Qualified / Level | Yes / Gold |
 
 | Included | |
 |------|-------|
-| Optical Drive Type | None
-| Numeric Keypad | Yes
+| Optical Drive Type | None |
+| Numeric Keypad | Yes |
 
 | Warranty | |
 |------|-------|
-| Warranty - Parts | 1 year
-| Warranty - Labor | 1 year
+| Warranty - Parts / Labor | 1 year / 1 year |
 
 | Other | |
 |------|-------|
-| UPC | 198155424168
-| BSIN | JJGSHC52HW
-| SKU | 6615774
+| UPC | 198155424168 |
+| BSIN | JJGSHC52HW |
+| SKU | 6615774 |
 
 BIOS version:<br />
 - Original (at purchase): QXCN19WW
