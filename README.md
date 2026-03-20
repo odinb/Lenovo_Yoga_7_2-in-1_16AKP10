@@ -179,6 +179,18 @@ or<br />
 Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?):<br />
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
+## Keyboard Backlight:
+The keyboard backlight is handled by the ideapad_acpi kernel driver and exposed via /sys/class/leds/platform::kbd_backlight. KDE detects it automatically — no additional packages required.
+
+Verify detection:<br />
+`ls /sys/class/leds/ | grep kbd`<br />
+
+Should show: platform::kbd_backlight
+
+Control in KDE:<br />
+System Settings → Power Management → Keyboard Backlight<br />
+The Fn+Space shortcut also cycles brightness levels directly.
+
 ## Verify suspend/sleep:
 Logged into Manjaro, test sleep:<br />
 `systemctl suspend`
