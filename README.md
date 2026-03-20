@@ -18,6 +18,8 @@ Things might (or might not) work on other combinations.
 - [Check BIOS](#check-bios)
 
 - [Verify suspend/sleep](#verify-suspend-sleep)
+
+- [Power Management](#power-management)
   - [Power Profiles](#power-profiles)
   - [Power-savings](#power-savings)
   - [Current power profile](#current-power-profile)
@@ -191,7 +193,7 @@ You should see both:<br />
 - PM: suspend entry, and
 - PM: suspend exit.
 
-### Power Management:
+## Power Management:
 Install packages:<br />
 `sudo pacman -S tlp`<br />
 `yay -S auto-cpufreq` # Do NOT run as sudo
