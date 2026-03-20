@@ -76,9 +76,8 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 
 # Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
 ## Specifications
-|-----|-----|
-| Key Specs |
-| | |
+| Key Specs | |
+|------|-------|
 | Screen Type | IPS |
 | Screen Size | 16 inches |
 | Screen Resolution | 1920 x 1200 (WUXGA) |
@@ -86,17 +85,16 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Refresh Rate | 60Hz |
 | Brightness | 300 nits |
 | Processor Model | AMD Ryzen AI 300 Series |
-| CPU Base Clock Frequency | 2 gigahertz |
+| CPU Base Clock | 2 GHz |
 | Storage Type | SSD |
-| Total Storage Capacity | 512 gigabytes |
-| System Memory (RAM) | 16 gigabytes |
+| Storage Capacity | 512 GB |
+| RAM | 16 GB |
 | Graphics | AMD Radeon 840M |
-| Display Connector(s) | 1 x HDMI 2.1, Display connection via USB port |
-| Battery Life (up to) | 15 hours |
-| Battery Chemistry | Lithium-polymer |
+| Display Connectors | 1x HDMI 2.1, USB-C |
+| Battery Life | Up to 15 hours |
+| Battery Type | Lithium-polymer |
 | 2-in-1 Design | Yes |
 | Backlit Keyboard | Yes |
-| | |
 
 CPU: AMD Ryzen AI 5 340 w/ Radeon 840M<br />
 BIOS version:<br />
