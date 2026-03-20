@@ -549,20 +549,14 @@ Then create (verify uid/gid with your user):<br />
 ```
 sudo tee /etc/systemd/system/mnt-cwwk.mount << 'EOF'
 [Unit]
-Description=SMB Share Mount
-DefaultDependencies=no
-After=NetworkManager-wait-online.service network-online.target
-Wants=network-online.target
+Description=TrueNAS SMB Share
 
 [Mount]
 What=//192.168.1.100/TrueNAS-share
 Where=/mnt/cwwk
 Type=cifs
-Options=credentials=/etc/samba/creds-share,iocharset=utf8,vers=3.0,_netdev,nofail,uid=1000,gid=1000,file_mode=0664,dir_mode=0775,noserverino
-TimeoutSec=5
-
-[Install]
-WantedBy=remote-fs.target
+Options=credentials=/etc/samba/creds-share,iocharset=utf8,vers=3.0,uid=1000,gid=1000,file_mode=0664,dir_mode=0775,noserverino,nofail,x-systemd.device-timeout=5s
+TimeoutSec=10
 EOF
 ```
 
@@ -570,21 +564,18 @@ Then create:<br />
 ```
 sudo tee /etc/systemd/system/mnt-cwwk.automount << 'EOF'
 [Unit]
-Description=Automount SMB Share
-After=network-online.target
-Wants=network-online.target
+Description=TrueNAS SMB Share Automount
 
 [Automount]
 Where=/mnt/cwwk
-TimeoutIdleSec=600
+TimeoutIdleSec=280
 
 [Install]
-WantedBy=remote-fs.target
-
-Enable and Start Automount:
+WantedBy=multi-user.target
+EOF
+# Enable and Start Automount:
 systemctl daemon-reload
 systemctl enable --now mnt-cwwk.automount
-EOF
 ```
 
 (or if edited/updated: `sudo systemctl restart mnt-cwwk.automount`)
