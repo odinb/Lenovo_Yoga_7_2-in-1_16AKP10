@@ -96,6 +96,125 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | 2-in-1 Design | Yes |
 | Backlit Keyboard | Yes |
 
+| General | |
+| Brand | Lenovo |
+| Model Number | 83JU0001US |
+| Product Name | Yoga 7 2-in-1 - Copilot+ PC - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 2025 - 16GB Memory - 512GB SSD |
+| Color | Seashell |
+| Year of Release | 2025 |
+
+| Display | |
+| Display Type | LCD |
+| Screen Type | IPS |
+| Screen Size | 16 inches |
+| Screen Resolution | 1920 x 1200 (WUXGA) |
+| Touch Screen | Yes |
+| Refresh Rate | 60Hz |
+| Brightness | 300 nits |
+| Color Gamut (NTSC) | 45 percent |
+
+| Processor | |
+| Processor Brand | AMD |
+| Processor Model | AMD Ryzen AI 300 Series |
+| Processor Model Number | AI 5 340 |
+| Processor Model Year of Release | 2025 |
+| CPU Base Clock Frequency | 2 gigahertz |
+| CPU Boost Clock Frequency | 4.8 gigahertz |
+| Number of CPU Cores | 6-core |
+| Number of CPU Threads | 12 |
+| CPU Cache Memory Level | L2, L3 |
+| L2 Cache | 6 megabytes |
+| L3 Cache | 16 megabytes |
+| Neural Processing Unit (NPU) | Yes |
+| Maximum NPU Performance | 50 trillions operations per second |
+
+| Storage | |
+| Storage Type | SSD |
+| Total Storage Capacity | 512 gigabytes |
+| Solid State Drive Capacity | 512 gigabytes |
+| Solid State Drive Interface | PCIe 4.0 |
+
+| Memory | |
+| System Memory (RAM) | 16 gigabytes |
+| Type of Memory (RAM) | LPDDR5X |
+| System Memory RAM Speed | 7500 megahertz |
+| Number Of Memory Slots | 0 |
+
+| Graphics | |
+| Graphics Type | Integrated |
+| GPU Brand | AMD Radeon |
+| Graphics | AMD Radeon 840M |
+
+| Connectivity | |
+| Display Connector(s) | 1 x HDMI 2.1, Display connection via USB port |
+| Number of HDMI Outputs (Total) | 1 |
+| DisplayPort Over USB-C | DisplayPort 1.4 |
+| USB Ports | 1 x USB-A 3.2, 2 x USB-C 3.2 |
+| Number of USB Ports (Total) | 3 |
+| Number of USB-C Charging Ports | 2 |
+| Headphone Jack | Yes |
+| Microphone Input | Yes |
+| Wireless Connectivity | Wi-Fi, Bluetooth |
+| Wireless Standard | BE |
+| Wireless Networking Standard | Wi-Fi 7 |
+| Number Of Ethernet Ports | 0 |
+
+| Power | |
+| Power Supply Input | USB-C |
+| Power Supply Maximum Wattage | 65 watts |
+| Battery Life (up to) | 15 hours |
+| Battery Cells | 4-cell |
+| Battery Capacity | 4525 milliampere hours |
+| Battery Chemistry | Lithium-polymer |
+
+| Expansion | |
+| Number of M.2 Slots | 1 |
+
+| Camera | |
+| Front-Facing Camera | Yes |
+| Front Facing Camera Video Resolution | 1080p |
+| Built-In Microphone | Yes |
+
+| Features | |
+| 2-in-1 Design | Yes |
+| Backlit Keyboard | Yes |
+| Customizable Keyboard Lighting | No |
+| GPS Enabled | Yes |
+| Touchpad Type | Multi-touch, Precision |
+| Media Card Reader | Yes |
+| Media Card Slot | microSD |
+| Customizable Case Lighting | No |
+| Audio Technology | High Definition (HD) Audio, Realtek ALC3306 codec |
+| Speaker Type | 4 stereo speakers, 2W x2 (woofers), 2W x2 (tweeters), optimized with Dolby Atmos, Smart Amplifier (AMP) |
+| Windows AI | Copilot+ PC |
+| Security Features | Privacy camera, Fingerprint reader |
+| Cable Lock Slot | None |
+| Casing Material | Aluminum |
+
+| Dimensions | |
+| Product Height | 0.67 inches |
+| Product Width | 10.12 inches |
+| Product Depth | 14.21 inches |
+| Product Weight | 3.96 pounds |
+
+| Certifications Listings & Approvals | |
+| ENERGY STAR Certified | Yes |
+| EPEAT Qualified | Yes |
+| EPEAT Level | Gold |
+
+| Included | |
+| Optical Drive Type | None
+| Numeric Keypad | Yes
+
+| Warranty | |
+| Warranty - Parts | 1 year
+| Warranty - Labor | 1 year
+
+| Other | |
+| UPC | 198155424168
+| BSIN | JJGSHC52HW
+| SKU | 6615774
+
 CPU: AMD Ryzen AI 5 340 w/ Radeon 840M<br />
 BIOS version:<br />
 - Original (at purchase): QXCN19WW
