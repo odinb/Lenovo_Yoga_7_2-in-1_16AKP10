@@ -302,7 +302,7 @@ Machine should now be at around 13 hours which beats most Linux laptops.
 The biggest real-world battery gains on this machine will come from screen brightness — the 16" 2K display is the #1 power consumer. Dropping from 100% to 50% (or therearound) brightness saves 2-3W easily.
 
 ### Additional Battery & Power-info:
-Battery & Power info:<br />
+Battery Discharge/power info:<br />
 `upower -i /org/freedesktop/UPower/devices/battery_BAT0`<br />
 or minimised:<br />
 `upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "energy-rate\|state"`
