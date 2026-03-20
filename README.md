@@ -97,6 +97,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Backlit Keyboard | Yes |
 
 | General | |
+|------|-------|
 | Brand | Lenovo |
 | Model Number | 83JU0001US |
 | Product Name | Yoga 7 2-in-1 - Copilot+ PC - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 2025 - 16GB Memory - 512GB SSD |
@@ -104,6 +105,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Year of Release | 2025 |
 
 | Display | |
+|------|-------|
 | Display Type | LCD |
 | Screen Type | IPS |
 | Screen Size | 16 inches |
@@ -114,6 +116,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Color Gamut (NTSC) | 45 percent |
 
 | Processor | |
+|------|-------|
 | Processor Brand | AMD |
 | Processor Model | AMD Ryzen AI 300 Series |
 | Processor Model Number | AI 5 340 |
@@ -129,23 +132,27 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Maximum NPU Performance | 50 trillions operations per second |
 
 | Storage | |
+|------|-------|
 | Storage Type | SSD |
 | Total Storage Capacity | 512 gigabytes |
 | Solid State Drive Capacity | 512 gigabytes |
 | Solid State Drive Interface | PCIe 4.0 |
 
 | Memory | |
+|------|-------|
 | System Memory (RAM) | 16 gigabytes |
 | Type of Memory (RAM) | LPDDR5X |
 | System Memory RAM Speed | 7500 megahertz |
 | Number Of Memory Slots | 0 |
 
 | Graphics | |
+|------|-------|
 | Graphics Type | Integrated |
 | GPU Brand | AMD Radeon |
 | Graphics | AMD Radeon 840M |
 
 | Connectivity | |
+|------|-------|
 | Display Connector(s) | 1 x HDMI 2.1, Display connection via USB port |
 | Number of HDMI Outputs (Total) | 1 |
 | DisplayPort Over USB-C | DisplayPort 1.4 |
@@ -160,6 +167,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Number Of Ethernet Ports | 0 |
 
 | Power | |
+|------|-------|
 | Power Supply Input | USB-C |
 | Power Supply Maximum Wattage | 65 watts |
 | Battery Life (up to) | 15 hours |
@@ -168,14 +176,17 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Battery Chemistry | Lithium-polymer |
 
 | Expansion | |
+|------|-------|
 | Number of M.2 Slots | 1 |
 
 | Camera | |
+|------|-------|
 | Front-Facing Camera | Yes |
 | Front Facing Camera Video Resolution | 1080p |
 | Built-In Microphone | Yes |
 
 | Features | |
+|------|-------|
 | 2-in-1 Design | Yes |
 | Backlit Keyboard | Yes |
 | Customizable Keyboard Lighting | No |
@@ -192,25 +203,30 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Casing Material | Aluminum |
 
 | Dimensions | |
+|------|-------|
 | Product Height | 0.67 inches |
 | Product Width | 10.12 inches |
 | Product Depth | 14.21 inches |
 | Product Weight | 3.96 pounds |
 
 | Certifications Listings & Approvals | |
+|------|-------|
 | ENERGY STAR Certified | Yes |
 | EPEAT Qualified | Yes |
 | EPEAT Level | Gold |
 
 | Included | |
+|------|-------|
 | Optical Drive Type | None
 | Numeric Keypad | Yes
 
 | Warranty | |
+|------|-------|
 | Warranty - Parts | 1 year
 | Warranty - Labor | 1 year
 
 | Other | |
+|------|-------|
 | UPC | 198155424168
 | BSIN | JJGSHC52HW
 | SKU | 6615774
