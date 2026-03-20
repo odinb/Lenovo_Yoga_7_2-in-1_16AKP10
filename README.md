@@ -198,12 +198,12 @@ Install packages:<br />
 `sudo pacman -S tlp`<br />
 `yay -S auto-cpufreq` # Do NOT run as sudo
 
-Mask power-profiles-daemon:<br />
+### Mask power-profiles-daemon:<br />
 Prevents conflicts with auto-cpufreq and TLP.<br />
 `sudo systemctl stop power-profiles-daemon`<br />
 `sudo systemctl mask power-profiles-daemon`
 
-Configure auto-cpufreq:
+### Configure auto-cpufreq:
 ```
 sudo cat > /etc/auto-cpufreq.conf << 'EOF'
 [charger]
@@ -218,7 +218,7 @@ turbo = auto
 EOF
 ```
 
-Configure TLP (battery threshold only):<br />
+### Configure TLP (battery threshold only):<br />
 `sudo vi /etc/tlp.conf`
 
 Set these values, leave everything else commented out:<br />
@@ -234,7 +234,7 @@ Enable services:<br />
 `sudo systemctl enable --now tlp`<br />
 `sudo systemctl enable --now auto-cpufreq`
 
-Battery threshold script:
+### Battery threshold script:
 ```
 sudo cat > /usr/local/bin/battery-threshold.sh << 'EOF'
 #!/bin/bash
@@ -279,7 +279,7 @@ EOF
 sudo systemctl enable --now battery-threshold.timer
 ```
 
-Verify:<br />
+### Verify Settings:<br />
 `sudo tlp-stat -b | grep -i "threshold\|conservation\|charge"`
 `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`
 `sudo journalctl -t battery-threshold -f`
