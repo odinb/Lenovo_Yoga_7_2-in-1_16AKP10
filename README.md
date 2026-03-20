@@ -304,11 +304,18 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 ❌ | MLO (multi-band bonding) | Not yet in driver |
 ❌ | 6 GHz band | Not yet in driver |
 
-## Bluetooth Audio
+##  Audio
 Bluetooth Audio (Bose QC45 / A2DP) 🎧 ➡️ 🔊 :<br />
 `sudo pacman -S bluez bluez-utils` # Already included in Manjaro but needed bluez-utils for bluetoothctl
 
+Enable the service:<br />
+`sudo systemctl enable --now bluetooth`
+
 Pair via KDE Bluetooth panel — A2DP stereo works out of the box once connected.
+
+Verify A2DP (with compatible headset connected):<br />
+`pactl list sinks short | grep bluez`<br />
+Should show float32le 2ch 48000Hz — that is stereo A2DP.
 
 ## Video/webcam:<br />
 Check if it's detected<br />
