@@ -191,26 +191,19 @@ You should see both:<br />
 - PM: suspend entry, and
 - PM: suspend exit.
 
-### Power Profiles:
-`sudo pacman -S power-profiles-daemon`<br />
-`sudo systemctl enable --now power-profiles-daemon`
+### Power Management:
+Install packages:<br />
+`sudo pacman -S tlp`<br />
+`yay -S auto-cpufreq` # Do NOT run as sudo
 
-Verify:<br />
-`systemctl status power-profiles-daemon`
+Mask power-profiles-daemon:<br />
+Prevents conflicts with auto-cpufreq and TLP.<br />
+`sudo systemctl stop power-profiles-daemon`<br />
+`sudo systemctl mask power-profiles-daemon`
 
-To switch profiles from terminal:<br />
-`powerprofilesctl set power-saver` # For Power-Saver profile<br />
-`powerprofilesctl set balanced` # For Balanced profile<br />
-`powerprofilesctl set performance` # For Performance profile<br />
-`powerprofilesctl get` # Check active profile<br />
-
-### Power-savings
-Install auto-cpufreq — will push idle wattage down further on battery:<br />
-`yay -S auto-cpufreq` # Do not run as sudo<br />
-`sudo systemctl enable --now auto-cpufreq`
-
-Create /etc/auto-cpufreq.conf with this content:<br />
+Configure auto-cpufreq:
 ```
+sudo cat > /etc/auto-cpufreq.conf << 'EOF'
 [charger]
 governor = performance
 energy_performance_preference = performance
@@ -220,52 +213,74 @@ turbo = auto
 governor = powersave
 energy_performance_preference = power
 turbo = auto
+EOF
 ```
 
-### Current power profile
-`powerprofilesctl get`
-
-### Battery status
-`upower -i /org/freedesktop/UPower/devices/battery_BAT0`
-
-### What's consuming power right now
-`sudo powertop --time=5 2>/dev/null | head -40`
-
-### TLP or auto-cpufreq installed?
-`sudo pacman -Qs 'tlp|auto-cpufreq'`
-
-### Lenovo battery threshold support via its own ACPI interface:
-`sudo pacman -S tlp`
+Configure TLP (battery threshold only):<br />
 `sudo vi /etc/tlp.conf`
 
-Find and set:<br />
-```
-START_CHARGE_THRESH_BAT0=0
-STOP_CHARGE_THRESH_BAT0=1
-```
-For Lenovo IdeaPad/Yoga, 1 = conservation mode on (charges to ~60%), 0 = off (charges to 100%).<br />
+Set these values, leave everything else commented out:<br />
+`TLP_ENABLE=1`<br />
+`TLP_DEFAULT_MODE=AC`<br />
+`TLP_PERSISTENT_DEFAULT=0`<br />
+`TLP_DISABLE_DEFAULTS=1`<br />
+`START_CHARGE_THRESH_BAT0=60`<br />
+`STOP_CHARGE_THRESH_BAT0=80`<br />
+TLP_DISABLE_DEFAULTS=1 prevents TLP from fighting auto-cpufreq over CPU settings. TLP only manages the battery threshold on this setup.
 
-Now fix the TLP service conflict with power-profiles-daemon.<br />
-Also uncomment and set:<br />
-`TLP_DISABLE_DEFAULTS=1`
-
-This stops TLP from fighting with power-profiles-daemon over CPU settings, and only uses TLP for battery threshold management.
-
-Mask power-profiles-daemon so TLP can start cleanly:<br />
-`sudo systemctl mask power-profiles-daemon`<br />
-`sudo systemctl stop power-profiles-daemon`<br />
+Enable services:<br />
 `sudo systemctl enable --now tlp`<br />
-`sudo systemctl status tlp`
+`sudo systemctl enable --now auto-cpufreq`
 
-Then verify the threshold is applied:<br />
-`sudo tlp-stat -b`
+Battery threshold script:
+```
+sudo cat > /usr/local/bin/battery-threshold.sh << 'EOF'
+#!/bin/bash
+CONSERVATION=/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
 
-Or:<br />
-`sudo tlp-stat -b | grep -i threshold`
+if [ "$CAPACITY" -ge 80 ]; then
+echo 1 > "$CONSERVATION"
+logger "battery-threshold: ${CAPACITY}% >= 80, conservation ON"
+elif [ "$CAPACITY" -le 60 ]; then
+echo 0 > "$CONSERVATION"
+logger "battery-threshold: ${CAPACITY}% <= 60, conservation OFF"
+fi
+EOF
+sudo chmod +x /usr/local/bin/battery-threshold.sh
+```
 
-You should see:<br />
-Supported features: charge threshold<br />
-* vendor (ideapad_laptop) = active (charge threshold)
+Battery threshold systemd timer service:
+```
+sudo cat > /etc/systemd/system/battery-threshold.service << 'EOF'
+[Unit]
+Description=Battery charge threshold control
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/battery-threshold.sh
+EOF
+```
+Battery threshold systemd timer:
+```
+sudo nano /etc/systemd/system/battery-threshold.timer << 'EOF'
+[Unit]
+Description=Run battery threshold check every minute
+
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=60
+
+[Install]
+WantedBy=timers.target
+EOF
+sudo systemctl enable --now battery-threshold.timer
+```
+
+Verify:<br />
+`sudo tlp-stat -b | grep -i "threshold\|conservation\|charge"`
+`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`
+`sudo journalctl -t battery-threshold -f`
 
 This is the most impactful long-term battery health setting — keeping the battery at 60% max when plugged in significantly extends its lifespan over years of use.
 
