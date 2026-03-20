@@ -17,7 +17,7 @@ Things might (or might not) work on other combinations.
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
 
-- [Verify suspend/sleep](#verify-suspend-sleep)
+- [Verify suspend/sleep](#verify-suspendsleep)
 
 - [Power Management](#power-management)
   - [Power Profiles](#power-profiles)
