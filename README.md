@@ -16,6 +16,7 @@ Things might (or might not) work on other combinations.
 - [Timeshift Setup](#timeshift-setup)
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
+- [Keyboard Backlight](#keyboard-backlight)
 - [Verify suspend/sleep](#verify-suspendsleep)
 
 - [Power Management](#power-management)
