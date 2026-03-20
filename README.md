@@ -80,25 +80,54 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 ## Specifications
 | Key Specs | |
 |------|-------|
+| Brand/Product | Lenovo Yoga 7 2-in-1 - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 - 16GB Memory - 512GB SSD |
+| Model Number | 83JU0001US |
+| UPC / BSIN / SKU | 198155424168 / JJGSHC52HW / 6615774|
 | Screen | IPS, 16 inches, 1920 x 1200 (WUXGA) 60Hz |
 | Brightness | 300 nits |
 | Touch Screen | Yes |
-| Processor Model | AMD Ryzen AI 340 |
+| Processor / GPU | AMD Ryzen AI 340 / AMD Radeon 840M |
 | CPU Base Clock | 2 GHz |
-| Storage | SSD, 512 GB |
-| RAM | 16 GB |
-| Graphics | AMD Radeon 840M |
+| Storage | SSD, 512 GB, PCIe 4.0 |
+| System Memory (RAM) | 16 GB LPDDR5X, 7500 MHz |
+| Number Of Memory Slots | 0 |
 | Display Connectors | 1x HDMI 2.1, USB-C |
 | Battery | Up to 15 hours, Lithium-polymer |
 | 2-in-1 Design | Yes |
 | Backlit Keyboard | Yes |
-
-| General | |
-|------|-------|
-| Brand/Product | Lenovo Yoga 7 2-in-1 - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 - 16GB Memory - 512GB SSD |
-| Model Number | 83JU0001US |
+| Customizable Keyboard Lighting | No |
+| Touchpad Type | CIRQ1080 Multi-touch, Precision |
+| Audio Technology | High Definition (HD) Audio, Realtek ALC3306 codec |
+| Speaker Type | 4 stereo speakers, 2W x2 (woofers), 2W x2 (tweeters), optimized with Dolby Atmos, Smart Amplifier (AMP) |
+| Security Features | Privacy camera, Fingerprint reader |
+| Windows AI | Copilot+ PC |
+| Customizable Case Lighting | No |
+| GPS Enabled | No |
+| Optical Drive Type | None |
+| Numeric Keypad | Yes |
+| Cable Lock Slot | None |
+| Casing Material | Aluminum |
 | Color | Seashell |
 | Year of Release | 2025 |
+| ENERGY STAR Certified | Yes |
+| EPEAT Qualified / Level | Yes / Gold |
+| Warranty - Parts / Labor | 1 year / 1 year |
+
+| Processor | |
+|------|-------|
+| Processor | AMD Ryzen AI 5 340 |
+| Year of Release | 2025 |
+| CPU Base Clock Frequency | 2 gigahertz |
+| CPU Boost Clock Frequency | 4.8 gigahertz |
+| Number of CPU Cores / Threads | 6-core / 12-Threads|
+| CPU Cache Memory Level | L2 (6 MB), L3 (16 MB) |
+| Neural Processing Unit (NPU) | Yes |
+| Maximum NPU Performance | 50 trillions operations per second |
+
+| Graphics | |
+|------|-------|
+| Graphics Type | Integrated |
+| Graphics GPU | AMD Radeon 840M |
 
 | Display | |
 |------|-------|
@@ -107,33 +136,12 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Touch Screen | Yes |
 | Color Gamut (NTSC) | 45 percent |
 
-| Processor | |
+| Camera | |
 |------|-------|
-| Processor | AMD Ryzen AI 5 340 |
-| Year of Release | 2025 |
-| CPU Base Clock Frequency | 2 gigahertz |
-| CPU Boost Clock Frequency | 4.8 gigahertz |
-| Number of CPU Cores | 6-core |
-| Number of CPU Threads | 12 |
-| CPU Cache Memory Level | L2 (6 MB), L3 (16 MB) |
-| Neural Processing Unit (NPU) | Yes |
-| Maximum NPU Performance | 50 trillions operations per second |
-
-| Storage | |
-|------|-------|
-| Solid State Drive Capacity | 512 gigabytes |
-| Solid State Drive Interface | PCIe 4.0 |
-
-| Memory | |
-|------|-------|
-| System Memory (RAM) | 16 GB LPDDR5X |
-| System Memory RAM Speed | 7500 megahertz |
-| Number Of Memory Slots | 0 |
-
-| Graphics | |
-|------|-------|
-| Graphics Type | Integrated |
-| Graphics GPU | AMD Radeon 840M |
+| Front-Facing Camera | Bison Electronics|
+| Front Facing Camera Video Resolution | 1920x1080p @ 30fps |
+| Integrated IR camera | 640x360 @ 30fps, 8-bit
+| Built-In Microphone | Yes |
 
 | Connectivity | |
 |------|-------|
@@ -158,53 +166,12 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Battery Capacity | 4525 milliampere hours |
 | Battery Chemistry | Lithium-polymer |
 
-| Camera | |
-|------|-------|
-| Front-Facing Camera | Bison Electronics|
-| Front Facing Camera Video Resolution | 1920x1080p @ 30fps |
-| Integrated IR camera | 640x360 @ 30fps, 8-bit
-| Built-In Microphone | Yes |
-
-| Features | |
-|------|-------|
-| Backlit Keyboard | Yes |
-| Customizable Keyboard Lighting | No |
-| Touchpad Type | CIRQ1080 Multi-touch, Precision |
-| Audio Technology | High Definition (HD) Audio, Realtek ALC3306 codec |
-| Speaker Type | 4 stereo speakers, 2W x2 (woofers), 2W x2 (tweeters), optimized with Dolby Atmos, Smart Amplifier (AMP) |
-| Security Features | Privacy camera, Fingerprint reader |
-| Windows AI | Copilot+ PC |
-| Customizable Case Lighting | No |
-| GPS Enabled | No |
-| Cable Lock Slot | None |
-| Casing Material | Aluminum |
-
 | Dimensions | |
 |------|-------|
 | Product Height | 0.67 inches |
 | Product Width | 10.12 inches |
 | Product Depth | 14.21 inches |
 | Product Weight | 3.96 pounds |
-
-| Certifications Listings & Approvals | |
-|------|-------|
-| ENERGY STAR Certified | Yes |
-| EPEAT Qualified / Level | Yes / Gold |
-
-| Included | |
-|------|-------|
-| Optical Drive Type | None |
-| Numeric Keypad | Yes |
-
-| Warranty | |
-|------|-------|
-| Warranty - Parts / Labor | 1 year / 1 year |
-
-| Other | |
-|------|-------|
-| UPC | 198155424168 |
-| BSIN | JJGSHC52HW |
-| SKU | 6615774 |
 
 BIOS version:<br />
 - Original (at purchase): QXCN19WW
