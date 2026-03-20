@@ -303,7 +303,9 @@ The biggest real-world battery gains on this machine will come from screen brigh
 
 ### Additional Battery & Power-info:
 Battery & Power info:<br />
-`upower -i /org/freedesktop/UPower/devices/battery_BAT0`
+`upower -i /org/freedesktop/UPower/devices/battery_BAT0`<br />
+or minimised:<br />
+`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "energy-rate\|state"`
 
 Power info:<br />
 `sudo powertop`
