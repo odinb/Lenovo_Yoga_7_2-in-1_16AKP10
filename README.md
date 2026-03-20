@@ -235,9 +235,9 @@ EOF
 
 Set these values, leave everything else commented out:<br />
 `TLP_ENABLE=1`<br />
+`TLP_DISABLE_DEFAULTS=1`<br />
 `TLP_DEFAULT_MODE=AC`<br />
 `TLP_PERSISTENT_DEFAULT=0`<br />
-`TLP_DISABLE_DEFAULTS=1`<br />
 `START_CHARGE_THRESH_BAT0=60`<br />
 `STOP_CHARGE_THRESH_BAT0=80`<br />
 TLP_DISABLE_DEFAULTS=1 prevents TLP from fighting auto-cpufreq over CPU settings. TLP only manages the battery threshold on this setup.
