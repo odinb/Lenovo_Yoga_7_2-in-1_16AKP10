@@ -9,6 +9,8 @@ Things might (or might not) work on other combinations.
 
 ## Table of Contents
 - [Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)](#laptop-lenovo-yoga-7-2-in-1-16akp10-83ju--lnvnb161216)
+  - [Specifications](#specifications)
+
 - [BIOS settings](#bios-settings)
 - [Filesystem at setup](#filesystem-at-setup)
 - [User setup](#user-setup)
@@ -78,13 +80,12 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 ## Specifications
 | Key Specs | |
 |------|-------|
-| Screen Type | IPS |
-| Screen Size | 16 inches |
+| Screen | IPS, 16 inches |
 | Screen Resolution | 1920 x 1200 (WUXGA) |
 | Touch Screen | Yes |
 | Refresh Rate | 60Hz |
 | Brightness | 300 nits |
-| Processor Model | AMD Ryzen AI 300 Series |
+| Processor Model | AMD Ryzen AI 340 |
 | CPU Base Clock | 2 GHz |
 | Storage Type | SSD |
 | Storage Capacity | 512 GB |
@@ -98,9 +99,8 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 
 | General | |
 |------|-------|
-| Brand | Lenovo |
+| Brand/Product | Lenovo Yoga 7 2-in-1 - Copilot+ PC - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 2025 - 16GB Memory - 512GB SSD |
 | Model Number | 83JU0001US |
-| Product Name | Yoga 7 2-in-1 - Copilot+ PC - 16" 2K LCD Touchscreen Laptop - AMD Ryzen AI 5 340 2025 - 16GB Memory - 512GB SSD |
 | Color | Seashell |
 | Year of Release | 2025 |
 
@@ -117,8 +117,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 
 | Processor | |
 |------|-------|
-| Processor Brand | AMD |
-| Processor Model | AMD Ryzen AI 300 Series |
+| Processor | AMD Ryzen AI 340 |
 | Processor Model Number | AI 5 340 |
 | Processor Model Year of Release | 2025 |
 | CPU Base Clock Frequency | 2 gigahertz |
@@ -153,7 +152,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 
 | Connectivity | |
 |------|-------|
-| Display Connector(s) | 1 x HDMI 2.1, Display connection via USB port |
+| Display Connector(s) | 1 x HDMI 2.1 up to 4K/60Hz, Display connection via USB port |
 | Number of HDMI Outputs (Total) | 1 |
 | DisplayPort Over USB-C | DisplayPort 1.4 |
 | USB Ports | 1 x USB-A 3.2, 2 x USB-C 3.2 |
@@ -161,10 +160,11 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Number of USB-C Charging Ports | 2 |
 | Headphone Jack | Yes |
 | Microphone Input | Yes |
-| Wireless Connectivity | Wi-Fi, Bluetooth |
-| Wireless Standard | BE |
+| Wireless Connectivity | Wi-Fi (RTL8922AE), Bluetooth (RTL8922AU) |
+| Wireless Standard | BE 5.3 |
 | Wireless Networking Standard | Wi-Fi 7 |
 | Number Of Ethernet Ports | 0 |
+| Number of M.2 Expansion Slots | 1 |
 
 | Power | |
 |------|-------|
@@ -175,25 +175,19 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Battery Capacity | 4525 milliampere hours |
 | Battery Chemistry | Lithium-polymer |
 
-| Expansion | |
-|------|-------|
-| Number of M.2 Slots | 1 |
-
 | Camera | |
 |------|-------|
-| Front-Facing Camera | Yes |
-| Front Facing Camera Video Resolution | 1080p |
+| Front-Facing Camera | Bison Electronics|
+| Front Facing Camera Video Resolution | 1920x1080p @ 30fps |
+| Integrated IR camera | 640x360 @ 30fps, 8-bit
 | Built-In Microphone | Yes |
 
 | Features | |
 |------|-------|
-| 2-in-1 Design | Yes |
 | Backlit Keyboard | Yes |
 | Customizable Keyboard Lighting | No |
-| GPS Enabled | Yes |
-| Touchpad Type | Multi-touch, Precision |
-| Media Card Reader | Yes |
-| Media Card Slot | microSD |
+| GPS Enabled | No |
+| Touchpad Type | CIRQ1080 Multi-touch, Precision |
 | Customizable Case Lighting | No |
 | Audio Technology | High Definition (HD) Audio, Realtek ALC3306 codec |
 | Speaker Type | 4 stereo speakers, 2W x2 (woofers), 2W x2 (tweeters), optimized with Dolby Atmos, Smart Amplifier (AMP) |
@@ -231,7 +225,6 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | BSIN | JJGSHC52HW
 | SKU | 6615774
 
-CPU: AMD Ryzen AI 5 340 w/ Radeon 840M<br />
 BIOS version:<br />
 - Original (at purchase): QXCN19WW
 - Now: QXCN21WW
