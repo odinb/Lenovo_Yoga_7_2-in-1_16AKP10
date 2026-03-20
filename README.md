@@ -16,17 +16,14 @@ Things might (or might not) work on other combinations.
 - [Timeshift Setup](#timeshift-setup)
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
-
 - [Verify suspend/sleep](#verify-suspendsleep)
 
 - [Power Management](#power-management)
-  - [Power Profiles](#power-profiles)
-  - [Power-savings](#power-savings)
-  - [Current power profile](#current-power-profile)
-  - [Battery status](#battery-status)
-  - [What's consuming power right now](#whats-consuming-power-right-now)
-  - [TLP or auto-cpufreq installed?](#tlp-or-auto-cpufreq-installed)
-  - [Lenovo battery threshold support via its own ACPI interface](#lenovo-battery-threshold-support-via-its-own-acpi-interface)
+  - [Mask power-profiles-daemon](#mask-power-profiles-daemon)
+  - [Configure auto-cpufreq](#configure-auto-cpufreq)
+  - [Configure TLP (battery threshold only)](#configure-tlp-battery-threshold-only)
+  - [Battery threshold script](#battery-threshold-script)
+  - [Verify Settings](#verify-settings)
 
 - [WiFi](#wifi)
   - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
