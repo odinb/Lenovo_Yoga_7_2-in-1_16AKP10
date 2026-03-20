@@ -294,7 +294,7 @@ sudo systemctl enable --now battery-threshold.timer
 `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor`<br />
 `sudo journalctl -u battery-threshold.service --since "5 minutes ago"`
 
-This is the most impactful long-term battery health setting — keeping the battery at 60% max when plugged in significantly extends its lifespan over years of use.
+This is the most impactful long-term battery health settings — keeping the battery between 60-80% max when plugged in significantly extends the lifespan of the battery over years of use.
 
 Machine should now be at around 13 hours which beats most Linux laptops.
 
