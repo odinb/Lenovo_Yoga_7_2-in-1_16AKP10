@@ -25,6 +25,7 @@ Things might (or might not) work on other combinations.
   - [Configure TLP (battery threshold only)](#configure-tlp-battery-threshold-only)
   - [Battery threshold script](#battery-threshold-script)
   - [Verify Settings](#verify-settings)
+  - [Additional Battery & Power-info](#additional-battery--power-info)
 
 - [WiFi](#wifi)
   - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
@@ -300,7 +301,7 @@ Machine should now be at around 13 hours which beats most Linux laptops.
 
 The biggest real-world battery gains on this machine will come from screen brightness — the 16" 2K display is the #1 power consumer. Dropping from 100% to 50% (or therearound) brightness saves 2-3W easily.
 
-### Additional battery & power-info:
+### Additional Battery & Power-info:
 Battery & Power info:<br />
 `upower -i /org/freedesktop/UPower/devices/battery_BAT0`
 
