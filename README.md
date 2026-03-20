@@ -218,7 +218,7 @@ Prevents conflicts with auto-cpufreq and TLP.<br />
 
 ### Configure auto-cpufreq:
 ```
-sudo cat > /etc/auto-cpufreq.conf << 'EOF'
+sudo tee /etc/auto-cpufreq.conf << 'EOF'
 [charger]
 governor = performance
 energy_performance_preference = performance
@@ -247,7 +247,7 @@ Enable services:<br />
 
 ### Battery threshold script:
 ```
-sudo cat > /usr/local/bin/battery-threshold.sh << 'EOF'
+sudo tee /usr/local/bin/battery-threshold.sh << 'EOF'
 #!/bin/bash
 CONSERVATION=/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
@@ -265,7 +265,7 @@ sudo chmod +x /usr/local/bin/battery-threshold.sh
 
 Battery threshold systemd timer service:
 ```
-sudo cat > /etc/systemd/system/battery-threshold.service << 'EOF'
+sudo tee /etc/systemd/system/battery-threshold.service << 'EOF'
 [Unit]
 Description=Battery charge threshold control
 
@@ -276,7 +276,7 @@ EOF
 ```
 Battery threshold systemd timer:
 ```
-sudo nano /etc/systemd/system/battery-threshold.timer << 'EOF'
+sudo tee /etc/systemd/system/battery-threshold.timer << 'EOF'
 [Unit]
 Description=Run battery threshold check every minute
 
@@ -449,9 +449,8 @@ You can call it whatever, change "cwwk" to what you want.<br />
 Same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
 
 Then create (verify uid/gid with your user):<br />
-`sudo vi /etc/systemd/system/mnt-cwwk.mount`
-With this content:
 ```
+sudo tee /etc/systemd/system/mnt-cwwk.mount << 'EOF'
 [Unit]
 Description=SMB Share Mount
 After=network-online.target
@@ -467,6 +466,7 @@ TimeoutSec=5
 
 [Install]
 WantedBy=remote-fs.target
+EOF
 ```
 
 Then create:<br />
