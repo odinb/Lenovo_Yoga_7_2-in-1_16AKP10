@@ -497,7 +497,7 @@ See separate page [ALC287](alc287.md) for how to fix properly untill missing ker
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
 🔊 🔊 🔊<br />
-This page also contains the EQ-fix for much improved sound.<br />
+This page also contains the [EQ-fix](https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/alc287.md#step-3-pipewire-eq-filter-chain) for much improved sound.<br />
 🔊 🔊 🔊
 
 
