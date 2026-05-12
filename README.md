@@ -37,6 +37,7 @@ Things might (or might not) work on other combinations.
 - [Microphone](#microphone)
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
 - [Audio Setup & EQ](#audio-setup--eq)
+- [PipeWire EQ Filter Chain](#pipewire-eq-filter--chain)
 - [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
@@ -499,6 +500,302 @@ See separate page [ALC287](alc287.md) for how to fix properly if needed.<br />
 🔊 🔊 🔊<br />
 This page also contains the [EQ-fix](https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/alc287.md#step-3-pipewire-eq-filter-chain) for much improved sound.<br />
 🔊 🔊 🔊
+
+## PipeWire EQ Filter Chain
+This adds a permanent equalizer in PipeWire for the speakers — no extra apps needed, works on every boot.
+
+Following scripts also adds functionality to:
+- ✅ Speakers → use/via speaker EQ
+- ✅ 3.5mm plug → use/via headphone EQ
+- ✅ USB DAC plug → DAC direct (no EQ)
+- ✅ USB DAC unplug → back to use/via speaker EQ
+
+1a. Create the config:
+```
+# Create PipeWire config directory
+mkdir -p ~/.config/pipewire/pipewire.conf.d
+
+# Create EQ configuration
+cat > ~/.config/pipewire/pipewire.conf.d/eq-laptop.conf << 'EOF'
+context.modules = [
+  { name = libpipewire-module-filter-chain
+    args = {
+      node.description = "Laptop Speaker EQ"
+      media.name = "Laptop Speaker EQ"
+      filter.graph = {
+        nodes = [
+          { type=builtin name=eq1  label=bq_peaking   control={ "Freq"=80.0   "Q"=0.7 "Gain"=2.0 } }
+          { type=builtin name=eq2  label=bq_peaking   control={ "Freq"=120.0  "Q"=1.0 "Gain"=2.5 } }
+          { type=builtin name=eq3  label=bq_peaking   control={ "Freq"=250.0  "Q"=1.0 "Gain"=1.0 } }
+          { type=builtin name=eq4  label=bq_peaking   control={ "Freq"=400.0  "Q"=1.0 "Gain"=2.0 } }
+          { type=builtin name=eq5  label=bq_peaking   control={ "Freq"=900.0  "Q"=2.0 "Gain"=-2.5 } }
+          { type=builtin name=eq6  label=bq_peaking   control={ "Freq"=2000.0 "Q"=1.5 "Gain"=2.5 } }
+          { type=builtin name=eq7  label=bq_peaking   control={ "Freq"=2800.0 "Q"=2.0 "Gain"=1.5 } }
+          { type=builtin name=eq8  label=bq_peaking   control={ "Freq"=4000.0 "Q"=1.5 "Gain"=-2.0 } }
+          { type=builtin name=eq9 label=bq_peaking   control={ "Freq"=6000.0 "Q"=1.2 "Gain"=-3.5 } }
+          { type=builtin name=eq10 label=bq_highshelf control={ "Freq"=8000.0 "Gain"=-3.0 } }
+        ]
+        links = [
+          { output="eq1:Out"  input="eq2:In" }
+          { output="eq2:Out"  input="eq3:In" }
+          { output="eq3:Out"  input="eq4:In" }
+          { output="eq4:Out"  input="eq5:In" }
+          { output="eq5:Out"  input="eq6:In" }
+          { output="eq6:Out"  input="eq7:In" }
+          { output="eq7:Out"  input="eq8:In" }
+          { output="eq8:Out"  input="eq9:In" }
+          { output="eq9:Out" input="eq10:In" }
+        ]
+      }
+      capture.props = {
+        node.name = "effect_input.eq_speaker"
+        media.class = "Audio/Sink"
+        audio.channels = 2
+        audio.position = [ FL FR ]
+      }
+      playback.props = {
+        node.name = "effect_output.eq_speaker"
+        node.target = "alsa_output.pci-0000_04_00.6.HiFi__Speaker__sink"
+        audio.channels = 2
+        audio.position = [ FL FR ]
+      }
+    }
+  }
+  { name = libpipewire-module-filter-chain
+    args = {
+      node.description = "Headphones EQ"
+      media.name = "Headphones EQ"
+      filter.graph = {
+        nodes = [
+          { type=builtin name=eq1  label=bq_lowshelf  control={ "Freq"=105.0  "Gain"=4.0 } }
+          { type=builtin name=eq2  label=bq_peaking   control={ "Freq"=380.0  "Q"=0.7 "Gain"=-3.0 } }
+          { type=builtin name=eq3  label=bq_peaking   control={ "Freq"=1000.0 "Q"=1.5 "Gain"=-1.5 } }
+          { type=builtin name=eq4  label=bq_peaking   control={ "Freq"=2500.0 "Q"=1.2 "Gain"=2.5 } }
+          { type=builtin name=eq5  label=bq_peaking   control={ "Freq"=4500.0 "Q"=1.5 "Gain"=2.0 } }
+          { type=builtin name=eq6  label=bq_peaking   control={ "Freq"=6000.0 "Q"=2.0 "Gain"=-1.5 } }
+          { type=builtin name=eq7  label=bq_highshelf control={ "Freq"=9000.0 "Gain"=-2.0 } }
+        ]
+        links = [
+          { output="eq1:Out" input="eq2:In" }
+          { output="eq2:Out" input="eq3:In" }
+          { output="eq3:Out" input="eq4:In" }
+          { output="eq4:Out" input="eq5:In" }
+          { output="eq5:Out" input="eq6:In" }
+          { output="eq6:Out" input="eq7:In" }
+        ]
+      }
+      capture.props = {
+        node.name = "effect_input.eq_headphones"
+        media.class = "Audio/Sink"
+        audio.channels = 2
+        audio.position = [ FL FR ]
+      }
+      playback.props = {
+        node.name = "effect_output.eq_headphones"
+        node.target = "alsa_output.pci-0000_04_00.6.HiFi__Headphones__sink"
+        audio.channels = 2
+        audio.position = [ FL FR ]
+      }
+    }
+  }
+]
+EOF
+```
+EQ will run on speakers to compensate for the poor output.<br />
+EQ on headphones on the 3.5mm will run a gentle harman curve (mild bass boost, slight upper-mid lift — works well on most headphones).
+
+1b. Now the WirePlumber default sink settings:
+Fallback script for if the WirePlumber auto-switch Lua script fails:
+```
+# Create WirePlumber config directory
+mkdir -p ~/.config/wireplumber/wireplumber.conf.d
+
+# Create default sink configuration
+cat > ~/.config/wireplumber/wireplumber.conf.d/default-sink.conf << 'EOF'
+wireplumber.settings = {
+  default.audio.sink = "effect_input.eq_speaker"
+}
+EOF
+```
+1c. Now the WirePlumber auto-switch script:
+```
+# Create WirePlumber auto-switch configuration
+cat > ~/.config/wireplumber/wireplumber.conf.d/auto-switch-eq.conf << 'EOF'
+wireplumber.components = [
+  {
+    name = "custom/auto-switch-eq.lua"
+    type = "script/lua"
+    provides = "custom.auto-switch-eq"
+  }
+]
+
+wireplumber.profiles = {
+  main = {
+    custom.auto-switch-eq = required
+  }
+}
+EOF
+```
+1d. Now the WirePlumber EQ-auto-switch script:
+```
+# Create WirePlumber EQ-auto-switch directory
+mkdir -p ~/.local/share/wireplumber/scripts/custom/
+
+# Create WirePlumber EQ-auto-switch configuration
+cat > ~/.local/share/wireplumber/scripts/custom/auto-switch-eq.lua << 'EOF'
+log = Log.open_topic("s-auto-switch-eq")
+
+local headphone_sink = "alsa_output.pci-0000_04_00.6.HiFi__Headphones__sink"
+
+local om_meta = ObjectManager {
+  Interest { type = "metadata",
+    Constraint { "metadata.name", "=", "default" }
+  }
+}
+
+local om_hp = ObjectManager {
+  Interest { type = "node",
+    Constraint { "node.name", "=", headphone_sink }
+  }
+}
+
+local om_dac = ObjectManager {
+  Interest { type = "node",
+    Constraint { "media.class", "=", "Audio/Sink" },
+    Constraint { "device.bus", "=", "usb", type = "pw" }
+  }
+}
+
+local function set_default_sink(name)
+  local metadata = om_meta:lookup {
+    Constraint { "metadata.name", "=", "default" }
+  }
+  if metadata then
+    log:info("Switching default sink to: " .. name)
+    metadata:set(0, "default.configured.audio.sink", "Spa:String:JSON",
+      Json.Object { ["name"] = name }:to_string())
+  else
+    log:warning("Could not find default metadata object")
+  end
+end
+
+local function get_fallback_sink()
+  if om_hp:lookup() then
+    return "effect_input.eq_headphones"
+  else
+    return "effect_input.eq_speaker"
+  end
+end
+
+-- 3.5mm headphone events
+om_hp:connect("object-added", function(_, node)
+  if not om_dac:lookup() then
+    log:info("Headphones plugged in - switching to headphone EQ")
+    set_default_sink("effect_input.eq_headphones")
+  end
+end)
+
+om_hp:connect("object-removed", function(_, node)
+  if not om_dac:lookup() then
+    log:info("Headphones unplugged - switching to speaker EQ")
+    set_default_sink("effect_input.eq_speaker")
+  end
+end)
+
+-- DAC events (any USB audio device)
+om_dac:connect("object-added", function(_, node)
+  local name = node.properties["node.name"]
+  log:info("USB DAC plugged in: " .. name .. " - switching to DAC")
+  set_default_sink(name)
+end)
+
+om_dac:connect("object-removed", function(_, node)
+  log:info("USB DAC unplugged - switching to fallback")
+  set_default_sink(get_fallback_sink())
+end)
+
+-- Handle devices already present at script load time
+om_meta:connect("object-added", function(_, metadata)
+  local dac = om_dac:lookup()
+  if dac then
+    local name = dac.properties["node.name"]
+    log:info("USB DAC already present at startup: " .. name)
+    set_default_sink(name)
+  elseif om_hp:lookup() then
+    log:info("Headphones already present at startup")
+    set_default_sink("effect_input.eq_headphones")
+  end
+end)
+
+om_meta:activate()
+om_hp:activate()
+om_dac:activate()
+EOF
+```
+1e. Now the Login autostart script — sets default sink:<br />
+Priority order matches the Lua script: USB DAC → 3.5mm headphones → speakers.<br />
+This only matters if you boot with a DAC already plugged in, since the Lua script handles hot-plug during the session.
+```
+# Set default sink
+cat > ~/.local/bin/set-default-sink.sh << 'EOF'
+#!/bin/bash
+sleep 3
+
+# Get EQ sink IDs
+HP_SINK=$(wpctl status | grep "effect_input.eq_headphones" | awk '{print $1}' | tr -d '.')
+SP_SINK=$(wpctl status | grep "effect_input.eq_speaker" | awk '{print $1}' | tr -d '.')
+
+# Check what's plugged in (USB DAC takes priority)
+DAC_SINK=$(pactl list sinks short | grep "usb" | grep -v "eq" | awk '{print $1}')
+
+if [ -n "$DAC_SINK" ]; then
+    # USB DAC present — get its full node name and set as default
+    DAC_NAME=$(pactl list sinks short | grep "usb" | grep -v "eq" | awk '{print $2}')
+    wpctl set-default "$DAC_SINK"
+elif [ -n "$HP_SINK" ] && wpctl status | grep -q "HiFi__Headphones__sink"; then
+    wpctl set-default "$HP_SINK"
+else
+    wpctl set-default "$SP_SINK"
+fi
+EOF
+chmod +x ~/.local/bin/set-default-sink.sh
+```
+To activate, it will be needed to logout user, and then log back in.
+
+1f. Now the KDE autostart entry
+```
+# KDE autostart entry
+cat > ~/.config/autostart/set-default-sink.desktop << 'EOF'
+[Desktop Entry]
+Type=Application
+Name=Set Default Audio Sink (EQ)
+Exec=/home/brodersen/.local/bin/set-default-sink.sh
+Terminal=false
+X-KDE-AutostartPhase=2
+EOF
+```
+1g. Restart audio stack:<br />
+`systemctl --user restart pipewire pipewire-pulse wireplumber`
+
+1h. Verify:<br />
+`pactl list sinks short` # Should show effect_input.eq as RUNNING when audio plays<br />
+`wpctl status | grep -i "sink\|default"` # effect_input.eq should have * (default marker)
+
+## Troubleshooting
+Volume control stops working:<br />
+`wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5`<br />
+`wpctl set-mute @DEFAULT_AUDIO_SINK@ 0`
+
+EQ not applying (audio sounds flat):
+Check EQ sink exists:<br />
+`pactl list sinks short`<br />
+Set it as default (use the ID shown for effect_input.eq):<br />
+`wpctl set-default <ID>`<br />
+Restart Brave/Firefox to reconnect to new default sink
+
+Speaker level reset to 64%:<br />
+`amixer -c 1 sset 'Speaker' 100%`<br />
+`sudo alsactl store`
 
 
 ## Fingerprint Sensor
