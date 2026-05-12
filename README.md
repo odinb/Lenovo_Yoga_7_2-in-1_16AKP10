@@ -275,7 +275,7 @@ or<br />
 
 ## Check BIOS:
 `sudo dmidecode -s bios-version`<br />
-`QXCN19WW`
+`QXCN21WW`
 
 Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?):<br />
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
