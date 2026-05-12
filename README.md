@@ -36,7 +36,7 @@ Things might (or might not) work on other combinations.
 - [Video/webcam](#videowebcam)
 - [Microphone](#microphone)
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
-- [Audio Setup & EQ](#audio-setup--eq)
+- [Audio Setup](#audio-setup)
 - [PipeWire EQ Filter Chain](#pipewire-eq-filter-chain)
 - [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
 - [Setup SMB automount](#setup-smb-automount)
@@ -492,17 +492,15 @@ If you are on KDE Plasma: Go to System Settings > Display and Monitor > Display 
 If you still have issues, try restarting plasma-kscreen:<br />
 `systemctl --user restart plasma-kscreen.service`
 
-## Audio Setup & EQ
+## Audio Setup
 Working after OS-install with kernel 6.18.26 or newer.<br />
 See separate page [ALC287](alc287.md) for how to fix properly if needed.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
-🔊 🔊 🔊<br />
-This page also contains the [EQ-fix](https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/alc287.md#step-3-pipewire-eq-filter-chain) for much improved sound.<br />
-🔊 🔊 🔊
-
 ## PipeWire EQ Filter Chain
 This adds a permanent equalizer in PipeWire for the speakers — no extra apps needed, works on every boot.
+
+🔊 🔊 🔊
 
 Following scripts also adds functionality to:
 - ✅ Speakers → use/via speaker EQ
@@ -510,7 +508,7 @@ Following scripts also adds functionality to:
 - ✅ USB DAC plug → DAC direct (no EQ)
 - ✅ USB DAC unplug → back to use/via speaker EQ
 
-1a. Create the config:
+1. Create the config:
 ```
 # Create PipeWire config directory
 mkdir -p ~/.config/pipewire/pipewire.conf.d
@@ -604,7 +602,7 @@ EOF
 EQ will run on speakers to compensate for the poor output.<br />
 EQ on headphones on the 3.5mm will run a gentle harman curve (mild bass boost, slight upper-mid lift — works well on most headphones).
 
-1b. Now the WirePlumber default sink settings:
+2. Now the WirePlumber default sink settings:
 Fallback script for if the WirePlumber auto-switch Lua script fails:
 ```
 # Create WirePlumber config directory
@@ -617,7 +615,7 @@ wireplumber.settings = {
 }
 EOF
 ```
-1c. Now the WirePlumber auto-switch script:
+3. Now the WirePlumber auto-switch script:
 ```
 # Create WirePlumber auto-switch configuration
 cat > ~/.config/wireplumber/wireplumber.conf.d/auto-switch-eq.conf << 'EOF'
@@ -636,7 +634,7 @@ wireplumber.profiles = {
 }
 EOF
 ```
-1d. Now the WirePlumber EQ-auto-switch script:
+4. Now the WirePlumber EQ-auto-switch script:
 ```
 # Create WirePlumber EQ-auto-switch directory
 mkdir -p ~/.local/share/wireplumber/scripts/custom/
@@ -732,7 +730,7 @@ om_hp:activate()
 om_dac:activate()
 EOF
 ```
-1e. Now the Login autostart script — sets default sink:<br />
+5. Now the Login autostart script — sets default sink:<br />
 Priority order matches the Lua script: USB DAC → 3.5mm headphones → speakers.<br />
 This only matters if you boot with a DAC already plugged in, since the Lua script handles hot-plug during the session.
 ```
@@ -762,7 +760,7 @@ chmod +x ~/.local/bin/set-default-sink.sh
 ```
 To activate, it will be needed to logout user, and then log back in.
 
-1f. Now the KDE autostart entry
+6. Now the KDE autostart entry
 ```
 # KDE autostart entry
 cat > ~/.config/autostart/set-default-sink.desktop << 'EOF'
@@ -774,14 +772,14 @@ Terminal=false
 X-KDE-AutostartPhase=2
 EOF
 ```
-1g. Restart audio stack:<br />
+7. Restart audio stack:<br />
 `systemctl --user restart pipewire pipewire-pulse wireplumber`
 
-1h. Verify:<br />
+8. Verify:<br />
 `pactl list sinks short` # Should show effect_input.eq as RUNNING when audio plays<br />
 `wpctl status | grep -i "sink\|default"` # effect_input.eq should have * (default marker)
 
-## Troubleshooting
+## Troubleshooting Audio
 Volume control stops working:<br />
 `wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5`<br />
 `wpctl set-mute @DEFAULT_AUDIO_SINK@ 0`
