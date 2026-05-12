@@ -37,7 +37,7 @@ Things might (or might not) work on other combinations.
 - [Microphone](#microphone)
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
 - [Audio Setup & EQ](#audio-setup--eq)
-- [PipeWire EQ Filter Chain](#pipewire-eq-filter--chain)
+- [PipeWire EQ Filter Chain](#pipewire-eq-filter-chain)
 - [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
