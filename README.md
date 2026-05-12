@@ -70,8 +70,8 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Bluetooth | ✅ Working | Needs: bluez + bluez-utils |
 | Microphone | ✅ Working | No changes needed |
 | Mute Buttons for Audio and Microphone | ✅ Working | No changes needed |
-| Volume Buttons for Audio | ⚠️ Partial  | Needs Kernel Quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
-| Audio Speakers | ⚠️ Partial  | Needs Kernel Quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+| Volume Buttons for Audio | ✅ Working  | Needs Kernel 6.18.26 or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+| Audio Speakers | ✅ Working  | Needs Kernel 6.18.26 or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
 | Audio EQ | ⚠️ Partial  | Needs PipeWire [EQ Filter Chain](#audio-setup--eq) fix |
 | FingerPrint Reader | ❌ Not Working | Needs more work apparently |
 
