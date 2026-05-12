@@ -492,8 +492,8 @@ If you still have issues, try restarting plasma-kscreen:<br />
 `systemctl --user restart plasma-kscreen.service`
 
 ## Audio Setup & EQ
-⚠️ Not working after OS-install, tinkering needed for now.<br />
-See separate page [ALC287](alc287.md) for how to fix properly untill missing kernel fixup is added.<br />
+Working after OS-install with kernel 6.18.28 or newer.<br />
+See separate page [ALC287](alc287.md) for how to fix properly if needed.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
 🔊 🔊 🔊<br />
