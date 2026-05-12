@@ -69,10 +69,10 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | WebCam | ✅ Working | No changes needed |
 | Bluetooth | ✅ Working | Needs: bluez + bluez-utils |
 | Microphone | ✅ Working | No changes needed |
-| Mute Buttons for Audio and Microphone | ✅ Working | No changes needed |
-| Volume Buttons for Audio | ✅ Working  | Needs Kernel 6.18.26 or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
-| Audio Speakers | ✅ Working  | Needs Kernel 6.18.26 or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
-| Audio EQ | ⚠️ Partial  | Needs PipeWire [EQ Filter Chain](#audio-setup--eq) fix |
+| Mute Buttons for  and Microphone | ✅ Working | No changes needed |
+| Volume Buttons for  | ✅ Working  | Needs Kernel 6.18.26 or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+|  Speakers | ✅ Working  | Needs Kernel 6.18.26 or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
+|  EQ | ⚠️ Partial  | Needs PipeWire [EQ Filter Chain](#-setup--eq) fix |
 | FingerPrint Reader | ❌ Not Working | Needs more work apparently |
 
 
@@ -97,7 +97,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Backlit Keyboard | Yes |
 | Customizable Keyboard Lighting | No |
 | Touchpad Type | CIRQ1080 Multi-touch, Precision |
-| Audio Technology | High Definition (HD) Audio, Realtek ALC3306 codec |
+|  Technology | High Definition (HD) , Realtek ALC3306 codec |
 | Speaker Type | 4 stereo speakers, 2W x2 (woofers), 2W x2 (tweeters), optimized with Dolby Atmos, Smart Amplifier (AMP) |
 | Security Features | Privacy camera, Fingerprint reader |
 | Windows AI | Copilot+ PC |
@@ -438,8 +438,8 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 ❌ | MLO (multi-band bonding) | Not yet in driver |
 ❌ | 6 GHz band | Not yet in driver |
 
-##  Audio
-Bluetooth Audio (Bose QC45 / A2DP) 🎧 ➡️ 🔊 :<br />
+##  
+Bluetooth  (Bose QC45 / A2DP) 🎧 ➡️ 🔊 :<br />
 `sudo pacman -S bluez bluez-utils` # Already included in Manjaro but needed bluez-utils for bluetoothctl
 
 Enable the service:<br />
@@ -460,7 +460,7 @@ To test, use KDE's built-in camera app:<br />
 `kamoso`
 
 ## Microphone:
-Record 5 seconds of audio:<br />
+Record 5 seconds of :<br />
 `arecord -d 5 -f cd /tmp/test.wav`
 
 Play it back:<br />
@@ -492,7 +492,7 @@ If you still have issues, try restarting plasma-kscreen:<br />
 `systemctl --user restart plasma-kscreen.service`
 
 ## Audio Setup & EQ
-Working after OS-install with kernel 6.18.28 or newer.<br />
+Working after OS-install with kernel 6.18.26 or newer.<br />
 See separate page [ALC287](alc287.md) for how to fix properly if needed.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
