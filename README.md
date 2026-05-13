@@ -493,8 +493,8 @@ If you still have issues, try restarting plasma-kscreen:<br />
 `systemctl --user restart plasma-kscreen.service`
 
 ## Audio Setup
-Working after OS-install with kernel 6.18.26 or newer.<br />
-See separate page [ALC287](alc287.md) for how to fix properly if needed.<br />
+Working after OS-install with kernel 6.18.26 or newer. Kernel 6.18.28 or newer recommended to also patch "Copy Fail (CVE-2026-31431)" and "dirty frag (CVE-2026-43284, CVE-2026-43500)"<br />
+See separate page [ALC287](alc287.md) for how to fix properly the manual way if needed.<br />
 [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210)
 
 ## PipeWire EQ Filter Chain
