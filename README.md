@@ -285,6 +285,56 @@ Verify with webpage if manual update needed, or wait for Lenovo to release (wish
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
 ## Check Secure Boot:
+To check Secure Boot, and security certificates, you need the "mokutil" application, so install it:
+`sudo pacman -S mokutil`
+
+To see if Secure Boot is enabled/disable, run:
+`sudo mokutil --sb-state`
+
+Personally recommend leaving this "SecureBoot disabled", but it is your machine!
+
+These are the certs that should exist:
+<p align="center">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Cert_secure_boot.png" width="600">
+</p>
+
+To see your KEK certificates, run:
+`sudo mokutil --kek`
+
+Here you should have 2 certs:
+Microsoft Corporation KEK CA 2011
+        Validity
+            Not Before: Jun 24 20:41:29 2011 GMT
+            Not After : Jun 24 20:51:29 2026 GMT
+
+Microsoft Corporation KEK 2K CA 2023
+        Validity
+            Not Before: Mar  2 20:21:35 2023 GMT
+            Not After : Mar  2 20:31:35 2038 GMT
+
+To see your DB certificates, run:
+`sudo mokutil --db`
+
+Here you should have 3 or more certs (seeing 5 on my machine):
+Microsoft Windows Production PCA 2011
+        Validity
+            Not Before: Oct 19 18:41:42 2011 GMT
+            Not After : Oct 19 18:51:42 2026 GMT
+
+Microsoft Corporation UEFI CA 2011
+        Validity
+            Not Before: Jun 27 21:22:45 2011 GMT
+            Not After : Jun 27 21:32:45 2026 GMT
+
+Windows UEFI CA 2023
+        Validity
+            Not Before: Jun 13 18:58:29 2023 GMT
+            Not After : Jun 13 19:08:29 2035 GMT
+
+Microsoft UEFI CA 2023
+        Validity
+            Not Before: Jun 13 19:21:47 2023 GMT
+            Not After : Jun 13 19:31:47 2038 GMT
 
 ## Keyboard Backlight:
 The keyboard backlight is handled by the ideapad_acpi kernel driver and exposed via /sys/class/leds/platform::kbd_backlight. KDE detects it automatically — no additional packages required.
