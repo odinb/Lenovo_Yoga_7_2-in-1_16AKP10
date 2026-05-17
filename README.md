@@ -490,7 +490,9 @@ Disable power save for WiFi when on AC power, keep it on battery:
 sudo tee /etc/NetworkManager/dispatcher.d/70-wifi-powersave << 'EOF'
 #!/bin/bash
 if [ "$2" = "power-change" ] || [ "$2" = "up" ]; then
-    if on_ac_power; then
+    # Check AC power status via /sys
+    if grep -q "Charging\|Full" /sys/class/power_supply/AC*/status 2>/dev/null || \
+       grep -q "1" /sys/class/power_supply/AC*/online 2>/dev/null; then
         iw dev wlp3s0 set power_save off
     else
         iw dev wlp3s0 set power_save on
