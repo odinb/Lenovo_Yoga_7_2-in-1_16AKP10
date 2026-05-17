@@ -272,8 +272,8 @@ Then:<br />
 `sudo fwupdmgr refresh`<br />
 or<br />
 `sudo fwupdmgr refresh --force`<br />
-`sudo fwupdmgr update`<br />
 `sudo fwupdmgr get-updates` # Lenovo can see aggregate/anonymous statistics via LVFS, not per‑machine log.<br />
+`sudo fwupdmgr update` # to apply any updates.<br />
 `sudo reboot`
 
 ## Check BIOS:
