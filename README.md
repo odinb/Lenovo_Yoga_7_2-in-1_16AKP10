@@ -295,7 +295,7 @@ System Settings → Power Management → Keyboard Backlight<br />
 The Fn+Space shortcut also cycles brightness levels directly.
 
 ## Keyboard CoPilot button Re-Mapping
-Re-map the the CoPilot key to open or close the "Overview" effect in the KDE Plasma desktop environment. When configured, and you press the CoPilot button, it tells the KDE window manager (KWin) to instantly toggle the fullscreen grid overlay that shows all your currently open windows and virtual desktops—exactly like pressing the Meta (Windows) + W keyboard shortcut by default.
+Re-map the CoPilot key to open or close the "Overview" effect in the KDE Plasma desktop environment. When configured, and you press the CoPilot button, it tells the KDE window manager (KWin) to instantly toggle the fullscreen grid overlay that shows all your currently open windows and virtual desktops—exactly like pressing the Meta (Windows) + W keyboard shortcut by default.
 
 Install "keyd":<br />
 `sudo pacman -S keyd`
