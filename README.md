@@ -503,18 +503,9 @@ sudo chmod +x /etc/NetworkManager/dispatcher.d/70-wifi-powersave
 Value 3 means enable power save (default), while 2 means disable. But NetworkManager can apply different settings per connection type:
 ```
 sudo tee /etc/NetworkManager/conf.d/wifi-powersave.conf << 'EOF'
-#!/bin/bash
-if [ "$2" = "power-change" ]; then
-    if on_ac_power; then
-        iw dev wlp3s0 set power_save off
-    else
-        iw dev wlp3s0 set power_save on
-    fi
-fi
+[connection]
+wifi.powersave = 3
 EOF
-sudo chmod +x /etc/NetworkManager/dispatcher.d/70-wifi-powersave
-sudo modprobe -r rtw89_8922ae rtw89_8922a rtw89_pci rtw89_core
-sudo modprobe rtw89_core rtw89_pci rtw89_8922a rtw89_8922ae
 ```
 
 This way you get stable WiFi on AC and preserve battery on battery power.
