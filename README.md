@@ -302,12 +302,12 @@ To see your KEK certificates, run:
 `sudo mokutil --kek`
 
 Here you should have 2 certs:
-Microsoft Corporation KEK CA 2011
+Microsoft Corporation KEK CA 2011:<br />
         Validity
             Not Before: Jun 24 20:41:29 2011 GMT
             Not After : Jun 24 20:51:29 2026 GMT
 
-Microsoft Corporation KEK 2K CA 2023
+Microsoft Corporation KEK 2K CA 2023:<br />
         Validity
             Not Before: Mar  2 20:21:35 2023 GMT
             Not After : Mar  2 20:31:35 2038 GMT
@@ -316,22 +316,22 @@ To see your DB certificates, run:
 `sudo mokutil --db`
 
 Here you should have 3 or more certs (seeing 5 on my machine):
-Microsoft Windows Production PCA 2011
+Microsoft Windows Production PCA 2011:<br />
         Validity
             Not Before: Oct 19 18:41:42 2011 GMT
             Not After : Oct 19 18:51:42 2026 GMT
 
-Microsoft Corporation UEFI CA 2011
+Microsoft Corporation UEFI CA 2011:<br />
         Validity
             Not Before: Jun 27 21:22:45 2011 GMT
             Not After : Jun 27 21:32:45 2026 GMT
 
-Windows UEFI CA 2023
+Windows UEFI CA 2023:<br />
         Validity
             Not Before: Jun 13 18:58:29 2023 GMT
             Not After : Jun 13 19:08:29 2035 GMT
 
-Microsoft UEFI CA 2023
+Microsoft UEFI CA 2023:<br />
         Validity
             Not Before: Jun 13 19:21:47 2023 GMT
             Not After : Jun 13 19:31:47 2038 GMT
