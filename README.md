@@ -293,6 +293,36 @@ Control in KDE:<br />
 System Settings → Power Management → Keyboard Backlight<br />
 The Fn+Space shortcut also cycles brightness levels directly.
 
+## Keyboard CoPilot button Mapping
+Re-map the the CoPilot key to open or close the "Overview" effect in the KDE Plasma desktop environment. When configured, and you press the CoPilot button, it tells the KDE window manager (KWin) to instantly toggle the fullscreen grid overlay that shows all your currently open windows and virtual desktops—exactly like pressing the Meta (Windows) + W keyboard shortcut by default.
+
+Install "keyd":<br />
+`sudo pacman -S keyd`
+
+Configure the Remap:<br />
+```
+sudo tee /etc/keyd/default.conf << 'EOF'
+[ids]
+*
+
+[main]
+leftmeta+leftshift+f23 = f24
+EOF
+```
+
+Enable and start service:<br />
+`sudo systemctl enable --now keyd && sudo systemctl restart keyd`
+
+Note: Your Copilot key will now cleanly register as "F24" to the Linux system.
+
+Configure the key shortcut:
+Open your "System Settings" app. In the left sidebar, click on "Keyboard", then "Shortcuts" (under the Workspace category).
+Look at the very top right of the window and click the "Add New" button. Select "Command or Script" from the pop-up menu. A new entry called "Add Command"" will appear. Name it something descriptive like "Toggle Overview".
+In the Command text box right above the name, paste your exact working gdbus string: `gdbus call --session --dest org.kde.kglobalaccel --object-path /component/kwin --method org.kde.kglobalaccel.Component.invokeShortcut 'Overview'`
+
+Click "+Add" button below your command, when the new button says "Input" (if not, click it and it will), click the CoPilot button, and it will now change to "F24".
+Click the "Apply" button in the bottom-right corner of the System Settings window. Your Copilot key on the Lenovo Yoga 7 will now instantly launch and close the window grid overview overlay!
+
 ## Verify suspend/sleep:
 Logged into Manjaro, test sleep:<br />
 `systemctl suspend`
