@@ -518,7 +518,13 @@ sudo modprobe rtw89_core rtw89_pci rtw89_8922a rtw89_8922ae
 ```
 
 This way you get stable WiFi on AC and preserve battery on battery power.
-This will also apply the rtw89 driver options using modprobe.
+
+This will apply the rtw89 driver options using modprobe.
+```
+sudo tee /etc/modprobe.d/rtw89.conf << 'EOF'
+options rtw89_core disable_ps_mode=1
+EOF
+```
 
 Then verify power save is off (assuming you're on AC):
 `iw dev wlp3s0 get power_save`
