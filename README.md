@@ -336,7 +336,7 @@ Microsoft UEFI CA 2023:<br />
             Not Before: Jun 13 19:21:47 2023 GMT<br />
             Not After : Jun 13 19:31:47 2038 GMT
 
-If for some reason you do not have the newer certs, expiring after 2026, and secure boot is enabled, you need a UEFI/BIOS firmware update to fix this. If certs are expired, you should still be able to boot, but other functionalty might be limited.
+If for some reason you do not have the newer certs, expiring after 2026, and secure boot is enabled, you need a UEFI/BIOS firmware update to fix this. If certs are expired, you should still be able to boot existing installed OS, but will not be able to re-install an OS with secure boot enabled.
 
 ## Keyboard Backlight:
 The keyboard backlight is handled by the ideapad_acpi kernel driver and exposed via /sys/class/leds/platform::kbd_backlight. KDE detects it automatically — no additional packages required.
