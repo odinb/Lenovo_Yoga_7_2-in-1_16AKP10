@@ -480,8 +480,8 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 ❌ | MLO (multi-band bonding) | Not yet in driver |
 ❌ | 6 GHz band | Not yet in driver |
 
-##  
-Bluetooth  (Bose QC45 / A2DP) 🎧 ➡️ 🔊 :<br />
+##  Bluetooth Audio:
+(Bose QC45 / A2DP) 🎧 ➡️ 🔊 <br />
 `sudo pacman -S bluez bluez-utils` # Already included in Manjaro but needed bluez-utils for bluetoothctl
 
 Enable the service:<br />
