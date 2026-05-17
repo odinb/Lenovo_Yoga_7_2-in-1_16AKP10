@@ -18,6 +18,7 @@ Things might (or might not) work on other combinations.
 - [Timeshift Setup](#timeshift-setup)
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
+- [Check Secure Boot](#check-secure-boot)
 - [Keyboard Backlight](#keyboard-backlight)
 - [Keyboard CoPilot button Re-Mapping](#keyboard-copilot-button-re-mapping)
 - [Verify suspend/sleep](#verify-suspendsleep)
@@ -282,6 +283,8 @@ or<br />
 
 Verify with webpage if manual update needed, or wait for Lenovo to release (wishful thinking?):<br />
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
+
+## Check Secure Boot:
 
 ## Keyboard Backlight:
 The keyboard backlight is handled by the ideapad_acpi kernel driver and exposed via /sys/class/leds/platform::kbd_backlight. KDE detects it automatically — no additional packages required.
