@@ -322,14 +322,14 @@ Look at the very top right of the window and click the "Add New" button. Select 
 In the Command text box right above the name, paste your exact working gdbus string: `gdbus call --session --dest org.kde.kglobalaccel --object-path /component/kwin --method org.kde.kglobalaccel.Component.invokeShortcut 'Overview'`
 
 <p align="center">
-  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Add-command_keyd.png" width="1200">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Add-command_keyd.png" width="600">
 </p>
 
 Click "+Add" button below your command, when the new button says "Input" (if not, click it and it will), click the CoPilot button, and it will now change to "F24".
 Click the "Apply" button in the bottom-right corner of the System Settings window.
 
 <p align="center">
-  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Shortcut_keyd.png" width="1200">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Shortcut_keyd.png" width="600">
 </p>
 
 Your Copilot key on the Lenovo Yoga 7 will now instantly launch and close the window grid overview overlay!
