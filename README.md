@@ -488,9 +488,16 @@ This will minimize this issue.
 Disable power save for WiFi when on AC power, keep it on battery:
 ```
 sudo tee /etc/NetworkManager/dispatcher.d/70-wifi-powersave << 'EOF'
-[connection]
-wifi.powersave = 3
+#!/bin/bash
+if [ "$2" = "power-change" ] || [ "$2" = "up" ]; then
+    if on_ac_power; then
+        iw dev wlp3s0 set power_save off
+    else
+        iw dev wlp3s0 set power_save on
+    fi
+fi
 EOF
+sudo chmod +x /etc/NetworkManager/dispatcher.d/70-wifi-powersave
 ```
 
 Value 3 means enable power save (default), while 2 means disable. But NetworkManager can apply different settings per connection type:
