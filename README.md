@@ -32,6 +32,7 @@ Things might (or might not) work on other combinations.
 
 - [WiFi](#wifi)
   - [Summary of WiFi 7 status](#summary-of-wifi-7-status)
+  - [Roaming WiFi and Powersave](#roaming-wifi-and-powersave)
 
 - [Bluetooth Audio](#bluetooth-audio)
 - [Video/webcam](#videowebcam)
@@ -480,8 +481,48 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 ❌ | MLO (multi-band bonding) | Not yet in driver |
 ❌ | 6 GHz band | Not yet in driver |
 
+### Roaming WiFi and Powersave:
+The WiFi will roam too frequently for my taste, causing WiFi to go down briefly regularly.
+This will minimize this issue.
+
+Disable power save for WiFi when on AC power, keep it on battery:
+```
+sudo tee /etc/NetworkManager/dispatcher.d/70-wifi-powersave << 'EOF'
+[connection]
+wifi.powersave = 3
+EOF
+```
+
+Value 3 means enable power save (default), while 2 means disable. But NetworkManager can apply different settings per connection type:
+```
+sudo tee /etc/NetworkManager/conf.d/wifi-powersave.conf << 'EOF'
+#!/bin/bash
+if [ "$2" = "power-change" ]; then
+    if on_ac_power; then
+        iw dev wlp3s0 set power_save off
+    else
+        iw dev wlp3s0 set power_save on
+    fi
+fi
+EOF
+sudo chmod +x /etc/NetworkManager/dispatcher.d/70-wifi-powersave
+sudo modprobe -r rtw89_8922ae rtw89_8922a rtw89_pci rtw89_core
+sudo modprobe rtw89_core rtw89_pci rtw89_8922a rtw89_8922ae
+```
+
+This way you get stable WiFi on AC and preserve battery on battery power.
+This will also apply the rtw89 driver options using modprobe.
+
+Then verify power save is off (assuming you're on AC):
+`iw dev wlp3s0 get power_save`
+
+You can monitor roaming using:
+`journalctl -u NetworkManager -f | grep -iE "roam|disconnect|deauth"`
+
+Leave that running and see if the disconnections stop.
+
 ##  Bluetooth Audio:
-(Bose QC45 / A2DP) 🎧 ➡️ 🔊 <br />
+Bose QC45 / A2DP 🎧 ➡️ 🔊 <br />
 `sudo pacman -S bluez bluez-utils` # Already included in Manjaro but needed bluez-utils for bluetoothctl
 
 Enable the service:<br />
