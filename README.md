@@ -19,6 +19,7 @@ Things might (or might not) work on other combinations.
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
 - [Keyboard Backlight](#keyboard-backlight)
+- [Keyboard CoPilot button Re-Mapping](#keyboard-copilot-button-re-mapping)
 - [Verify suspend/sleep](#verify-suspendsleep)
 
 - [Power Management](#power-management)
@@ -293,7 +294,7 @@ Control in KDE:<br />
 System Settings → Power Management → Keyboard Backlight<br />
 The Fn+Space shortcut also cycles brightness levels directly.
 
-## Keyboard CoPilot button Mapping
+## Keyboard CoPilot button Re-Mapping
 Re-map the the CoPilot key to open or close the "Overview" effect in the KDE Plasma desktop environment. When configured, and you press the CoPilot button, it tells the KDE window manager (KWin) to instantly toggle the fullscreen grid overlay that shows all your currently open windows and virtual desktops—exactly like pressing the Meta (Windows) + W keyboard shortcut by default.
 
 Install "keyd":<br />
