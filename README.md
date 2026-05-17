@@ -295,7 +295,7 @@ Personally recommend leaving this "SecureBoot disabled", but it is your machine!
 
 These are the certs that should exist:
 <p align="center">
-  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Cert_secure_boot.png" width="1000">
+  <img src="https://github.com/odinb/Lenovo_Yoga_7_2-in-1_16AKP10/blob/main/Cert_secure_boot.png" width="900">
 </p>
 
 To see your KEK certificates, run:
