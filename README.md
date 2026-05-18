@@ -14,7 +14,7 @@ Things might (or might not) work on other combinations.
 - [BIOS settings](#bios-settings)
 - [Filesystem at setup](#filesystem-at-setup)
 - [User setup](#user-setup)
-- [Update System](#update-system)
+- [Update System](#update-system)<br />
 - [Timeshift Setup](#timeshift-setup)
 - [Add firmware-updates](#add-firmware-updates)
 - [Check BIOS](#check-bios)
@@ -435,6 +435,7 @@ Set these values, leave everything else commented out:<br />
 `TLP_DISABLE_DEFAULTS=1`<br />
 `TLP_DEFAULT_MODE=AC`<br />
 `TLP_PERSISTENT_DEFAULT=0`<br />
+
 TLP_DISABLE_DEFAULTS=1 prevents TLP from fighting auto-cpufreq over CPU settings. TLP only manages the battery threshold on this setup.
 
 Enable services:<br />
