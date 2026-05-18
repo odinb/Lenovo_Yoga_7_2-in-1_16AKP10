@@ -291,7 +291,7 @@ To check Secure Boot, and security certificates, you need the "mokutil" applicat
 To see if Secure Boot is enabled/disable, run:
 `sudo mokutil --sb-state`
 
-Personally recommend leaving this "SecureBoot disabled", but it is your machine!
+Personally recommend leaving this "SecureBoot disabled", but it is your machine! Even though it runs a standard kernel from the repos, there is still an involved process to follow, and the rtw89 driver modules are the tricky part — even on the standard Manjaro kernel. Those modules need to be signed with your MOK key, and every kernel update would require re-signing them unless automated with a DKMS hook.
 A much more meaningful security improvement for a laptop than Secure Boot would be LUKS disk encryption, and if it's not enabled it would be the higher priority in my opinion.
 
 These are the certs that should exist:
@@ -338,10 +338,6 @@ Microsoft UEFI CA 2023:<br />
             Not After : Jun 13 19:31:47 2038 GMT
 
 If for some reason you do not have the newer certs, expiring after 2026, and secure boot is enabled, you need a UEFI/BIOS firmware update to fix this. If certs are expired, you should still be able to boot existing installed OS, but will not be able to re-install an OS with secure boot enabled.
-
-If you still want Secure Boot, the good news as long as you run a standard Manjaro kernel from the repos is it's simple to enable — no custom kernel signing needed. The path would be:
-`yay -S shim-signed
-sudo pacman -S mokutil sbsigntools`
 
 ## Keyboard Backlight:
 The keyboard backlight is handled by the ideapad_acpi kernel driver and exposed via /sys/class/leds/platform::kbd_backlight. KDE detects it automatically — no additional packages required.
