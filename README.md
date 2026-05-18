@@ -285,10 +285,10 @@ Verify with webpage if manual update needed, or wait for Lenovo to release (wish
 [Lenovo Yoga 7 2-in-1 16AKP10 - Type 83JU](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/yoga-series/yoga-7-2-in-1-16akp10/83ju)
 
 ## Check Secure Boot:
-To check Secure Boot, and security certificates, you need the "mokutil" application, so install it:
+To check Secure Boot, and security certificates, you need the "mokutil" application, so install it:<br />
 `sudo pacman -S mokutil`
 
-To see if Secure Boot is enabled/disable, run:
+To see if Secure Boot is enabled/disable, run:<br />
 `sudo mokutil --sb-state`
 
 Personally recommend leaving this "SecureBoot disabled", but it is your machine! Even though it runs a standard kernel from the repos, there is still an involved process to follow, and the rtw89 driver modules are the tricky part — even on the standard Manjaro kernel. Those modules need to be signed with your MOK key, and every kernel update would require re-signing them unless automated with a DKMS hook.
