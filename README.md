@@ -1008,14 +1008,16 @@ Start the automount trigger:<br />
 `sudo systemctl restart remote-fs.target`
 
 Testing the Setup:<br />
-Check status: `systemctl status mnt-cwwk.automount` should show active (waiting).
+Check status:<br />
+`systemctl status mnt-cwwk.automount` should show active (waiting).
 
-Verify it's NOT mounted yet: `mount | grep cwwk` should return nothing.
+Verify it's NOT mounted yet:<br />
+`mount | grep cwwk` should return nothing.
 
 Access the share:<br />
 `ls /mnt/cwwk`
 
-Verify it IS mounted now: `mount | grep cwwk`<br />should now show the connection.
+Verify it IS mounted now:<br />`mount | grep cwwk`<br />should now show the connection.
 
 For WiFi:<br />
 Stop race-condition by storing password in config, not kwallet.<br />
