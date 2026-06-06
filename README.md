@@ -1020,27 +1020,28 @@ Access the share:<br />
 Verify it IS mounted now:<br />
 `mount | grep cwwk` should now show the connection.
 
-For robust WiFi setup:<br />
+For robust WiFi setup for the SMB mount:<br />
 This ensures your WiFi connects during the boot process (at the system level) rather than waiting for you to log in and unlock your KWallet.<br />
 
 Replace "TheSSID" with your actual WiFi name (SSID).<br />
 Run `nmcli connection show` to find it:<br />
-Enable the service that waits for network before mounting:
+
+Enable the service that waits for network before mounting:<br />
 `sudo systemctl enable NetworkManager-wait-online.service`
 
-Tell NetworkManager to store the password in the system config (psk-flags 0), and give it a high priority:
+Tell NetworkManager to store the password in the system config (psk-flags 0), and give it a high priority:<br />
 `sudo nmcli connection modify "TheSSID" \
     wifi-sec.psk-flags 0 \
     connection.autoconnect-priority 10 \
     connection.wait-device-timeout 10`
 
-Save your password into the system-level config file:
+Save your password into the system-level config file:<br />
 `sudo nmcli connection modify "TheSSID" wifi-sec.psk "YOUR_ACTUAL_PASSWORD"`
 
-Apply the changes:
+Apply the changes:<br />
 `sudo nmcli connection up "TheSSID"`
 
-After running the commands above, verify that the flag is set to 0 (which means "store in the system files"):
+After running the commands above, verify that the flag is set to 0 (which means "store in the system files"):<br />
 `nmcli -s connection show "TheSSID" | grep psk-flags`
 It should output: 802-11-wireless-security.psk-flags: 0
 
