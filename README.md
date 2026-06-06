@@ -1020,23 +1020,28 @@ Access the share:<br />
 Verify it IS mounted now:<br />
 `mount | grep cwwk` should now show the connection.
 
-For WiFi:<br />
-Stop race-condition by storing password in config, not kwallet.<br />
-Replace "TheSSID" with your actual SSID:<br />
-`sudo vi /etc/NetworkManager/system-connections/TheSSID.nmconnection`
+For robust WiFi setup:<br />
+This ensures your WiFi connects during the boot process (at the system level) rather than waiting for you to log in and unlock your KWallet.<br />
+Replace "TheSSID" with your actual WiFi name (SSID).<br />
+Run `nmcli connection show` to find it:<br />
+Enable the service that waits for network before mounting:
+`sudo systemctl enable NetworkManager-wait-online.service`
 
-Change "psk-flags=1" to "psk-flags=0" and make sure the password is present:
-```
-[wifi-security]
-auth-alg=open
-key-mgmt=sae
-psk=YOUR_ACTUAL_PASSWORD
-psk-flags=0
-```
-Verify (where MySSID is your SSID):<br />
-`nmcli connection show MySSID | grep -i psk`
+Tell NetworkManager to store the password in the system config (psk-flags 0), and give it a high priority:
+`sudo nmcli connection modify "TheSSID" \
+    wifi-sec.psk-flags 0 \
+    connection.autoconnect-priority 10 \
+    connection.wait-device-timeout 10`
 
-Should show psk-flags: 0. Then reboot and WiFi should connect immediately at boot without waiting for KWallet.
+Save your password into the system-level config file:
+`sudo nmcli connection modify "TheSSID" wifi-sec.psk "YOUR_ACTUAL_PASSWORD"`
+
+Apply the changes:
+`sudo nmcli connection up "TheSSID"`
+
+After running the commands above, verify that the flag is set to 0 (which means "store in the system files"):
+`nmcli -s connection show "TheSSID" | grep psk-flags`
+It should output: 802-11-wireless-security.psk-flags: 0
 
 ## Create a Dolphin “Places” bookmark
 Replace /mnt/cwwk with whatever you named it above.<br />
