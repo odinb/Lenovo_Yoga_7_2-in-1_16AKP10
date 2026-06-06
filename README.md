@@ -986,7 +986,7 @@ You can call it whatever, change "cwwk" to what you want.<br />
 Same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
 
 Then configure the automount (via /etc/fstab) (verify uid/gid with your user):<br />
-Open the file: `sudo vi /etc/fstab`
+Open the file: `sudo vi /etc/fstab`<br />
 Add this line at the bottom (replace the IP and share name with yours, keep it as a one-liner):
 ```
 //192.168.1.100/TrueNAS-share /mnt/cwwk cifs credentials=/etc/samba/creds-share,iocharset=utf8,uid=1000,gid=1000,file_mode=0664,dir_mode=0775,noserverino,vers=3.0,noauto,x-systemd.automount,x-systemd.idle-timeout=300,x-systemd.mount-timeout=10,_netdev,nofail 0 0
@@ -998,23 +998,24 @@ Key benefits of these options:
 - x-systemd.mount-timeout=10: Stops the system from freezing if the server is offline.
 - _netdev: Ensures the system waits for network before attempting the mount.
 
-Finalize and Activate
+Finalize and Activate:<br />
 Run these commands to tell systemd to process your new fstab entry and start the automount trigger.
 
-Reload systemd
+Reload systemd:<br />
 `sudo systemctl daemon-reload`
 
-Start the automount trigger
+Start the automount trigger:<br />
 `sudo systemctl restart remote-fs.target`
 
-Testing the Setup
+Testing the Setup:<br />
 Check status: `systemctl status mnt-cwwk.automount` should show active (waiting).
 
 Verify it's NOT mounted yet: `mount | grep cwwk` should return nothing.
 
-Access the share: `ls /mnt/cwwk`
+Access the share:<br />
+`ls /mnt/cwwk`
 
-Verify it IS mounted now: `mount | grep cwwk` should now show the connection.
+Verify it IS mounted now: `mount | grep cwwk`<br />should now show the connection.
 
 For WiFi:<br />
 Stop race-condition by storing password in config, not kwallet.<br />
