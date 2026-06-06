@@ -1041,7 +1041,7 @@ Apply the changes:<br />
 `sudo nmcli connection up "TheSSID"`
 
 After running the commands above, verify that the flag is set to 0 (which means "store in the system files"):<br />
-`nmcli -s connection show "TheSSID" | grep psk-flags`
+`nmcli -s connection show "TheSSID" | grep psk-flags`<br />
 It should output: 802-11-wireless-security.psk-flags: 0
 
 ## Create a Dolphin “Places” bookmark
