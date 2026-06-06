@@ -1017,7 +1017,8 @@ Verify it's NOT mounted yet:<br />
 Access the share:<br />
 `ls /mnt/cwwk`
 
-Verify it IS mounted now:<br />`mount | grep cwwk`<br />should now show the connection.
+Verify it IS mounted now:<br />
+`mount | grep cwwk` should now show the connection.
 
 For WiFi:<br />
 Stop race-condition by storing password in config, not kwallet.<br />
