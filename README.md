@@ -977,7 +977,7 @@ password=mypassword
 EOF
 ```
 
-then secure permissions:<br />
+Then secure permissions:<br />
 `sudo chmod 600 /etc/samba/creds-share`
 
 Create mount-point:<br />
@@ -986,17 +986,17 @@ You can call it whatever, change "cwwk" to what you want.<br />
 Same thing goes for "//192.168.1.100/TrueNAS-share" which needs to change to your mount-location.
 
 Then configure the automount (via /etc/fstab) (verify uid/gid with your user):<br />
-Open the file: sudo vi /etc/fstab
+Open the file: `sudo vi /etc/fstab`
 Add this line at the bottom (replace the IP and share name with yours, keep it as a one-liner):
 ```
 //192.168.1.100/TrueNAS-share /mnt/cwwk cifs credentials=/etc/samba/creds-share,iocharset=utf8,uid=1000,gid=1000,file_mode=0664,dir_mode=0775,noserverino,vers=3.0,noauto,x-systemd.automount,x-systemd.idle-timeout=300,x-systemd.mount-timeout=10,_netdev,nofail 0 0
 ```
 
 Key benefits of these options:
-noauto,x-systemd.automount: Mounts only when you try to open the folder.
-x-systemd.idle-timeout=300: Unmounts after 5 mins of inactivity (saves battery/prevents hangs).
-x-systemd.mount-timeout=10: Stops the system from freezing if the server is offline.
-_netdev: Ensures the system waits for network before attempting the mount.
+- noauto,x-systemd.automount: Mounts only when you try to open the folder.
+- x-systemd.idle-timeout=300: Unmounts after 5 mins of inactivity (saves battery/prevents hangs).
+- x-systemd.mount-timeout=10: Stops the system from freezing if the server is offline.
+- _netdev: Ensures the system waits for network before attempting the mount.
 
 Finalize and Activate
 Run these commands to tell systemd to process your new fstab entry and start the automount trigger.
