@@ -1022,6 +1022,7 @@ Verify it IS mounted now:<br />
 
 For robust WiFi setup:<br />
 This ensures your WiFi connects during the boot process (at the system level) rather than waiting for you to log in and unlock your KWallet.<br />
+
 Replace "TheSSID" with your actual WiFi name (SSID).<br />
 Run `nmcli connection show` to find it:<br />
 Enable the service that waits for network before mounting:
