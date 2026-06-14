@@ -520,7 +520,7 @@ Check driver version:<br />
 Check what the driver currently supports:<br />
 `iw dev wlp3s0 link | grep -i "Link\|EHT\|MLO\|be\|width"`
 
-Output (the multiple links shows connections on 2.4/5/6GHz bands):<br />
+Output (the multiple links shows connections on 2.4GHz/5GHz/6GHz bands showing at least partial MLO-functionality):<br />
 ```
         Link 0 BSSID aa:2a:6f:a2:9c:51
                 freq: 2412.0
@@ -542,7 +542,7 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 | 2x2 MIMO | ✅ Working 
 | 4096-QAM | ✅ Working 
 | ~1 Gbps on 5 GHz | ✅ Working 
-| MLO (multi-band bonding) | ⚠️ Partial | Needs kernel 6.18 and iw version 6.17 or newer, mprovements still needed |
+| MLO (multi-band bonding) | ⚠️ Partial | Needs kernel 6.18 and iw version 6.17 or newer, improvements still needed |
 | 6 GHz band | ✅ Working | Needs kernel 6.18 and iw version 6.17 or newer |
 
 ### Roaming WiFi and Powersave:
