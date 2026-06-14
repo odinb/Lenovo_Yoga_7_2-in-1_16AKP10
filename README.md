@@ -518,10 +518,17 @@ Check driver version:<br />
 `modinfo rtw89_8922ae | grep -i "version\|description"`
 
 Check what the driver currently supports:<br />
-`iw dev wlp3s0 link | grep -i "EHT\|MLO\|be\|width"`
+`iw dev wlp3s0 link | grep -i "Link\|EHT\|MLO\|be\|width"`
 
 Output:<br />
 ```
+        Link 0 BSSID aa:2a:6f:a2:9c:51
+                freq: 2412.0
+        Link 1 BSSID a6:2a:6f:a2:9c:50
+                freq: 5745.0
+        Link 2 BSSID a6:2a:6f:a2:9c:52
+                freq: 6135.0
+
 rx bitrate: 864.8 MBit/s 80MHz EHT-MCS 8 EHT-NSS 2 EHT-GI 0
 tx bitrate: 960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
 ```
@@ -531,12 +538,12 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 ### Summary of WiFi 7 status:
 | Working | Item | Notes |
 |-----|-----|-----|
-✅ | EHT (WiFi 7 modulation) | Working |
-✅ | 2x2 MIMO | Working |
-✅ | 4096-QAM | Working |
-✅ | ~1 Gbps on 5 GHz | Working |
-❌ | MLO (multi-band bonding) | Not yet in driver |
-❌ | 6 GHz band | Not yet in driver |
+✅ Working | EHT (WiFi 7 modulation) |
+✅ Working | 2x2 MIMO |
+✅ Working| 4096-QAM |
+✅ Working | ~1 Gbps on 5 GHz |
+⚠️ Partial | MLO (multi-band bonding) | Needs kernel 6.18 and iw v 6.17 or newer. Improvements still needed. |
+✅ | 6 GHz band | Needs kernel 6.18 and iw v 6.17 or newer |
 
 ### Roaming WiFi and Powersave:
 The WiFi will roam too frequently for my taste, causing WiFi to go down briefly regularly.
