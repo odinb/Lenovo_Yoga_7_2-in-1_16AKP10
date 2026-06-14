@@ -536,14 +536,14 @@ tx bitrate: 960.7 MBit/s 80MHz EHT-MCS 9 EHT-NSS 2 EHT-GI 0
 EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 with 2 spatial streams.
 
 ### Summary of WiFi 7 status:
-| Working | Item | Notes |
+| Item | Status | Notes |
 |-----|-----|-----|
-✅ Working | EHT (WiFi 7 modulation) |
-✅ Working | 2x2 MIMO |
-✅ Working| 4096-QAM |
-✅ Working | ~1 Gbps on 5 GHz |
-⚠️ Partial | MLO (multi-band bonding) | Needs kernel 6.18 and iw v 6.17 or newer. Improvements still needed. |
-✅ | 6 GHz band | Needs kernel 6.18 and iw v 6.17 or newer |
+| EHT (WiFi 7 modulation) | ✅ Working 
+| 2x2 MIMO | ✅ Working 
+| 4096-QAM | ✅ Working 
+| ~1 Gbps on 5 GHz | ✅ Working 
+| MLO (multi-band bonding) | ⚠️ Partial | Needs kernel 6.18 and iw version 6.17 or newer, mprovements still needed |
+| 6 GHz band | ✅ Working | Needs kernel 6.18 and iw version 6.17 or newer |
 
 ### Roaming WiFi and Powersave:
 The WiFi will roam too frequently for my taste, causing WiFi to go down briefly regularly.
