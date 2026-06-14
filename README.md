@@ -520,7 +520,7 @@ Check driver version:<br />
 Check what the driver currently supports:<br />
 `iw dev wlp3s0 link | grep -i "Link\|EHT\|MLO\|be\|width"`
 
-Output:<br />
+Output (the multiple links shows connections on 2.4/5/6GHz bands):<br />
 ```
         Link 0 BSSID aa:2a:6f:a2:9c:51
                 freq: 2412.0
