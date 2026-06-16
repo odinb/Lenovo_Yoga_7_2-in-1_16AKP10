@@ -538,10 +538,10 @@ EHT = Extremely High Throughput = WiFi 7. Connected at nearly 1 Gbps on WiFi 7 w
 ### Summary of WiFi 7 status:
 | Item | Status | Notes |
 |-----|-----|-----|
-| EHT (WiFi 7 modulation) | ✅ Working |
-| 2x2 MIMO | ✅ Working |
-| 4096-QAM | ✅ Working |
-| ~1 Gbps on 5 GHz | ✅ Working |
+| EHT (WiFi 7 modulation) | ✅ Working | |
+| 2x2 MIMO | ✅ Working | |
+| 4096-QAM | ✅ Working | |
+| ~1 Gbps on 5 GHz | ✅ Working | |
 | MLO (multi-band bonding) | ⚠️ Partial | Needs kernel 6.18 and iw version 6.17 or newer, improvements still needed |
 | 6 GHz band | ⚠️ Partial | Needs kernel 6.18 and iw version 6.17 or newer, improvements still needed |
 
