@@ -970,13 +970,13 @@ At the prompts:
 - Confirm the build.
 
 If it fails:
-rebuild skipping the check phase
+rebuild skipping the check phase:<br />
 `yay -S --mflags "--nocheck" libfprint-egismoc-sdcp-git`
 
-If your yay version wants the flag attached differently:
+If your yay version wants the flag attached differently:<br />
 `yay -S libfprint-egismoc-sdcp-git --mflags="--nocheck"`
 
-Then check it landed correctly:
+Then check it landed correctly:<br />
 `pacman -Q libfprint-egismoc-sdcp-git`
 `pacman -Qi libfprint-egismoc-sdcp-git | grep -E 'Provides|Conflicts'`
 `ls -l /usr/lib/libfprint-2.so.2.0.0`
