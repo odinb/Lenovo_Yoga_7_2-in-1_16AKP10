@@ -961,7 +961,7 @@ Confirm the device and that no stock libfprint is installed:<br />
 Expected: the USB line is present, and both packages report “not found”. If stock libfprint is installed, remove it first (it conflicts with the fork):<br />
 `sudo pacman -Rns libfprint`
 
-3. Build and install the SDCP libfprint from AUR<br />
+2. Build and install the SDCP libfprint from AUR<br />
 `yay -S libfprint-egismoc-sdcp-git`
 
 At the prompts:
