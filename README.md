@@ -1015,7 +1015,8 @@ The fingerprint must still appear after each verification. If it disappears, you
 Look for a fingerprint option/icon on the lock screen, click it and touch the sensor, or just touch the sensor. If it unlocks, you're done for the desktop. If not, it is needed to create an explicit `/etc/pam.d/kde-fingerprint` override.
 
 6. Other integrations (optional, not needed for login)
-Current relevant files:<br />
+Current relevant files:
+
 | File | Current content |
 |-----|-----|
 | /etc/pam.d/sudo	| auth include system-auth (no fingerprint) |
