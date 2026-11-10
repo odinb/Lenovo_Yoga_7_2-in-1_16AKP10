@@ -1014,7 +1014,7 @@ The fingerprint must still appear after each verification. If it disappears, you
 
 Look for a fingerprint option/icon on the lock screen, click it and touch the sensor, or just touch the sensor. If it unlocks, you're done for the desktop. If not, it is needed to create an explicit `/etc/pam.d/kde-fingerprint` override.
 
-6. Other integrations (optional, not needed for login)
+6. Other integrations (optional, not needed for login)<br />
 Current relevant files:
 
 | File | Current content |
@@ -1025,19 +1025,19 @@ Current relevant files:
 | /usr/lib/pam.d/polkit-1	| vendor, no fingerprint |
 
 Option A — sudo
-Add one line at the top of `/etc/pam.d/sudo`:
-`+auth		sufficient	pam_fprintd.so max-tries=1 timeout=10
+Add one line at the top of `/etc/pam.d/sudo`:<br />
+`+auth		sufficient	pam_fprintd.so max-tries=1 timeout=10<br />
  auth		include		system-auth`
 
 Effect: fingerprint is tried first; if it fails or times out after 10 s, password still works. Downside: sudo can pause up to 10 s waiting for a finger before showing the password prompt (PAM serialises methods).
 
 Option B — polkit (GUI admin prompts)
-Create `/etc/pam.d/polkit-1` (overrides the vendor file):
-`#%PAM-1.0
-auth       sufficient   pam_fprintd.so max-tries=1 timeout=10
-auth       include      system-auth
-account    include      system-auth
-password   include      system-auth
+Create `/etc/pam.d/polkit-1` (overrides the vendor file):<br />
+`#%PAM-1.0<br />
+auth       sufficient   pam_fprintd.so max-tries=1 timeout=10<br />
+auth       include      system-auth<br />
+account    include      system-auth<br />
+password   include      system-auth<br />
 session    include      system-auth`
 
 Same trade-off, and polkit prompts are frequent.
