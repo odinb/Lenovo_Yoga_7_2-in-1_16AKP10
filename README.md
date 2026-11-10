@@ -1032,20 +1032,21 @@ Add one line at the top of `/etc/pam.d/sudo`:<br />
 Effect: fingerprint is tried first; if it fails or times out after 10 s, password still works. Downside: sudo can pause up to 10 s waiting for a finger before showing the password prompt (PAM serialises methods).
 
 Option B — polkit (GUI admin prompts)
-Create `/etc/pam.d/polkit-1` (overrides the vendor file):<br />
-`#%PAM-1.0`
-`auth       sufficient   pam_fprintd.so max-tries=1 timeout=10`
-`auth       include      system-auth`
-`account    include      system-auth`
-`password   include      system-auth`
-`session    include      system-auth`
+Create `/etc/pam.d/polkit-1` (overrides the vendor file):
 
+```text
+#%PAM-1.0
+auth       sufficient   pam_fprintd.so max-tries=1 timeout=10
+auth       include      system-auth
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth
+```
 Same trade-off, and polkit prompts are frequent.
 
 
 ## Setup SMB automount:
 Create credentials file. Replace with your actual credentials
-```
 sudo mkdir -p /etc/samba
 sudo tee /etc/samba/creds-share << 'EOF' > /dev/null
 username=myuser
