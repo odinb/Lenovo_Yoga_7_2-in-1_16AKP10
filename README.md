@@ -1014,8 +1014,8 @@ The fingerprint must still appear after each verification. If it disappears, you
 
 Look for a fingerprint option/icon on the lock screen, click it and touch the sensor, or just touch the sensor. If it unlocks, you're done for the desktop. If not, it is needed to create an explicit `/etc/pam.d/kde-fingerprint` override.
 
-6. Add a second finger
-Pick a different finger name, for example:
+6. Add a second finger<br />
+Pick a different finger name, for example:<br />
 `fprintd-enroll -f left-index-finger`
 
 Touch the sensor repeatedly until enroll-completed.
