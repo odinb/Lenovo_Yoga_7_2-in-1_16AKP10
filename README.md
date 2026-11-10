@@ -77,7 +77,7 @@ This is my working "lazy-moose" for this combo. Things might change, and this gu
 | Volume Buttons for  | ✅ Working  | Needs Kernel 6.18.26 (or newer) or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
 |  Speakers | ✅ Working  | Needs Kernel 6.18.26 (or newer) or quirk table fix, [Bug 221210](https://bugzilla.kernel.org/show_bug.cgi?id=221210) or workaround below |
 |  EQ | ⚠️ Partial  | Needs PipeWire [EQ Filter Chain](#-setup--eq) fix |
-| FingerPrint Reader | ❌ Not Working | Needs more work apparently |
+| FingerPrint Reader | ⚠️ Partial | Works using AUR |
 
 
 # Laptop: Lenovo Yoga 7 2-in-1 16AKP10 (83JU / LNVNB161216)
