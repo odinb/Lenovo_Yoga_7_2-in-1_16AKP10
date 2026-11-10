@@ -1020,14 +1020,14 @@ Pick a different finger name, for example:<br />
 
 Touch the sensor repeatedly until enroll-completed.
 
-Valid finger names are:
-left-thumb          right-thumb
-left-index-finger   right-index-finger
-left-middle-finger  right-middle-finger
-left-ring-finger    right-ring-finger
-left-little-finger  right-little-finger
+Valid finger names are:<br />
+left-thumb          right-thumb<br />
+left-index-finger   right-index-finger<br />
+left-middle-finger  right-middle-finger<br />
+left-ring-finger    right-ring-finger<br />
+left-little-finger  right-little-finger<br />
 
-Confirm both are enrolled
+Confirm both are enrolled:<br />
 `fprintd-list "$USER"`
 
 You should see two entries, e.g.:
