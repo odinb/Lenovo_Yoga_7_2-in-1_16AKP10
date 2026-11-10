@@ -949,6 +949,100 @@ Speaker level reset to 64%:<br />
 
 
 ## Fingerprint Sensor
+Installed using AUR
+
+AUR warning: libfprint-egismoc-sdcp-git is community-maintained. The PKGBUILD is short and applies the required OpenSSL patch, but review it at the prompt. yay is assumed already installed on the system.
+
+1. Pre-flight (read-only)
+Confirm the device and that no stock libfprint is installed:
+`lsusb | grep -i '1c7a:0583'`
+`pacman -Q libfprint fprintd 2>&1`
+
+Expected: the USB line is present, and both packages report “not found”. If stock libfprint is installed, remove it first (it conflicts with the fork):
+`sudo pacman -Rns libfprint`
+
+3. Build and install the SDCP libfprint from AUR
+`yay -S libfprint-egismoc-sdcp-git`
+
+At the prompts:
+- Choose A (All) — clean the build directory first.
+- Review the PKGBUILD (it should contain the egismoc : ['openssl'] patch in prepare() and -D drivers=egismoc).
+- Confirm the build.
+
+If it fails:
+rebuild skipping the check phase
+`yay -S --mflags "--nocheck" libfprint-egismoc-sdcp-git`
+
+If your yay version wants the flag attached differently:
+`yay -S libfprint-egismoc-sdcp-git --mflags="--nocheck"`
+
+Then check it landed correctly:
+`pacman -Q libfprint-egismoc-sdcp-git`
+`pacman -Qi libfprint-egismoc-sdcp-git | grep -E 'Provides|Conflicts'`
+`ls -l /usr/lib/libfprint-2.so.2.0.0`
+
+The library should be roughly 1.3 MB (the non-SDCP build is ~760 KB).
+
+3. Install fprintd from the official repo
+`sudo pacman -S fprintd`
+
+Its libfprint dependency is satisfied by the fork's Provides. Confirm:
+`pacman -Q fprintd`
+`systemctl status fprintd --no-pager`
+
+fprintd is D-Bus-activated, so it may show as inactive until first use — that's normal.
+
+4. Enroll and test persistence
+`fprintd-enroll -f right-index-finger`
+
+Touch the sensor repeatedly when prompted — typically about 15 successful stages. Occasional enroll-finger-not-centered or enroll-remove-and-retry is normal; just reposition.
+
+The critical persistence test:
+`fprintd-verify`
+`fprintd-list "$USER"`
+
+The critical test — verify twice, checking the list after each:
+`fprintd-verify`
+`fprintd-list "$USER"`
+`fprintd-verify`
+`fprintd-list "$USER"`
+
+The fingerprint must still appear after each verification. If it disappears, you're seeing the old SDCP bug (wrong library loaded or old enrollment).
+
+5. Test this first, with no edits:
+`loginctl lock-session`
+
+Look for a fingerprint option/icon on the lock screen, click it and touch the sensor, or just touch the sensor. If it unlocks, you're done for the desktop. If not, it is needed to create an explicit `/etc/pam.d/kde-fingerprint` override.
+
+6. Other integrations (optional, not needed for login)
+Current relevant files:
+| File | Current content |
+|-----|-----|
+| /etc/pam.d/sudo	| auth include system-auth (no fingerprint) |
+| /etc/pam.d/sddm	| auth include system-login (no fingerprint) |
+| /etc/pam.d/login	| auth include system-local-login (no fingerprint) |
+| /usr/lib/pam.d/polkit-1	| vendor, no fingerprint |
+
+Option A — sudo
+Add one line at the top of `/etc/pam.d/sudo`:
+`+auth		sufficient	pam_fprintd.so max-tries=1 timeout=10
+ auth		include		system-auth`
+
+Effect: fingerprint is tried first; if it fails or times out after 10 s, password still works. Downside: sudo can pause up to 10 s waiting for a finger before showing the password prompt (PAM serialises methods).
+
+Option B — polkit (GUI admin prompts)
+Create `/etc/pam.d/polkit-1` (overrides the vendor file):
+`#%PAM-1.0
+auth       sufficient   pam_fprintd.so max-tries=1 timeout=10
+auth       include      system-auth
+account    include      system-auth
+password   include      system-auth
+session    include      system-auth`
+
+Same trade-off, and polkit prompts are frequent.
+
+
+
 ⚠️ Not working after OS-install, ignoring for now.<br />
 `lsusb` to get printout:<br />
 `Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E`
