@@ -983,33 +983,33 @@ Then check it landed correctly:<br />
 
 The library should be roughly 1.3 MB (the non-SDCP build is ~760 KB).
 
-3. Install fprintd from the official repo
+3. Install fprintd from the official repo:<br />
 `sudo pacman -S fprintd`
 
-Its libfprint dependency is satisfied by the fork's Provides. Confirm:
-`pacman -Q fprintd`
+Its libfprint dependency is satisfied by the fork's Provides. Confirm:<br />
+`pacman -Q fprintd`<br />
 `systemctl status fprintd --no-pager`
 
 fprintd is D-Bus-activated, so it may show as inactive until first use — that's normal.
 
-4. Enroll and test persistence
+4. Enroll and test persistence<br />
 `fprintd-enroll -f right-index-finger`
 
 Touch the sensor repeatedly when prompted — typically about 15 successful stages. Occasional enroll-finger-not-centered or enroll-remove-and-retry is normal; just reposition.
 
-The critical persistence test:
-`fprintd-verify`
+The critical persistence test:<br />
+`fprintd-verify`<br />
 `fprintd-list "$USER"`
 
-The critical test — verify twice, checking the list after each:
-`fprintd-verify`
-`fprintd-list "$USER"`
-`fprintd-verify`
+The critical test — verify twice, checking the list after each:<br />
+`fprintd-verify`<br />
+`fprintd-list "$USER"`<br />
+`fprintd-verify`<br />
 `fprintd-list "$USER"`
 
 The fingerprint must still appear after each verification. If it disappears, you're seeing the old SDCP bug (wrong library loaded or old enrollment).
 
-5. Test this first, with no edits:
+5. Test this first, with no edits:<br />
 `loginctl lock-session`
 
 Look for a fingerprint option/icon on the lock screen, click it and touch the sensor, or just touch the sensor. If it unlocks, you're done for the desktop. If not, it is needed to create an explicit `/etc/pam.d/kde-fingerprint` override.
