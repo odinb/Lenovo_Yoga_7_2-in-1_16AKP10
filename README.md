@@ -977,8 +977,8 @@ If your yay version wants the flag attached differently:<br />
 `yay -S libfprint-egismoc-sdcp-git --mflags="--nocheck"`
 
 Then check it landed correctly:<br />
-`pacman -Q libfprint-egismoc-sdcp-git`
-`pacman -Qi libfprint-egismoc-sdcp-git | grep -E 'Provides|Conflicts'`
+`pacman -Q libfprint-egismoc-sdcp-git`<br />
+`pacman -Qi libfprint-egismoc-sdcp-git | grep -E 'Provides|Conflicts'`<br />
 `ls -l /usr/lib/libfprint-2.so.2.0.0`
 
 The library should be roughly 1.3 MB (the non-SDCP build is ~760 KB).
