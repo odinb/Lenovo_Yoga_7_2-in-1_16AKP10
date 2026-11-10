@@ -41,7 +41,7 @@ Things might (or might not) work on other combinations.
 - [TouchScreen & Auto-rotate](#TouchScreen--Auto-rotate)
 - [Audio Setup](#audio-setup)
 - [PipeWire EQ Filter Chain](#pipewire-eq-filter-chain)
-- [Fingerprint Sensor (not yet working, ignoring for now)](#fingerprint-sensor-not-yet-working-ignoring-for-now)
+- [Fingerprint Sensor](#fingerprint-sensor)
 - [Setup SMB automount](#setup-smb-automount)
 - [Create a Dolphin “Places” bookmark](#create-a-dolphin-places-bookmark)
 
