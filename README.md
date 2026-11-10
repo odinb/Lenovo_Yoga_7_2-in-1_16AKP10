@@ -954,7 +954,7 @@ Installed using AUR
 AUR warning: libfprint-egismoc-sdcp-git is community-maintained. The PKGBUILD is short and applies the required OpenSSL patch, but review it at the prompt. yay is assumed already installed on the system.
 
 1. Pre-flight (read-only)
-Confirm the device and that no stock libfprint is installed:
+Confirm the device and that no stock libfprint is installed:<br />
 `lsusb | grep -i '1c7a:0583'`
 `pacman -Q libfprint fprintd 2>&1`
 
@@ -1043,31 +1043,7 @@ Same trade-off, and polkit prompts are frequent.
 
 
 
-⚠️ Not working after OS-install, ignoring for now.<br />
-`lsusb` to get printout:<br />
-`Bus 003 Device 002: ID 1c7a:0583 LighTuning Technology Inc. ETU905A88-E`
 
-`sudo pacman -S fprintd`<br />
-`sudo systemctl enable --now fprintd`<br />
-`fprintd-enroll -f right-index-finger`
-
-Test enrollment first:<br />
-`fprintd-list $USER`
-
-If it shows your enrolled finger, try locking the screen and using the fingerprint to unlock.<br />
-If it enrolls but fails to match, unfortunately that's a known bug with this specific sensor on Linux that hasn't been fully resolved upstream yet.
-
-Enrollment is lost after the screen locks or sleeps:<br />
-This is a known bug with this exact sensor. The 1c7a:0583 device has been widely reported to fail — it enrolls successfully but enrollment is lost after the screen locks or sleeps.
-
-If enrollment works, then enable it for KDE login and sudo:<br />
-`sudo pam-auth-update --enable fprintd`
-
-And for the lock screen specifically:<br />
-`sudo nano /etc/pam.d/kde`
-
-Add at the top:<br />
-`auth sufficient pam_fprintd.so`
 
 ## Setup SMB automount:
 Create credentials file. Replace with your actual credentials
