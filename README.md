@@ -1033,17 +1033,14 @@ Effect: fingerprint is tried first; if it fails or times out after 10 s, passwor
 
 Option B — polkit (GUI admin prompts)
 Create `/etc/pam.d/polkit-1` (overrides the vendor file):<br />
-`#%PAM-1.0<br />
-auth       sufficient   pam_fprintd.so max-tries=1 timeout=10<br />
-auth       include      system-auth<br />
-account    include      system-auth<br />
-password   include      system-auth<br />
-session    include      system-auth`
+`#%PAM-1.0`
+`auth       sufficient   pam_fprintd.so max-tries=1 timeout=10`
+`auth       include      system-auth`
+`account    include      system-auth`
+`password   include      system-auth`
+`session    include      system-auth`
 
 Same trade-off, and polkit prompts are frequent.
-
-
-
 
 
 ## Setup SMB automount:
