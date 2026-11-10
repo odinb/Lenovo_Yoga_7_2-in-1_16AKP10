@@ -951,7 +951,11 @@ Speaker level reset to 64%:<br />
 ## Fingerprint Sensor
 Installed using AUR
 
-AUR warning: libfprint-egismoc-sdcp-git is community-maintained. The PKGBUILD is short and applies the required OpenSSL patch, but review it at the prompt. yay is assumed already installed on the system.
+AUR warning: libfprint-egismoc-sdcp-git is community-maintained. Because anyone can upload content to the AUR, it requires a healthy level of caution.
+- Inspect the PKGBUILD: Always open and read the PKGBUILD script before building an unfamiliar package, especially if it downloads binaries directly from external URLs or runs arbitrary scripts during installation.
+- Check User Comments and Votes: The AUR website displays community votes and comment sections for every package. If a package is broken, malicious, or outdated, other users will usually report it in the comments.
+
+The PKGBUILD is short and applies the required OpenSSL patch, but review it at the prompt. yay is assumed already installed on the system.
 
 1. Pre-flight (read-only)
 Confirm the device and that no stock libfprint is installed:<br />
