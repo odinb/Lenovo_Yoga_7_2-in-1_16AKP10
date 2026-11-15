@@ -957,6 +957,8 @@ AUR warning: libfprint-egismoc-sdcp-git is community-maintained. Because anyone 
 
 The PKGBUILD is short and applies the required OpenSSL patch, but review it at the prompt. yay is assumed already installed on the system.
 
+The login works after resume (kscreenlocker) and not after reboot (SDDM).
+
 1. Pre-flight (read-only)
 Confirm the device and that no stock libfprint is installed:<br />
 `lsusb | grep -i '1c7a:0583'`
