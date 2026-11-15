@@ -957,7 +957,12 @@ AUR warning: libfprint-egismoc-sdcp-git is community-maintained. Because anyone 
 
 The PKGBUILD is short and applies the required OpenSSL patch, but review it at the prompt. yay is assumed already installed on the system.
 
-The login works after resume (kscreenlocker) and not after reboot (SDDM).
+The two "login" screens are different programs, so the login works after resume (kscreenlocker) and not after reboot (SDDM).
+
+| Screen | Program | PAM Service | Fingerprint |
+|-----|-----|-----|-----|
+| Boot login | SDDM 0.21 | /etc/pam.d/sddm → system-login → system-auth (pam_unix + faillock) |	no support at all |
+| Lock after resume / after login | kscreenlocker 6.8.2 | /usr/lib/pam.d/kde-fingerprint (vendor file) | yes |
 
 1. Pre-flight (read-only)
 Confirm the device and that no stock libfprint is installed:<br />
