@@ -964,6 +964,7 @@ The two "login" screens are different programs, so the login works after resume 
 | Boot login | SDDM 0.21 | /etc/pam.d/sddm → system-login → system-auth (pam_unix + faillock) |	no support at all |
 | Lock after resume / after login | kscreenlocker 6.8.2 | /usr/lib/pam.d/kde-fingerprint (vendor file) | yes |
 
+
 1. Pre-flight (read-only)
 Confirm the device and that no stock libfprint is installed:<br />
 `lsusb | grep -i '1c7a:0583'`
